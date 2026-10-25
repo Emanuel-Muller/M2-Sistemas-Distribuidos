@@ -1,0 +1,11 @@
+# Variante da segunda série do E3: primário com "notify no".
+# Ativar (no terminal em uso):
+#   export COMPOSE_FILE=docker-compose.yml:docker-compose.sem-notify.yml
+#   docker compose up -d ns1        # recria só o ns1 com a nova configuração
+# Voltar à base:
+#   unset COMPOSE_FILE
+#   docker compose up -d ns1
+services:
+  ns1:
+    volumes:
+      - ./ns1/named.sem-notify.conf:/etc/bind/named.conf:ro

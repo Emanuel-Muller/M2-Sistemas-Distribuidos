@@ -1,0 +1,71 @@
+# Topologia-base do roteiro (p.12) para os experimentos E1 a E8.
+# Adaptações em relação ao trecho do PDF (ver docs/adaptacoes.md):
+#   A2  nome fixo do projeto (redes: sdlab_interna e sdlab_clientes)
+#   A3  zona do ns1 lida de runtime/ns1 (cópia de trabalho, fora do Git)
+#   A4  segundo cliente (cliente2) para o E9
+#   A5  clientes também com "build", para nunca tentar baixar sd-bind da internet
+name: sdlab
+
+x-bind: &bind
+  build: .
+  image: sd-bind
+  mem_limit: 128m
+
+services:
+  ns1:                                   # primário autoritativo
+    <<: *bind
+    container_name: ns1
+    volumes:
+      - ./ns1/named.conf:/etc/bind/named.conf:ro
+      - ./runtime/ns1:/var/lib/bind
+    networks:
+      interna:  {ipv4_address: 172.30.0.11}
+      clientes: {ipv4_address: 172.31.0.11}
+
+  ns2:                                   # secundário
+    <<: *bind
+    container_name: ns2
+    volumes:
+      - ./ns2/named.conf:/etc/bind/named.conf:ro
+    networks:
+      interna:  {ipv4_address: 172.30.0.12}
+      clientes: {ipv4_address: 172.31.0.12}
+
+  ns3:                                   # secundário
+    <<: *bind
+    container_name: ns3
+    volumes:
+      - ./ns3/named.conf:/etc/bind/named.conf:ro
+    networks:
+      interna:  {ipv4_address: 172.30.0.13}
+      clientes: {ipv4_address: 172.31.0.13}
+
+  resolvedor:                            # recursivo com cache
+    <<: *bind
+    container_name: resolvedor
+    volumes:
+      - ./resolvedor/named.conf:/etc/bind/named.conf:ro
+    networks:
+      clientes: {ipv4_address: 172.31.0.53}
+
+  cliente:                               # dig / nsupdate
+    <<: *bind
+    container_name: cliente
+    mem_limit: 32m
+    command: ["sleep", "infinity"]
+    networks:
+      clientes: {ipv4_address: 172.31.0.100}
+
+  cliente2:                              # segundo cliente (E9)
+    <<: *bind
+    container_name: cliente2
+    mem_limit: 32m
+    command: ["sleep", "infinity"]
+    networks:
+      clientes: {ipv4_address: 172.31.0.101}
+
+networks:
+  interna:
+    ipam: {config: [{subnet: 172.30.0.0/24}]}
+  clientes:
+    ipam: {config: [{subnet: 172.31.0.0/24}]}
