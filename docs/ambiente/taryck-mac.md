@@ -1,6 +1,6 @@
 # Ficha de ambiente: taryck-mac
 
-Gerada em: 2026-10-24 21:47:34 -0300
+Gerada em: 2026-10-24 21:49:26 -0300
 
 ```
 == Sistema
@@ -17,13 +17,12 @@ contexto Docker: desktop-linux
 motor: linux/aarch64 | CPUs: 8 | memória: 8319770624 bytes
 
 == Repositório
-commit: 2a6595d5c348a26a10ddf6a8c2cb01b1c0c79545
-tag/descrição: 2a6595d
+commit: b76b3130b5613fa6cd5e3d11d0b1cf1e1b99e0d1
+tag/descrição: b76b313
 alterações locais: 1 arquivo(s)
 
 == Imagem
-digest da base alpine:3.20: 
-imagem base não encontrada
+digest da base alpine:3.20: alpine@sha256:d9e853e87e55526f6b2917df91a2115c36dd7c696a35be12163d44e6e2a4b6bc
 BIND 9.18.49 (Extended Support Version) <id:cd4a53b>
 named                /usr/sbin/named
 rndc                 /usr/sbin/rndc
@@ -35,7 +34,8 @@ tsig-keygen          /usr/sbin/tsig-keygen
 nsupdate             /usr/bin/nsupdate
 dig                  /usr/bin/dig
 ip                   /sbin/ip
-relógio no contêiner (date +%s%N): 1792889255
+relógio no contêiner (date +%s%N): 1792889369
+modo de relógio dos scripts: /proc/uptime (10 ms)
 sleep fracionário: ok
 
 == Redes Docker existentes
