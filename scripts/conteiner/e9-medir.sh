@@ -6,9 +6,13 @@
 agora_ms() {
     t=$(date +%s%N 2>/dev/null)
     case "$t" in
-        ""|*[!0-9]*) awk '{ printf "%.0f\n", $1 * 1000 }' /proc/uptime ;;
-        *) echo $((t / 1000000)) ;;
+        ""|*[!0-9]*) t="" ;;
     esac
+    if [ "${#t}" -ge 16 ]; then
+        echo $((t / 1000000))
+    else
+        awk '{ printf "%.0f\n", $1 * 1000 }' /proc/uptime
+    fi
 }
 
 v=$1; lim=$2; nome=medida.sd.lab

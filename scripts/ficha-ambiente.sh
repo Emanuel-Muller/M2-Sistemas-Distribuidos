@@ -32,10 +32,12 @@ mkdir -p docs/ambiente
     echo "alterações locais: $(git status --porcelain | wc -l | tr -d ' ') arquivo(s)"
     echo
     echo "== Imagem"
-    echo "digest da base alpine:3.20: $(docker image inspect alpine:3.20 --format '{{index .RepoDigests 0}}' 2>/dev/null || echo 'imagem base não encontrada')"
+    docker pull -q alpine:3.20 >/dev/null 2>&1 || true
+    echo "digest da base alpine:3.20: $(docker image inspect alpine:3.20 --format '{{index .RepoDigests 0}}' 2>/dev/null || echo 'nao obtido')"
     docker run --rm sd-bind named -v
     docker run --rm sd-bind sh -c 'for b in named rndc rndc-confgen named-checkconf named-checkzone named-journalprint tsig-keygen nsupdate dig ip; do printf "%-20s %s\n" "$b" "$(command -v $b || echo AUSENTE)"; done'
     echo "relógio no contêiner (date +%s%N): $(docker run --rm sd-bind date +%s%N)"
+    echo "modo de relógio dos scripts: $(docker run --rm sd-bind sh -c 't=$(date +%s%N); if [ ${#t} -ge 16 ]; then echo "date +%s%N (1 ms)"; else echo "/proc/uptime (10 ms)"; fi')"
     echo "sleep fracionário: $(docker run --rm sd-bind sh -c 'sleep 0.1 && echo ok' 2>&1)"
     echo
     echo "== Redes Docker existentes"
