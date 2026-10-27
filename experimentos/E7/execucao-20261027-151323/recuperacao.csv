@@ -1,0 +1,6 @@
+repeticao,espera_s,serial_alvo,rede_ms,sincronizado_ms,tempo_ms,transferencia
+1,20,2026101402,3903000,3904740,1740,AXFR-style IXFR started
+2,20,2026101403,3930150,3931810,1660,AXFR-style IXFR started
+3,20,2026101404,3957210,3958760,1550,AXFR-style IXFR started
+4,20,2026101405,3984140,3986800,2660,AXFR-style IXFR started
+5,20,2026101406,4012230,4015780,3550,AXFR-style IXFR started
