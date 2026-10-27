@@ -1,0 +1,4 @@
+== resolvedor
+== ns1
+== ns2
+== ns3

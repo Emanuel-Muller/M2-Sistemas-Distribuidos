@@ -1,0 +1,82 @@
+### 1) pelo resolvedor (cache vazio)
+19:34:23
+
+; <<>> DiG 9.18.49 <<>> @172.31.0.53 app.sd.lab
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 11058
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 12c3990e94f36c43010000006ae126ef9d838c0d74557369 (good)
+;; QUESTION SECTION:
+;app.sd.lab.			IN	A
+
+;; ANSWER SECTION:
+app.sd.lab.		60	IN	A	10.0.0.1
+
+;; Query time: 4 msec
+;; SERVER: 172.31.0.53#53(172.31.0.53) (UDP)
+;; WHEN: Tue Oct 27 22:34:23 UTC 2026
+;; MSG SIZE  rcvd: 83
+
+### 2) de novo pelo resolvedor, 5 s depois
+19:34:28
+
+; <<>> DiG 9.18.49 <<>> @172.31.0.53 app.sd.lab
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 27378
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: aa2b1abeb87c39db010000006ae126f405c091b1e76c57f1 (good)
+;; QUESTION SECTION:
+;app.sd.lab.			IN	A
+
+;; ANSWER SECTION:
+app.sd.lab.		55	IN	A	10.0.0.1
+
+;; Query time: 0 msec
+;; SERVER: 172.31.0.53#53(172.31.0.53) (UDP)
+;; WHEN: Tue Oct 27 22:34:28 UTC 2026
+;; MSG SIZE  rcvd: 83
+
+### 3) direto ao ns1, sem recursão
+19:34:28
+
+; <<>> DiG 9.18.49 <<>> @172.31.0.11 app.sd.lab +norecurse
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 48608
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 4
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: aaa1d79da4f2d842010000006ae126f46d12c4bfe7b5c7ff (good)
+;; QUESTION SECTION:
+;app.sd.lab.			IN	A
+
+;; ANSWER SECTION:
+app.sd.lab.		60	IN	A	10.0.0.1
+
+;; AUTHORITY SECTION:
+sd.lab.			60	IN	NS	ns2.sd.lab.
+sd.lab.			60	IN	NS	ns1.sd.lab.
+sd.lab.			60	IN	NS	ns3.sd.lab.
+
+;; ADDITIONAL SECTION:
+ns1.sd.lab.		60	IN	A	172.31.0.11
+ns2.sd.lab.		60	IN	A	172.31.0.12
+ns3.sd.lab.		60	IN	A	172.31.0.13
+
+;; Query time: 0 msec
+;; SERVER: 172.31.0.11#53(172.31.0.11) (UDP)
+;; WHEN: Tue Oct 27 22:34:28 UTC 2026
+;; MSG SIZE  rcvd: 185
+
