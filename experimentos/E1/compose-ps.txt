@@ -1,0 +1,7 @@
+NAME         IMAGE     COMMAND                  SERVICE      CREATED          STATUS          PORTS
+cliente      sd-bind   "sleep infinity"         cliente      41 seconds ago   Up 40 seconds   
+cliente2     sd-bind   "sleep infinity"         cliente2     41 seconds ago   Up 40 seconds   
+ns1          sd-bind   "named -g -u named -…"   ns1          41 seconds ago   Up 40 seconds   
+ns2          sd-bind   "named -g -u named -…"   ns2          41 seconds ago   Up 41 seconds   
+ns3          sd-bind   "named -g -u named -…"   ns3          41 seconds ago   Up 40 seconds   
+resolvedor   sd-bind   "named -g -u named -…"   resolvedor   41 seconds ago   Up 41 seconds   

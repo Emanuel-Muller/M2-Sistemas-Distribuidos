@@ -1,0 +1,9 @@
+Variante: base | saída: experimentos/E3/com-notify-20261027-134339.csv
+repetição 1: serial 2026101402  ns2=110 ms  ns3=570 ms
+repetição 2: serial 2026101403  ns2=30 ms  ns3=620 ms
+repetição 3: serial 2026101404  ns2=30 ms  ns3=620 ms
+repetição 4: serial 2026101405  ns2=40 ms  ns3=630 ms
+repetição 5: serial 2026101406  ns2=120 ms  ns3=570 ms
+
+atraso_ns2_ms: n=5  media=66.0  desvio_padrao=45.1  min=30.0  max=120.0  (NA=0)
+atraso_ns3_ms: n=5  media=602.0  desvio_padrao=29.5  min=570.0  max=630.0  (NA=0)

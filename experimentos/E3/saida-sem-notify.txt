@@ -1,0 +1,9 @@
+Variante: sem-notify (E3) | saída: experimentos/E3/sem-notify-20261027-134440.csv
+repetição 1: serial 2026101407  ns2=25520 ms  ns3=26000 ms
+repetição 2: serial 2026101408  ns2=17270 ms  ns3=22700 ms
+repetição 3: serial 2026101409  ns2=16220 ms  ns3=18720 ms
+repetição 4: serial 2026101410  ns2=16200 ms  ns3=21690 ms
+repetição 5: serial 2026101411  ns2=17170 ms  ns3=18680 ms
+
+atraso_ns2_ms: n=5  media=18476.0  desvio_padrao=3970.1  min=16200.0  max=25520.0  (NA=0)
+atraso_ns3_ms: n=5  media=21558.0  desvio_padrao=3057.4  min=18680.0  max=26000.0  (NA=0)

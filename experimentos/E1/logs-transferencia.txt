@@ -1,0 +1,10 @@
+ns3  | 27-Oct-2026 22:24:51.089 zone sd.lab/IN: Transfer started.
+ns3  | 27-Oct-2026 22:24:51.089 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns3  | 27-Oct-2026 22:24:51.089 zone sd.lab/IN: transferred serial 2026101401
+ns3  | 27-Oct-2026 22:24:51.089 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns3  | 27-Oct-2026 22:24:51.089 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 9 records, 224 bytes, 0.001 secs (224000 bytes/sec) (serial 2026101401)
+ns2  | 27-Oct-2026 22:24:50.977 zone sd.lab/IN: Transfer started.
+ns2  | 27-Oct-2026 22:24:50.977 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns2  | 27-Oct-2026 22:24:50.977 zone sd.lab/IN: transferred serial 2026101401
+ns2  | 27-Oct-2026 22:24:50.977 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns2  | 27-Oct-2026 22:24:50.977 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 9 records, 224 bytes, 0.001 secs (224000 bytes/sec) (serial 2026101401)
