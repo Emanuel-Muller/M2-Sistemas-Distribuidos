@@ -54,6 +54,8 @@ docker compose down           # remove os contêineres
 | `scripts/observar.sh <nome> <int> <dur> <csv>` | Linha do tempo de ns1, ns2, ns3 e resolvedor |
 | `scripts/medir-propagacao.sh <rotulo> [n]` | E3: tempo primário → secundários |
 | `scripts/medir-recuperacao.sh [n] [espera_s]` | E7: tempo de recuperação do ns3 após partição |
+| `scripts/e5-falha.sh [int] [limite] [extras]` | E5: quadro nós ativos x leitura x escrita; ns3 até o expire |
+| `scripts/e6-particao.sh [int] [limite] [--manter-isolado]` | E6: ns3 isolado da rede interna, divergência e expire |
 | `scripts/estatisticas.sh <csv> <coluna>` | Média e desvio padrão de uma coluna |
 | `scripts/gerar-chaves-tsig.sh` | E9: chaves TSIG em `secrets/` (fora do Git) |
 | `scripts/e9-atualizar.sh ...` | E9: uma atualização dinâmica (validação e testes de autorização) |
