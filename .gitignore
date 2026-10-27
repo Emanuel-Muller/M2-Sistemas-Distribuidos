@@ -1,0 +1,18 @@
+# Estado de execução: cada máquina tem o seu (recriado por scripts/reset.sh)
+runtime/*
+!runtime/.gitkeep
+logs/
+
+# Segredos TSIG: gerados em cada máquina por scripts/gerar-chaves-tsig.sh
+secrets/
+*.key
+
+# Journals e temporários do BIND
+*.jnl
+*.tmp
+
+# Vídeos e arquivos grandes: guardar no drive da equipe e linkar no relatório
+*.mp4
+*.mkv
+*.mov
+*.webm

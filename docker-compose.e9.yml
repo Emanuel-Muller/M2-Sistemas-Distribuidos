@@ -1,0 +1,19 @@
+# Variante da Ênfase B (E9): atualização dinâmica com TSIG no ns1.
+# Pré-requisito: scripts/gerar-chaves-tsig.sh
+# Ativar (no terminal em uso):
+#   export COMPOSE_FILE=docker-compose.yml:docker-compose.e9.yml
+#   scripts/reset.sh
+# Voltar à base:
+#   unset COMPOSE_FILE
+#   scripts/reset.sh
+services:
+  ns1:
+    volumes:
+      - ./ns1/named.e9.conf:/etc/bind/named.conf:ro
+      - ./secrets:/etc/bind/chaves:ro
+  cliente:
+    volumes:
+      - ./secrets:/chaves:ro
+  cliente2:
+    volumes:
+      - ./secrets:/chaves:ro

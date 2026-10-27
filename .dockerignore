@@ -1,0 +1,7 @@
+# O build só precisa do Dockerfile; nada disto deve ir para o contexto da imagem
+.git
+secrets
+runtime
+logs
+experimentos
+docs
