@@ -1,0 +1,533 @@
+resolvedor  | 2026-10-27T18:31:13.793346621Z 27-Oct-2026 18:31:13.790 starting BIND 9.18.49 (Extended Support Version) <id:cd4a53b>
+resolvedor  | 2026-10-27T18:31:13.793389323Z 27-Oct-2026 18:31:13.790 running on Linux x86_64 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026
+resolvedor  | 2026-10-27T18:31:13.793393123Z 27-Oct-2026 18:31:13.790 built with  '--build=x86_64-alpine-linux-musl' '--host=x86_64-alpine-linux-musl' '--prefix=/usr' '--sysconfdir=/etc/bind' '--localstatedir=/var' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--with-gssapi=yes' '--with-libxml2' '--with-json-c' '--with-openssl=yes' '--enable-dnstap' '--enable-largefile' '--enable-linux-caps' '--enable-shared' '--disable-static' 'build_alias=x86_64-alpine-linux-musl' 'host_alias=x86_64-alpine-linux-musl' 'CC=gcc' 'CFLAGS=-Os -fstack-clash-protection -Wformat -Werror=format-security -fno-plt -g -D_GNU_SOURCE' 'LDFLAGS=-Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs'
+resolvedor  | 2026-10-27T18:31:13.793396723Z 27-Oct-2026 18:31:13.790 running as: named -g -u named -c /etc/bind/named.conf
+resolvedor  | 2026-10-27T18:31:13.793398524Z 27-Oct-2026 18:31:13.790 compiled by GCC 13.2.1 20240309
+resolvedor  | 2026-10-27T18:31:13.793399924Z 27-Oct-2026 18:31:13.790 compiled with OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+resolvedor  | 2026-10-27T18:31:13.793401124Z 27-Oct-2026 18:31:13.790 linked to OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+resolvedor  | 2026-10-27T18:31:13.793402424Z 27-Oct-2026 18:31:13.790 compiled with libuv version: 1.48.0
+resolvedor  | 2026-10-27T18:31:13.793403624Z 27-Oct-2026 18:31:13.790 linked to libuv version: 1.48.0
+resolvedor  | 2026-10-27T18:31:13.793404824Z 27-Oct-2026 18:31:13.790 compiled with libxml2 version: 2.12.10
+resolvedor  | 2026-10-27T18:31:13.793406324Z 27-Oct-2026 18:31:13.790 linked to libxml2 version: 21210
+resolvedor  | 2026-10-27T18:31:13.793407624Z 27-Oct-2026 18:31:13.790 compiled with json-c version: 0.17
+resolvedor  | 2026-10-27T18:31:13.793409124Z 27-Oct-2026 18:31:13.790 linked to json-c version: 0.17
+resolvedor  | 2026-10-27T18:31:13.793410424Z 27-Oct-2026 18:31:13.790 compiled with zlib version: 1.3.2
+resolvedor  | 2026-10-27T18:31:13.793411724Z 27-Oct-2026 18:31:13.790 linked to zlib version: 1.3.2
+resolvedor  | 2026-10-27T18:31:13.793413024Z 27-Oct-2026 18:31:13.790 ----------------------------------------------------
+resolvedor  | 2026-10-27T18:31:13.793414224Z 27-Oct-2026 18:31:13.790 BIND 9 is maintained by Internet Systems Consortium,
+resolvedor  | 2026-10-27T18:31:13.793415424Z 27-Oct-2026 18:31:13.790 Inc. (ISC), a non-profit 501(c)(3) public-benefit 
+resolvedor  | 2026-10-27T18:31:13.793416724Z 27-Oct-2026 18:31:13.790 corporation.  Support and training for BIND 9 are 
+resolvedor  | 2026-10-27T18:31:13.793417925Z 27-Oct-2026 18:31:13.790 available at https://www.isc.org/support
+resolvedor  | 2026-10-27T18:31:13.793420025Z 27-Oct-2026 18:31:13.790 ----------------------------------------------------
+resolvedor  | 2026-10-27T18:31:13.793423325Z 27-Oct-2026 18:31:13.790 found 12 CPUs, using 12 worker threads
+resolvedor  | 2026-10-27T18:31:13.793424625Z 27-Oct-2026 18:31:13.790 using 12 UDP listeners per interface
+resolvedor  | 2026-10-27T18:31:13.820251877Z 27-Oct-2026 18:31:13.818 DNSSEC algorithms: RSASHA1 NSEC3RSASHA1 RSASHA256 RSASHA512 ECDSAP256SHA256 ECDSAP384SHA384 ED25519 ED448
+resolvedor  | 2026-10-27T18:31:13.820290679Z 27-Oct-2026 18:31:13.818 DS algorithms: SHA-1 SHA-256 SHA-384
+resolvedor  | 2026-10-27T18:31:13.820294179Z 27-Oct-2026 18:31:13.818 HMAC algorithms: HMAC-MD5 HMAC-SHA1 HMAC-SHA224 HMAC-SHA256 HMAC-SHA384 HMAC-SHA512
+resolvedor  | 2026-10-27T18:31:13.820295279Z 27-Oct-2026 18:31:13.818 TKEY mode 2 support (Diffie-Hellman): yes
+resolvedor  | 2026-10-27T18:31:13.820296279Z 27-Oct-2026 18:31:13.818 TKEY mode 3 support (GSS-API): yes
+resolvedor  | 2026-10-27T18:31:13.822210976Z 27-Oct-2026 18:31:13.818 the initial working directory is '/'
+resolvedor  | 2026-10-27T18:31:13.822220776Z 27-Oct-2026 18:31:13.818 loading configuration from '/etc/bind/named.conf'
+resolvedor  | 2026-10-27T18:31:13.822824207Z 27-Oct-2026 18:31:13.818 the working directory is now '/var/bind'
+resolvedor  | 2026-10-27T18:31:13.823186025Z 27-Oct-2026 18:31:13.818 reading built-in trust anchors from file '/etc/bind/bind.keys'
+resolvedor  | 2026-10-27T18:31:13.824488091Z 27-Oct-2026 18:31:13.822 using default UDP/IPv4 port range: [32768, 60999]
+resolvedor  | 2026-10-27T18:31:13.824537793Z 27-Oct-2026 18:31:13.822 using default UDP/IPv6 port range: [32768, 60999]
+resolvedor  | 2026-10-27T18:31:13.825299131Z 27-Oct-2026 18:31:13.822 listening on IPv4 interface lo, 127.0.0.1#53
+resolvedor  | 2026-10-27T18:31:13.848718112Z 27-Oct-2026 18:31:13.846 listening on IPv4 interface eth0, 172.31.0.53#53
+resolvedor  | 2026-10-27T18:31:13.850273790Z 27-Oct-2026 18:31:13.846 IPv6 socket API is incomplete; explicitly binding to each IPv6 address separately
+resolvedor  | 2026-10-27T18:31:13.850294891Z 27-Oct-2026 18:31:13.846 listening on IPv6 interface lo, ::1#53
+resolvedor  | 2026-10-27T18:31:13.852629609Z 27-Oct-2026 18:31:13.850 generating session key for dynamic DNS
+resolvedor  | 2026-10-27T18:31:13.852816518Z 27-Oct-2026 18:31:13.850 sizing zone task pool based on 1 zones
+resolvedor  | 2026-10-27T18:31:13.852823719Z 27-Oct-2026 18:31:13.850 none:98: 'max-cache-size 90%' - setting to 7112MB (out of 7902MB)
+resolvedor  | 2026-10-27T18:31:13.865620564Z 27-Oct-2026 18:31:13.862 set up managed keys zone for view _default, file 'managed-keys.bind'
+resolvedor  | 2026-10-27T18:31:13.865647565Z 27-Oct-2026 18:31:13.862 automatic empty zone: 10.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.865650665Z 27-Oct-2026 18:31:13.862 automatic empty zone: 16.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.865652766Z 27-Oct-2026 18:31:13.862 automatic empty zone: 17.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.865654566Z 27-Oct-2026 18:31:13.862 automatic empty zone: 18.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.865656766Z 27-Oct-2026 18:31:13.862 automatic empty zone: 19.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.865814974Z 27-Oct-2026 18:31:13.862 automatic empty zone: 20.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.865828074Z 27-Oct-2026 18:31:13.862 automatic empty zone: 21.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.865830974Z 27-Oct-2026 18:31:13.862 automatic empty zone: 22.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.865833575Z 27-Oct-2026 18:31:13.862 automatic empty zone: 23.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.865834875Z 27-Oct-2026 18:31:13.862 automatic empty zone: 24.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.865965681Z 27-Oct-2026 18:31:13.862 automatic empty zone: 25.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.865971282Z 27-Oct-2026 18:31:13.862 automatic empty zone: 26.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.865972882Z 27-Oct-2026 18:31:13.862 automatic empty zone: 27.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866103088Z 27-Oct-2026 18:31:13.862 automatic empty zone: 28.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866113789Z 27-Oct-2026 18:31:13.862 automatic empty zone: 29.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866115689Z 27-Oct-2026 18:31:13.862 automatic empty zone: 30.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866117189Z 27-Oct-2026 18:31:13.862 automatic empty zone: 31.172.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866207593Z 27-Oct-2026 18:31:13.862 automatic empty zone: 168.192.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866217494Z 27-Oct-2026 18:31:13.862 automatic empty zone: 64.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866219794Z 27-Oct-2026 18:31:13.862 automatic empty zone: 65.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866228795Z 27-Oct-2026 18:31:13.862 automatic empty zone: 66.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866396703Z 27-Oct-2026 18:31:13.862 automatic empty zone: 67.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866410904Z 27-Oct-2026 18:31:13.862 automatic empty zone: 68.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866413304Z 27-Oct-2026 18:31:13.862 automatic empty zone: 69.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866414804Z 27-Oct-2026 18:31:13.862 automatic empty zone: 70.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866638915Z 27-Oct-2026 18:31:13.862 automatic empty zone: 71.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866646216Z 27-Oct-2026 18:31:13.862 automatic empty zone: 72.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866648016Z 27-Oct-2026 18:31:13.862 automatic empty zone: 73.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866649216Z 27-Oct-2026 18:31:13.862 automatic empty zone: 74.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866650416Z 27-Oct-2026 18:31:13.862 automatic empty zone: 75.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866726520Z 27-Oct-2026 18:31:13.862 automatic empty zone: 76.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866731020Z 27-Oct-2026 18:31:13.862 automatic empty zone: 77.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866731920Z 27-Oct-2026 18:31:13.862 automatic empty zone: 78.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866851926Z 27-Oct-2026 18:31:13.862 automatic empty zone: 79.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866859026Z 27-Oct-2026 18:31:13.862 automatic empty zone: 80.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866861026Z 27-Oct-2026 18:31:13.862 automatic empty zone: 81.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866898028Z 27-Oct-2026 18:31:13.862 automatic empty zone: 82.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.866923430Z 27-Oct-2026 18:31:13.862 automatic empty zone: 83.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867069437Z 27-Oct-2026 18:31:13.862 automatic empty zone: 84.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867074937Z 27-Oct-2026 18:31:13.862 automatic empty zone: 85.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867076737Z 27-Oct-2026 18:31:13.862 automatic empty zone: 86.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867179342Z 27-Oct-2026 18:31:13.862 automatic empty zone: 87.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867184843Z 27-Oct-2026 18:31:13.862 automatic empty zone: 88.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867185743Z 27-Oct-2026 18:31:13.862 automatic empty zone: 89.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867220445Z 27-Oct-2026 18:31:13.862 automatic empty zone: 90.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867301749Z 27-Oct-2026 18:31:13.862 automatic empty zone: 91.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867306749Z 27-Oct-2026 18:31:13.862 automatic empty zone: 92.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867367352Z 27-Oct-2026 18:31:13.862 automatic empty zone: 93.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867377252Z 27-Oct-2026 18:31:13.862 automatic empty zone: 94.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867379053Z 27-Oct-2026 18:31:13.862 automatic empty zone: 95.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867517359Z 27-Oct-2026 18:31:13.862 automatic empty zone: 96.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867522460Z 27-Oct-2026 18:31:13.862 automatic empty zone: 97.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867568262Z 27-Oct-2026 18:31:13.862 automatic empty zone: 98.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867572162Z 27-Oct-2026 18:31:13.862 automatic empty zone: 99.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867666967Z 27-Oct-2026 18:31:13.862 automatic empty zone: 100.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867671067Z 27-Oct-2026 18:31:13.862 automatic empty zone: 101.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867672667Z 27-Oct-2026 18:31:13.862 automatic empty zone: 102.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867763872Z 27-Oct-2026 18:31:13.862 automatic empty zone: 103.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867768372Z 27-Oct-2026 18:31:13.862 automatic empty zone: 104.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867770172Z 27-Oct-2026 18:31:13.862 automatic empty zone: 105.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867802774Z 27-Oct-2026 18:31:13.862 automatic empty zone: 106.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867935181Z 27-Oct-2026 18:31:13.862 automatic empty zone: 107.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867944881Z 27-Oct-2026 18:31:13.862 automatic empty zone: 108.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867970982Z 27-Oct-2026 18:31:13.862 automatic empty zone: 109.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.867973983Z 27-Oct-2026 18:31:13.866 automatic empty zone: 110.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868072987Z 27-Oct-2026 18:31:13.866 automatic empty zone: 111.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868078888Z 27-Oct-2026 18:31:13.866 automatic empty zone: 112.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868080588Z 27-Oct-2026 18:31:13.866 automatic empty zone: 113.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868178993Z 27-Oct-2026 18:31:13.866 automatic empty zone: 114.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868184193Z 27-Oct-2026 18:31:13.866 automatic empty zone: 115.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868185193Z 27-Oct-2026 18:31:13.866 automatic empty zone: 116.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868277898Z 27-Oct-2026 18:31:13.866 automatic empty zone: 117.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868286598Z 27-Oct-2026 18:31:13.866 automatic empty zone: 118.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868400904Z 27-Oct-2026 18:31:13.866 automatic empty zone: 119.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868407004Z 27-Oct-2026 18:31:13.866 automatic empty zone: 120.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868408704Z 27-Oct-2026 18:31:13.866 automatic empty zone: 121.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868410104Z 27-Oct-2026 18:31:13.866 automatic empty zone: 122.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868411405Z 27-Oct-2026 18:31:13.866 automatic empty zone: 123.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868412905Z 27-Oct-2026 18:31:13.866 automatic empty zone: 124.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868490309Z 27-Oct-2026 18:31:13.866 automatic empty zone: 125.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868496609Z 27-Oct-2026 18:31:13.866 automatic empty zone: 126.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868498909Z 27-Oct-2026 18:31:13.866 automatic empty zone: 127.100.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868586013Z 27-Oct-2026 18:31:13.866 automatic empty zone: 0.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868591114Z 27-Oct-2026 18:31:13.866 automatic empty zone: 127.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868696619Z 27-Oct-2026 18:31:13.866 automatic empty zone: 254.169.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868701419Z 27-Oct-2026 18:31:13.866 automatic empty zone: 2.0.192.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868703119Z 27-Oct-2026 18:31:13.866 automatic empty zone: 100.51.198.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868704419Z 27-Oct-2026 18:31:13.866 automatic empty zone: 113.0.203.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868839826Z 27-Oct-2026 18:31:13.866 automatic empty zone: 255.255.255.255.IN-ADDR.ARPA
+resolvedor  | 2026-10-27T18:31:13.868844626Z 27-Oct-2026 18:31:13.866 automatic empty zone: 0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.IP6.ARPA
+resolvedor  | 2026-10-27T18:31:13.868919530Z 27-Oct-2026 18:31:13.866 automatic empty zone: 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.IP6.ARPA
+resolvedor  | 2026-10-27T18:31:13.868925030Z 27-Oct-2026 18:31:13.866 automatic empty zone: D.F.IP6.ARPA
+resolvedor  | 2026-10-27T18:31:13.868937231Z 27-Oct-2026 18:31:13.866 automatic empty zone: 8.E.F.IP6.ARPA
+resolvedor  | 2026-10-27T18:31:13.869053037Z 27-Oct-2026 18:31:13.866 automatic empty zone: 9.E.F.IP6.ARPA
+resolvedor  | 2026-10-27T18:31:13.869059137Z 27-Oct-2026 18:31:13.866 automatic empty zone: A.E.F.IP6.ARPA
+resolvedor  | 2026-10-27T18:31:13.869094039Z 27-Oct-2026 18:31:13.866 automatic empty zone: B.E.F.IP6.ARPA
+resolvedor  | 2026-10-27T18:31:13.869210245Z 27-Oct-2026 18:31:13.866 automatic empty zone: 8.B.D.0.1.0.0.2.IP6.ARPA
+resolvedor  | 2026-10-27T18:31:13.869215545Z 27-Oct-2026 18:31:13.866 automatic empty zone: EMPTY.AS112.ARPA
+resolvedor  | 2026-10-27T18:31:13.869217345Z 27-Oct-2026 18:31:13.866 automatic empty zone: HOME.ARPA
+resolvedor  | 2026-10-27T18:31:13.869340651Z 27-Oct-2026 18:31:13.866 automatic empty zone: RESOLVER.ARPA
+resolvedor  | 2026-10-27T18:31:13.874915732Z 27-Oct-2026 18:31:13.870 configuring command channel from '/etc/bind/rndc.key'
+resolvedor  | 2026-10-27T18:31:13.875912383Z 27-Oct-2026 18:31:13.870 command channel listening on 127.0.0.1#953
+resolvedor  | 2026-10-27T18:31:13.875927583Z 27-Oct-2026 18:31:13.870 configuring command channel from '/etc/bind/rndc.key'
+resolvedor  | 2026-10-27T18:31:13.876622418Z 27-Oct-2026 18:31:13.874 command channel listening on ::1#953
+resolvedor  | 2026-10-27T18:31:13.876633319Z 27-Oct-2026 18:31:13.874 not using config file logging statement for logging due to -g option
+resolvedor  | 2026-10-27T18:31:13.879367957Z 27-Oct-2026 18:31:13.874 managed-keys-zone: loaded serial 0
+resolvedor  | 2026-10-27T18:31:13.913804093Z 27-Oct-2026 18:31:13.910 all zones loaded
+resolvedor  | 2026-10-27T18:31:13.914243915Z 27-Oct-2026 18:31:13.910 running
+ns2         | 2026-10-27T18:31:14.200665352Z 27-Oct-2026 18:31:14.198 starting BIND 9.18.49 (Extended Support Version) <id:cd4a53b>
+ns2         | 2026-10-27T18:31:14.200703454Z 27-Oct-2026 18:31:14.198 running on Linux x86_64 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026
+ns2         | 2026-10-27T18:31:14.200709454Z 27-Oct-2026 18:31:14.198 built with  '--build=x86_64-alpine-linux-musl' '--host=x86_64-alpine-linux-musl' '--prefix=/usr' '--sysconfdir=/etc/bind' '--localstatedir=/var' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--with-gssapi=yes' '--with-libxml2' '--with-json-c' '--with-openssl=yes' '--enable-dnstap' '--enable-largefile' '--enable-linux-caps' '--enable-shared' '--disable-static' 'build_alias=x86_64-alpine-linux-musl' 'host_alias=x86_64-alpine-linux-musl' 'CC=gcc' 'CFLAGS=-Os -fstack-clash-protection -Wformat -Werror=format-security -fno-plt -g -D_GNU_SOURCE' 'LDFLAGS=-Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs'
+ns2         | 2026-10-27T18:31:14.200711354Z 27-Oct-2026 18:31:14.198 running as: named -g -u named -c /etc/bind/named.conf
+ns2         | 2026-10-27T18:31:14.200713754Z 27-Oct-2026 18:31:14.198 compiled by GCC 13.2.1 20240309
+ns2         | 2026-10-27T18:31:14.200715454Z 27-Oct-2026 18:31:14.198 compiled with OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns2         | 2026-10-27T18:31:14.200716854Z 27-Oct-2026 18:31:14.198 linked to OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns2         | 2026-10-27T18:31:14.200718255Z 27-Oct-2026 18:31:14.198 compiled with libuv version: 1.48.0
+ns2         | 2026-10-27T18:31:14.200719655Z 27-Oct-2026 18:31:14.198 linked to libuv version: 1.48.0
+ns2         | 2026-10-27T18:31:14.200721055Z 27-Oct-2026 18:31:14.198 compiled with libxml2 version: 2.12.10
+ns2         | 2026-10-27T18:31:14.200721855Z 27-Oct-2026 18:31:14.198 linked to libxml2 version: 21210
+ns2         | 2026-10-27T18:31:14.200722655Z 27-Oct-2026 18:31:14.198 compiled with json-c version: 0.17
+ns2         | 2026-10-27T18:31:14.200723455Z 27-Oct-2026 18:31:14.198 linked to json-c version: 0.17
+ns2         | 2026-10-27T18:31:14.200724255Z 27-Oct-2026 18:31:14.198 compiled with zlib version: 1.3.2
+ns2         | 2026-10-27T18:31:14.200724955Z 27-Oct-2026 18:31:14.198 linked to zlib version: 1.3.2
+ns2         | 2026-10-27T18:31:14.200725755Z 27-Oct-2026 18:31:14.198 ----------------------------------------------------
+ns2         | 2026-10-27T18:31:14.200726555Z 27-Oct-2026 18:31:14.198 BIND 9 is maintained by Internet Systems Consortium,
+ns2         | 2026-10-27T18:31:14.200727355Z 27-Oct-2026 18:31:14.198 Inc. (ISC), a non-profit 501(c)(3) public-benefit 
+ns2         | 2026-10-27T18:31:14.200767157Z 27-Oct-2026 18:31:14.198 corporation.  Support and training for BIND 9 are 
+ns2         | 2026-10-27T18:31:14.200774657Z 27-Oct-2026 18:31:14.198 available at https://www.isc.org/support
+ns2         | 2026-10-27T18:31:14.200776557Z 27-Oct-2026 18:31:14.198 ----------------------------------------------------
+ns2         | 2026-10-27T18:31:14.200777958Z 27-Oct-2026 18:31:14.198 found 12 CPUs, using 12 worker threads
+ns2         | 2026-10-27T18:31:14.200822860Z 27-Oct-2026 18:31:14.198 using 12 UDP listeners per interface
+ns2         | 2026-10-27T18:31:14.223374297Z 27-Oct-2026 18:31:14.218 DNSSEC algorithms: RSASHA1 NSEC3RSASHA1 RSASHA256 RSASHA512 ECDSAP256SHA256 ECDSAP384SHA384 ED25519 ED448
+ns2         | 2026-10-27T18:31:14.223388597Z 27-Oct-2026 18:31:14.218 DS algorithms: SHA-1 SHA-256 SHA-384
+ns2         | 2026-10-27T18:31:14.223391297Z 27-Oct-2026 18:31:14.218 HMAC algorithms: HMAC-MD5 HMAC-SHA1 HMAC-SHA224 HMAC-SHA256 HMAC-SHA384 HMAC-SHA512
+ns2         | 2026-10-27T18:31:14.223393197Z 27-Oct-2026 18:31:14.218 TKEY mode 2 support (Diffie-Hellman): yes
+ns2         | 2026-10-27T18:31:14.223394798Z 27-Oct-2026 18:31:14.218 TKEY mode 3 support (GSS-API): yes
+ns2         | 2026-10-27T18:31:14.225146486Z 27-Oct-2026 18:31:14.222 the initial working directory is '/'
+ns2         | 2026-10-27T18:31:14.225174587Z 27-Oct-2026 18:31:14.222 loading configuration from '/etc/bind/named.conf'
+ns2         | 2026-10-27T18:31:14.225974528Z 27-Oct-2026 18:31:14.222 the working directory is now '/var/bind'
+ns2         | 2026-10-27T18:31:14.226236241Z 27-Oct-2026 18:31:14.222 reading built-in trust anchors from file '/etc/bind/bind.keys'
+ns2         | 2026-10-27T18:31:14.227348197Z 27-Oct-2026 18:31:14.222 using default UDP/IPv4 port range: [32768, 60999]
+ns2         | 2026-10-27T18:31:14.227357697Z 27-Oct-2026 18:31:14.222 using default UDP/IPv6 port range: [32768, 60999]
+ns2         | 2026-10-27T18:31:14.228092534Z 27-Oct-2026 18:31:14.226 listening on IPv4 interface lo, 127.0.0.1#53
+ns2         | 2026-10-27T18:31:14.252830281Z 27-Oct-2026 18:31:14.250 listening on IPv4 interface eth0, 172.31.0.12#53
+ns2         | 2026-10-27T18:31:14.254252553Z 27-Oct-2026 18:31:14.250 listening on IPv4 interface eth1, 172.30.0.12#53
+ns2         | 2026-10-27T18:31:14.255905436Z 27-Oct-2026 18:31:14.250 IPv6 socket API is incomplete; explicitly binding to each IPv6 address separately
+ns2         | 2026-10-27T18:31:14.255924537Z 27-Oct-2026 18:31:14.250 listening on IPv6 interface lo, ::1#53
+ns2         | 2026-10-27T18:31:14.258476166Z 27-Oct-2026 18:31:14.254 generating session key for dynamic DNS
+ns2         | 2026-10-27T18:31:14.258955790Z 27-Oct-2026 18:31:14.254 sizing zone task pool based on 1 zones
+ns2         | 2026-10-27T18:31:14.266410266Z 27-Oct-2026 18:31:14.262 obtaining root key for view _default from '/etc/bind/bind.keys'
+ns2         | 2026-10-27T18:31:14.266440667Z 27-Oct-2026 18:31:14.262 set up managed keys zone for view _default, file 'managed-keys.bind'
+ns2         | 2026-10-27T18:31:14.271687832Z 27-Oct-2026 18:31:14.266 configuring command channel from '/etc/bind/rndc.key'
+ns2         | 2026-10-27T18:31:14.272534274Z 27-Oct-2026 18:31:14.270 command channel listening on 127.0.0.1#953
+ns2         | 2026-10-27T18:31:14.272545375Z 27-Oct-2026 18:31:14.270 configuring command channel from '/etc/bind/rndc.key'
+ns2         | 2026-10-27T18:31:14.273720434Z 27-Oct-2026 18:31:14.270 command channel listening on ::1#953
+ns2         | 2026-10-27T18:31:14.273738735Z 27-Oct-2026 18:31:14.270 not using config file logging statement for logging due to -g option
+ns2         | 2026-10-27T18:31:14.275603329Z 27-Oct-2026 18:31:14.270 managed-keys-zone: loaded serial 0
+ns2         | 2026-10-27T18:31:14.277474723Z 27-Oct-2026 18:31:14.274 all zones loaded
+ns2         | 2026-10-27T18:31:14.283140609Z 27-Oct-2026 18:31:14.278 running
+ns2         | 2026-10-27T18:31:14.283722738Z 27-Oct-2026 18:31:14.278 network unreachable resolving './DNSKEY/IN': 2001:500:1::53#53
+ns2         | 2026-10-27T18:31:14.283939249Z 27-Oct-2026 18:31:14.278 network unreachable resolving './DNSKEY/IN': 2001:500:2d::d#53
+ns2         | 2026-10-27T18:31:14.283952250Z 27-Oct-2026 18:31:14.282 network unreachable resolving './NS/IN': 2001:500:2d::d#53
+ns2         | 2026-10-27T18:31:14.284196962Z 27-Oct-2026 18:31:14.282 network unreachable resolving './DNSKEY/IN': 2001:500:9f::42#53
+ns2         | 2026-10-27T18:31:14.284203463Z 27-Oct-2026 18:31:14.282 zone sd.lab/IN: Transfer started.
+ns2         | 2026-10-27T18:31:14.284206563Z 27-Oct-2026 18:31:14.282 network unreachable resolving './NS/IN': 2001:500:9f::42#53
+ns2         | 2026-10-27T18:31:14.284340670Z 27-Oct-2026 18:31:14.282 network unreachable resolving './DNSKEY/IN': 2001:500:2f::f#53
+ns2         | 2026-10-27T18:31:14.284346370Z 27-Oct-2026 18:31:14.282 network unreachable resolving './NS/IN': 2001:500:2f::f#53
+ns2         | 2026-10-27T18:31:14.284353170Z 27-Oct-2026 18:31:14.282 network unreachable resolving './DNSKEY/IN': 2001:500:12::d0d#53
+ns2         | 2026-10-27T18:31:14.284508078Z 27-Oct-2026 18:31:14.282 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns2         | 2026-10-27T18:31:14.284608483Z 27-Oct-2026 18:31:14.282 network unreachable resolving './NS/IN': 2001:500:12::d0d#53
+ns2         | 2026-10-27T18:31:14.284787292Z 27-Oct-2026 18:31:14.282 network unreachable resolving './DNSKEY/IN': 2001:503:c27::2:30#53
+ns2         | 2026-10-27T18:31:14.284793092Z 27-Oct-2026 18:31:14.282 network unreachable resolving './NS/IN': 2001:503:c27::2:30#53
+ns2         | 2026-10-27T18:31:14.284988202Z 27-Oct-2026 18:31:14.282 network unreachable resolving './DNSKEY/IN': 2001:500:a8::e#53
+ns2         | 2026-10-27T18:31:14.284999703Z 27-Oct-2026 18:31:14.282 network unreachable resolving './NS/IN': 2001:500:a8::e#53
+ns2         | 2026-10-27T18:31:14.285001803Z 27-Oct-2026 18:31:14.282 zone sd.lab/IN: transferred serial 2026101401
+ns2         | 2026-10-27T18:31:14.285151410Z 27-Oct-2026 18:31:14.282 network unreachable resolving './DNSKEY/IN': 2001:503:ba3e::2:30#53
+ns2         | 2026-10-27T18:31:14.285155911Z 27-Oct-2026 18:31:14.282 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns2         | 2026-10-27T18:31:14.285156911Z 27-Oct-2026 18:31:14.282 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 9 records, 224 bytes, 0.001 secs (224000 bytes/sec) (serial 2026101401)
+ns2         | 2026-10-27T18:31:14.285181612Z 27-Oct-2026 18:31:14.282 network unreachable resolving './NS/IN': 2001:503:ba3e::2:30#53
+ns2         | 2026-10-27T18:31:14.285184812Z 27-Oct-2026 18:31:14.282 zone sd.lab/IN: sending notifies (serial 2026101401)
+ns2         | 2026-10-27T18:31:14.285383922Z 27-Oct-2026 18:31:14.282 network unreachable resolving './DNSKEY/IN': 2001:7fe::53#53
+ns2         | 2026-10-27T18:31:14.285399223Z 27-Oct-2026 18:31:14.282 network unreachable resolving './NS/IN': 2001:7fe::53#53
+ns2         | 2026-10-27T18:31:14.285560731Z 27-Oct-2026 18:31:14.282 network unreachable resolving './DNSKEY/IN': 2001:dc3::35#53
+ns2         | 2026-10-27T18:31:14.285567131Z 27-Oct-2026 18:31:14.282 network unreachable resolving './NS/IN': 2001:dc3::35#53
+ns2         | 2026-10-27T18:31:14.285569431Z 27-Oct-2026 18:31:14.282 network unreachable resolving './DNSKEY/IN': 2801:1b8:10::b#53
+ns2         | 2026-10-27T18:31:14.285814944Z 27-Oct-2026 18:31:14.282 network unreachable resolving './NS/IN': 2801:1b8:10::b#53
+ns2         | 2026-10-27T18:31:14.285819244Z 27-Oct-2026 18:31:14.282 network unreachable resolving './DNSKEY/IN': 2001:7fd::1#53
+ns2         | 2026-10-27T18:31:14.286036455Z 27-Oct-2026 18:31:14.282 network unreachable resolving './NS/IN': 2001:7fd::1#53
+ns2         | 2026-10-27T18:31:14.286172362Z 27-Oct-2026 18:31:14.282 network unreachable resolving './DNSKEY/IN': 2001:500:2::c#53
+ns2         | 2026-10-27T18:31:14.286191163Z 27-Oct-2026 18:31:14.282 network unreachable resolving './NS/IN': 2001:500:2::c#53
+ns2         | 2026-10-27T18:31:14.465667709Z 27-Oct-2026 18:31:14.462 managed-keys-zone: Initializing automatic trust anchor management for zone '.'; DNSKEY ID 20326 is now trusted, waiving the normal 30-day waiting period.
+ns2         | 2026-10-27T18:31:14.465828417Z 27-Oct-2026 18:31:14.462 managed-keys-zone: Initializing automatic trust anchor management for zone '.'; DNSKEY ID 38696 is now trusted, waiving the normal 30-day waiting period.
+ns2         | 2026-10-27T18:31:14.604798722Z 27-Oct-2026 18:31:14.602 client @0x7f0c146232f0 172.31.0.11#49807: received notify for zone 'sd.lab'
+ns2         | 2026-10-27T18:31:14.604824124Z 27-Oct-2026 18:31:14.602 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#49807
+ns2         | 2026-10-27T18:31:14.607311149Z 27-Oct-2026 18:31:14.602 client @0x7f0c1461c310 172.31.0.13#42375: received notify for zone 'sd.lab'
+ns2         | 2026-10-27T18:31:14.607323550Z 27-Oct-2026 18:31:14.602 zone sd.lab/IN: refused notify from non-primary: 172.31.0.13#42375
+ns2         | 2026-10-27T18:31:15.495381612Z 27-Oct-2026 18:31:15.490 no longer listening on 127.0.0.1#53
+ns2         | 2026-10-27T18:31:15.496253256Z 27-Oct-2026 18:31:15.494 no longer listening on 172.31.0.12#53
+ns2         | 2026-10-27T18:31:15.497201304Z 27-Oct-2026 18:31:15.494 no longer listening on 172.30.0.12#53
+ns2         | 2026-10-27T18:31:15.497937041Z 27-Oct-2026 18:31:15.494 no longer listening on ::1#53
+ns2         | 2026-10-27T18:31:15.499419116Z 27-Oct-2026 18:31:15.494 shutting down
+ns2         | 2026-10-27T18:31:15.499424816Z 27-Oct-2026 18:31:15.494 stopping command channel on 127.0.0.1#953
+ns2         | 2026-10-27T18:31:15.499826236Z 27-Oct-2026 18:31:15.494 stopping command channel on ::1#953
+ns2         | 2026-10-27T18:31:15.519007803Z 27-Oct-2026 18:31:15.514 exiting
+ns2         | 2026-10-27T18:31:22.511101328Z 27-Oct-2026 18:31:22.506 starting BIND 9.18.49 (Extended Support Version) <id:cd4a53b>
+ns2         | 2026-10-27T18:31:22.511131330Z 27-Oct-2026 18:31:22.506 running on Linux x86_64 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026
+ns2         | 2026-10-27T18:31:22.511135530Z 27-Oct-2026 18:31:22.506 built with  '--build=x86_64-alpine-linux-musl' '--host=x86_64-alpine-linux-musl' '--prefix=/usr' '--sysconfdir=/etc/bind' '--localstatedir=/var' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--with-gssapi=yes' '--with-libxml2' '--with-json-c' '--with-openssl=yes' '--enable-dnstap' '--enable-largefile' '--enable-linux-caps' '--enable-shared' '--disable-static' 'build_alias=x86_64-alpine-linux-musl' 'host_alias=x86_64-alpine-linux-musl' 'CC=gcc' 'CFLAGS=-Os -fstack-clash-protection -Wformat -Werror=format-security -fno-plt -g -D_GNU_SOURCE' 'LDFLAGS=-Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs'
+ns2         | 2026-10-27T18:31:22.511137730Z 27-Oct-2026 18:31:22.506 running as: named -g -u named -c /etc/bind/named.conf
+ns2         | 2026-10-27T18:31:22.511140130Z 27-Oct-2026 18:31:22.506 compiled by GCC 13.2.1 20240309
+ns2         | 2026-10-27T18:31:22.511142331Z 27-Oct-2026 18:31:22.506 compiled with OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns2         | 2026-10-27T18:31:22.511144331Z 27-Oct-2026 18:31:22.506 linked to OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns2         | 2026-10-27T18:31:22.511146231Z 27-Oct-2026 18:31:22.506 compiled with libuv version: 1.48.0
+ns2         | 2026-10-27T18:31:22.511148131Z 27-Oct-2026 18:31:22.506 linked to libuv version: 1.48.0
+ns2         | 2026-10-27T18:31:22.511160631Z 27-Oct-2026 18:31:22.506 compiled with libxml2 version: 2.12.10
+ns2         | 2026-10-27T18:31:22.511163032Z 27-Oct-2026 18:31:22.506 linked to libxml2 version: 21210
+ns2         | 2026-10-27T18:31:22.511165632Z 27-Oct-2026 18:31:22.506 compiled with json-c version: 0.17
+ns2         | 2026-10-27T18:31:22.511167432Z 27-Oct-2026 18:31:22.506 linked to json-c version: 0.17
+ns2         | 2026-10-27T18:31:22.511168932Z 27-Oct-2026 18:31:22.506 compiled with zlib version: 1.3.2
+ns2         | 2026-10-27T18:31:22.511170432Z 27-Oct-2026 18:31:22.506 linked to zlib version: 1.3.2
+ns2         | 2026-10-27T18:31:22.511171832Z 27-Oct-2026 18:31:22.506 ----------------------------------------------------
+ns2         | 2026-10-27T18:31:22.511173332Z 27-Oct-2026 18:31:22.506 BIND 9 is maintained by Internet Systems Consortium,
+ns2         | 2026-10-27T18:31:22.511174832Z 27-Oct-2026 18:31:22.506 Inc. (ISC), a non-profit 501(c)(3) public-benefit 
+ns2         | 2026-10-27T18:31:22.511176132Z 27-Oct-2026 18:31:22.506 corporation.  Support and training for BIND 9 are 
+ns2         | 2026-10-27T18:31:22.511177532Z 27-Oct-2026 18:31:22.506 available at https://www.isc.org/support
+ns2         | 2026-10-27T18:31:22.511180232Z 27-Oct-2026 18:31:22.506 ----------------------------------------------------
+ns2         | 2026-10-27T18:31:22.511181533Z 27-Oct-2026 18:31:22.506 found 12 CPUs, using 12 worker threads
+ns2         | 2026-10-27T18:31:22.511183033Z 27-Oct-2026 18:31:22.506 using 12 UDP listeners per interface
+ns2         | 2026-10-27T18:31:22.543763497Z 27-Oct-2026 18:31:22.538 DNSSEC algorithms: RSASHA1 NSEC3RSASHA1 RSASHA256 RSASHA512 ECDSAP256SHA256 ECDSAP384SHA384 ED25519 ED448
+ns2         | 2026-10-27T18:31:22.543785498Z 27-Oct-2026 18:31:22.538 DS algorithms: SHA-1 SHA-256 SHA-384
+ns2         | 2026-10-27T18:31:22.543789798Z 27-Oct-2026 18:31:22.538 HMAC algorithms: HMAC-MD5 HMAC-SHA1 HMAC-SHA224 HMAC-SHA256 HMAC-SHA384 HMAC-SHA512
+ns2         | 2026-10-27T18:31:22.543791798Z 27-Oct-2026 18:31:22.538 TKEY mode 2 support (Diffie-Hellman): yes
+ns2         | 2026-10-27T18:31:22.543793698Z 27-Oct-2026 18:31:22.538 TKEY mode 3 support (GSS-API): yes
+ns2         | 2026-10-27T18:31:22.547825604Z 27-Oct-2026 18:31:22.542 the initial working directory is '/'
+ns2         | 2026-10-27T18:31:22.547871406Z 27-Oct-2026 18:31:22.542 loading configuration from '/etc/bind/named.conf'
+ns2         | 2026-10-27T18:31:22.547878207Z 27-Oct-2026 18:31:22.542 the working directory is now '/var/bind'
+ns2         | 2026-10-27T18:31:22.548445236Z 27-Oct-2026 18:31:22.546 reading built-in trust anchors from file '/etc/bind/bind.keys'
+ns2         | 2026-10-27T18:31:22.549103069Z 27-Oct-2026 18:31:22.546 using default UDP/IPv4 port range: [32768, 60999]
+ns2         | 2026-10-27T18:31:22.549114870Z 27-Oct-2026 18:31:22.546 using default UDP/IPv6 port range: [32768, 60999]
+ns2         | 2026-10-27T18:31:22.549765703Z 27-Oct-2026 18:31:22.546 listening on IPv4 interface lo, 127.0.0.1#53
+ns2         | 2026-10-27T18:31:22.564771269Z 27-Oct-2026 18:31:22.562 listening on IPv4 interface eth0, 172.31.0.12#53
+ns2         | 2026-10-27T18:31:22.566066436Z 27-Oct-2026 18:31:22.562 listening on IPv4 interface eth1, 172.30.0.12#53
+ns2         | 2026-10-27T18:31:22.567269697Z 27-Oct-2026 18:31:22.562 IPv6 socket API is incomplete; explicitly binding to each IPv6 address separately
+ns2         | 2026-10-27T18:31:22.567285098Z 27-Oct-2026 18:31:22.562 listening on IPv6 interface lo, ::1#53
+ns2         | 2026-10-27T18:31:22.569129592Z 27-Oct-2026 18:31:22.566 generating session key for dynamic DNS
+ns2         | 2026-10-27T18:31:22.569307301Z 27-Oct-2026 18:31:22.566 sizing zone task pool based on 1 zones
+ns2         | 2026-10-27T18:31:22.575405613Z 27-Oct-2026 18:31:22.570 obtaining root key for view _default from '/etc/bind/bind.keys'
+ns2         | 2026-10-27T18:31:22.575431014Z 27-Oct-2026 18:31:22.570 set up managed keys zone for view _default, file 'managed-keys.bind'
+ns2         | 2026-10-27T18:31:22.580573177Z 27-Oct-2026 18:31:22.578 configuring command channel from '/etc/bind/rndc.key'
+ns2         | 2026-10-27T18:31:22.581414319Z 27-Oct-2026 18:31:22.578 command channel listening on 127.0.0.1#953
+ns2         | 2026-10-27T18:31:22.581426020Z 27-Oct-2026 18:31:22.578 configuring command channel from '/etc/bind/rndc.key'
+ns2         | 2026-10-27T18:31:22.582193059Z 27-Oct-2026 18:31:22.578 command channel listening on ::1#953
+ns2         | 2026-10-27T18:31:22.582199460Z 27-Oct-2026 18:31:22.578 not using config file logging statement for logging due to -g option
+ns2         | 2026-10-27T18:31:22.584160460Z 27-Oct-2026 18:31:22.582 managed-keys-zone: loaded serial 2
+ns2         | 2026-10-27T18:31:22.585001303Z 27-Oct-2026 18:31:22.582 zone sd.lab/IN: loaded serial 2026101401
+ns2         | 2026-10-27T18:31:22.585536930Z 27-Oct-2026 18:31:22.582 zone sd.lab/IN: sending notifies (serial 2026101401)
+ns2         | 2026-10-27T18:31:22.585590533Z 27-Oct-2026 18:31:22.582 all zones loaded
+ns2         | 2026-10-27T18:31:22.585818544Z 27-Oct-2026 18:31:22.582 running
+ns2         | 2026-10-27T18:31:22.586230965Z 27-Oct-2026 18:31:22.582 network unreachable resolving './DNSKEY/IN': 2001:500:2f::f#53
+ns2         | 2026-10-27T18:31:22.586366372Z 27-Oct-2026 18:31:22.582 network unreachable resolving './DNSKEY/IN': 2001:500:2::c#53
+ns2         | 2026-10-27T18:31:22.586371073Z 27-Oct-2026 18:31:22.582 network unreachable resolving './NS/IN': 2001:500:2::c#53
+ns2         | 2026-10-27T18:31:22.586468978Z 27-Oct-2026 18:31:22.582 network unreachable resolving './DNSKEY/IN': 2001:500:2d::d#53
+ns2         | 2026-10-27T18:31:22.586586584Z 27-Oct-2026 18:31:22.582 network unreachable resolving './NS/IN': 2001:500:2d::d#53
+ns2         | 2026-10-27T18:31:22.586590184Z 27-Oct-2026 18:31:22.582 network unreachable resolving './DNSKEY/IN': 2001:500:a8::e#53
+ns2         | 2026-10-27T18:31:22.586677488Z 27-Oct-2026 18:31:22.582 network unreachable resolving './NS/IN': 2001:500:a8::e#53
+ns2         | 2026-10-27T18:31:22.586758292Z 27-Oct-2026 18:31:22.582 network unreachable resolving './DNSKEY/IN': 2001:7fe::53#53
+ns2         | 2026-10-27T18:31:22.586762793Z 27-Oct-2026 18:31:22.582 network unreachable resolving './NS/IN': 2001:7fe::53#53
+ns2         | 2026-10-27T18:31:22.586859898Z 27-Oct-2026 18:31:22.582 network unreachable resolving './DNSKEY/IN': 2001:dc3::35#53
+ns2         | 2026-10-27T18:31:22.586922901Z 27-Oct-2026 18:31:22.582 network unreachable resolving './NS/IN': 2001:dc3::35#53
+ns2         | 2026-10-27T18:31:22.587023306Z 27-Oct-2026 18:31:22.582 network unreachable resolving './DNSKEY/IN': 2001:7fd::1#53
+ns2         | 2026-10-27T18:31:22.587028306Z 27-Oct-2026 18:31:22.582 network unreachable resolving './NS/IN': 2001:7fd::1#53
+ns2         | 2026-10-27T18:31:22.587040707Z 27-Oct-2026 18:31:22.582 network unreachable resolving './DNSKEY/IN': 2001:500:12::d0d#53
+ns2         | 2026-10-27T18:31:22.587143212Z 27-Oct-2026 18:31:22.582 network unreachable resolving './NS/IN': 2001:500:12::d0d#53
+ns2         | 2026-10-27T18:31:22.587212916Z 27-Oct-2026 18:31:22.582 network unreachable resolving './DNSKEY/IN': 2001:500:1::53#53
+ns2         | 2026-10-27T18:31:22.587218016Z 27-Oct-2026 18:31:22.582 network unreachable resolving './NS/IN': 2001:500:1::53#53
+ns2         | 2026-10-27T18:31:22.587338822Z 27-Oct-2026 18:31:22.582 network unreachable resolving './DNSKEY/IN': 2001:503:ba3e::2:30#53
+ns2         | 2026-10-27T18:31:22.587343522Z 27-Oct-2026 18:31:22.582 network unreachable resolving './NS/IN': 2001:503:ba3e::2:30#53
+ns2         | 2026-10-27T18:31:22.587453028Z 27-Oct-2026 18:31:22.582 network unreachable resolving './DNSKEY/IN': 2001:503:c27::2:30#53
+ns2         | 2026-10-27T18:31:22.587457928Z 27-Oct-2026 18:31:22.582 network unreachable resolving './NS/IN': 2001:503:c27::2:30#53
+ns2         | 2026-10-27T18:31:22.587556933Z 27-Oct-2026 18:31:22.582 network unreachable resolving './DNSKEY/IN': 2001:500:9f::42#53
+ns2         | 2026-10-27T18:31:22.587563234Z 27-Oct-2026 18:31:22.582 network unreachable resolving './NS/IN': 2001:500:9f::42#53
+ns2         | 2026-10-27T18:31:22.587677839Z 27-Oct-2026 18:31:22.582 network unreachable resolving './DNSKEY/IN': 2801:1b8:10::b#53
+ns2         | 2026-10-27T18:31:22.587729142Z 27-Oct-2026 18:31:22.582 network unreachable resolving './NS/IN': 2801:1b8:10::b#53
+ns2         | 2026-10-27T18:31:22.603721659Z 27-Oct-2026 18:31:22.598 managed-keys-zone: Key 20326 for zone . is now trusted (acceptance timer complete)
+ns2         | 2026-10-27T18:31:22.604150481Z 27-Oct-2026 18:31:22.598 managed-keys-zone: Key 38696 for zone . is now trusted (acceptance timer complete)
+ns2         | 2026-10-27T18:31:24.108621217Z 27-Oct-2026 18:31:24.106 client @0x7c35f43352a0 172.30.0.11#39191: received notify for zone 'sd.lab'
+ns2         | 2026-10-27T18:31:24.108655419Z 27-Oct-2026 18:31:24.106 zone sd.lab/IN: notify from 172.30.0.11#39191: serial 2026101402
+ns2         | 2026-10-27T18:31:24.109062740Z 27-Oct-2026 18:31:24.106 zone sd.lab/IN: Transfer started.
+ns2         | 2026-10-27T18:31:24.109361955Z 27-Oct-2026 18:31:24.106 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns2         | 2026-10-27T18:31:24.110070291Z 27-Oct-2026 18:31:24.106 zone sd.lab/IN: transferred serial 2026101402
+ns2         | 2026-10-27T18:31:24.110163196Z 27-Oct-2026 18:31:24.106 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns2         | 2026-10-27T18:31:24.110176296Z 27-Oct-2026 18:31:24.106 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 10 records, 246 bytes, 0.001 secs (246000 bytes/sec) (serial 2026101402)
+ns2         | 2026-10-27T18:31:24.605538596Z 27-Oct-2026 18:31:24.602 client @0x7c35f43263c0 172.31.0.11#33103: received notify for zone 'sd.lab'
+ns2         | 2026-10-27T18:31:24.605557897Z 27-Oct-2026 18:31:24.602 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#33103
+ns2         | 2026-10-27T18:31:24.612309141Z 27-Oct-2026 18:31:24.610 client @0x7c35f43233e0 172.31.0.13#60654: received notify for zone 'sd.lab'
+ns2         | 2026-10-27T18:31:24.612327742Z 27-Oct-2026 18:31:24.610 zone sd.lab/IN: refused notify from non-primary: 172.31.0.13#60654
+ns3         | 2026-10-27T18:31:13.488845973Z 27-Oct-2026 18:31:13.486 starting BIND 9.18.49 (Extended Support Version) <id:cd4a53b>
+ns3         | 2026-10-27T18:31:13.488890575Z 27-Oct-2026 18:31:13.486 running on Linux x86_64 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026
+ns3         | 2026-10-27T18:31:13.488896275Z 27-Oct-2026 18:31:13.486 built with  '--build=x86_64-alpine-linux-musl' '--host=x86_64-alpine-linux-musl' '--prefix=/usr' '--sysconfdir=/etc/bind' '--localstatedir=/var' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--with-gssapi=yes' '--with-libxml2' '--with-json-c' '--with-openssl=yes' '--enable-dnstap' '--enable-largefile' '--enable-linux-caps' '--enable-shared' '--disable-static' 'build_alias=x86_64-alpine-linux-musl' 'host_alias=x86_64-alpine-linux-musl' 'CC=gcc' 'CFLAGS=-Os -fstack-clash-protection -Wformat -Werror=format-security -fno-plt -g -D_GNU_SOURCE' 'LDFLAGS=-Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs'
+ns3         | 2026-10-27T18:31:13.488898075Z 27-Oct-2026 18:31:13.486 running as: named -g -u named -c /etc/bind/named.conf
+ns3         | 2026-10-27T18:31:13.488899775Z 27-Oct-2026 18:31:13.486 compiled by GCC 13.2.1 20240309
+ns3         | 2026-10-27T18:31:13.488901475Z 27-Oct-2026 18:31:13.486 compiled with OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns3         | 2026-10-27T18:31:13.488902875Z 27-Oct-2026 18:31:13.486 linked to OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns3         | 2026-10-27T18:31:13.488904075Z 27-Oct-2026 18:31:13.486 compiled with libuv version: 1.48.0
+ns3         | 2026-10-27T18:31:13.488905476Z 27-Oct-2026 18:31:13.486 linked to libuv version: 1.48.0
+ns3         | 2026-10-27T18:31:13.488906876Z 27-Oct-2026 18:31:13.486 compiled with libxml2 version: 2.12.10
+ns3         | 2026-10-27T18:31:13.488908276Z 27-Oct-2026 18:31:13.486 linked to libxml2 version: 21210
+ns3         | 2026-10-27T18:31:13.488909476Z 27-Oct-2026 18:31:13.486 compiled with json-c version: 0.17
+ns3         | 2026-10-27T18:31:13.488910676Z 27-Oct-2026 18:31:13.486 linked to json-c version: 0.17
+ns3         | 2026-10-27T18:31:13.488911776Z 27-Oct-2026 18:31:13.486 compiled with zlib version: 1.3.2
+ns3         | 2026-10-27T18:31:13.488973779Z 27-Oct-2026 18:31:13.486 linked to zlib version: 1.3.2
+ns3         | 2026-10-27T18:31:13.488983379Z 27-Oct-2026 18:31:13.486 ----------------------------------------------------
+ns3         | 2026-10-27T18:31:13.488985880Z 27-Oct-2026 18:31:13.486 BIND 9 is maintained by Internet Systems Consortium,
+ns3         | 2026-10-27T18:31:13.488987580Z 27-Oct-2026 18:31:13.486 Inc. (ISC), a non-profit 501(c)(3) public-benefit 
+ns3         | 2026-10-27T18:31:13.488989280Z 27-Oct-2026 18:31:13.486 corporation.  Support and training for BIND 9 are 
+ns3         | 2026-10-27T18:31:13.488991180Z 27-Oct-2026 18:31:13.486 available at https://www.isc.org/support
+ns3         | 2026-10-27T18:31:13.488992980Z 27-Oct-2026 18:31:13.486 ----------------------------------------------------
+ns3         | 2026-10-27T18:31:13.488994780Z 27-Oct-2026 18:31:13.486 found 12 CPUs, using 12 worker threads
+ns3         | 2026-10-27T18:31:13.488996680Z 27-Oct-2026 18:31:13.486 using 12 UDP listeners per interface
+ns3         | 2026-10-27T18:31:13.512290654Z 27-Oct-2026 18:31:13.510 DNSSEC algorithms: RSASHA1 NSEC3RSASHA1 RSASHA256 RSASHA512 ECDSAP256SHA256 ECDSAP384SHA384 ED25519 ED448
+ns3         | 2026-10-27T18:31:13.512314455Z 27-Oct-2026 18:31:13.510 DS algorithms: SHA-1 SHA-256 SHA-384
+ns3         | 2026-10-27T18:31:13.512317156Z 27-Oct-2026 18:31:13.510 HMAC algorithms: HMAC-MD5 HMAC-SHA1 HMAC-SHA224 HMAC-SHA256 HMAC-SHA384 HMAC-SHA512
+ns3         | 2026-10-27T18:31:13.512319056Z 27-Oct-2026 18:31:13.510 TKEY mode 2 support (Diffie-Hellman): yes
+ns3         | 2026-10-27T18:31:13.512320856Z 27-Oct-2026 18:31:13.510 TKEY mode 3 support (GSS-API): yes
+ns3         | 2026-10-27T18:31:13.514185150Z 27-Oct-2026 18:31:13.510 the initial working directory is '/'
+ns3         | 2026-10-27T18:31:13.514199650Z 27-Oct-2026 18:31:13.510 loading configuration from '/etc/bind/named.conf'
+ns3         | 2026-10-27T18:31:13.515311106Z 27-Oct-2026 18:31:13.510 the working directory is now '/var/bind'
+ns3         | 2026-10-27T18:31:13.516704277Z 27-Oct-2026 18:31:13.514 reading built-in trust anchors from file '/etc/bind/bind.keys'
+ns3         | 2026-10-27T18:31:13.518378461Z 27-Oct-2026 18:31:13.514 using default UDP/IPv4 port range: [32768, 60999]
+ns3         | 2026-10-27T18:31:13.518386862Z 27-Oct-2026 18:31:13.514 using default UDP/IPv6 port range: [32768, 60999]
+ns3         | 2026-10-27T18:31:13.519150000Z 27-Oct-2026 18:31:13.514 listening on IPv4 interface lo, 127.0.0.1#53
+ns3         | 2026-10-27T18:31:13.548685289Z 27-Oct-2026 18:31:13.546 listening on IPv4 interface eth0, 172.31.0.13#53
+ns3         | 2026-10-27T18:31:13.549749342Z 27-Oct-2026 18:31:13.546 listening on IPv4 interface eth1, 172.30.0.13#53
+ns3         | 2026-10-27T18:31:13.550818696Z 27-Oct-2026 18:31:13.546 IPv6 socket API is incomplete; explicitly binding to each IPv6 address separately
+ns3         | 2026-10-27T18:31:13.550830297Z 27-Oct-2026 18:31:13.546 listening on IPv6 interface lo, ::1#53
+ns3         | 2026-10-27T18:31:13.553168415Z 27-Oct-2026 18:31:13.550 generating session key for dynamic DNS
+ns3         | 2026-10-27T18:31:13.553205717Z 27-Oct-2026 18:31:13.550 sizing zone task pool based on 1 zones
+ns3         | 2026-10-27T18:31:13.557580937Z 27-Oct-2026 18:31:13.554 obtaining root key for view _default from '/etc/bind/bind.keys'
+ns3         | 2026-10-27T18:31:13.557745645Z 27-Oct-2026 18:31:13.554 set up managed keys zone for view _default, file 'managed-keys.bind'
+ns3         | 2026-10-27T18:31:13.562316076Z 27-Oct-2026 18:31:13.558 configuring command channel from '/etc/bind/rndc.key'
+ns3         | 2026-10-27T18:31:13.563583040Z 27-Oct-2026 18:31:13.558 command channel listening on 127.0.0.1#953
+ns3         | 2026-10-27T18:31:13.563590440Z 27-Oct-2026 18:31:13.558 configuring command channel from '/etc/bind/rndc.key'
+ns3         | 2026-10-27T18:31:13.564161869Z 27-Oct-2026 18:31:13.562 command channel listening on ::1#953
+ns3         | 2026-10-27T18:31:13.564174969Z 27-Oct-2026 18:31:13.562 not using config file logging statement for logging due to -g option
+ns3         | 2026-10-27T18:31:13.566038763Z 27-Oct-2026 18:31:13.562 managed-keys-zone: loaded serial 0
+ns3         | 2026-10-27T18:31:13.567700147Z 27-Oct-2026 18:31:13.562 all zones loaded
+ns3         | 2026-10-27T18:31:13.572920010Z 27-Oct-2026 18:31:13.570 running
+ns3         | 2026-10-27T18:31:13.573419135Z 27-Oct-2026 18:31:13.570 network unreachable resolving './DNSKEY/IN': 2001:500:2d::d#53
+ns3         | 2026-10-27T18:31:13.573430136Z 27-Oct-2026 18:31:13.570 network unreachable resolving './DNSKEY/IN': 2001:500:1::53#53
+ns3         | 2026-10-27T18:31:13.573610445Z 27-Oct-2026 18:31:13.570 network unreachable resolving './NS/IN': 2001:500:1::53#53
+ns3         | 2026-10-27T18:31:13.573617545Z 27-Oct-2026 18:31:13.570 network unreachable resolving './DNSKEY/IN': 2001:7fe::53#53
+ns3         | 2026-10-27T18:31:13.573619346Z 27-Oct-2026 18:31:13.570 network unreachable resolving './NS/IN': 2001:7fe::53#53
+ns3         | 2026-10-27T18:31:13.573755652Z 27-Oct-2026 18:31:13.570 network unreachable resolving './DNSKEY/IN': 2001:500:a8::e#53
+ns3         | 2026-10-27T18:31:13.573760953Z 27-Oct-2026 18:31:13.570 network unreachable resolving './NS/IN': 2001:500:a8::e#53
+ns3         | 2026-10-27T18:31:13.573766453Z 27-Oct-2026 18:31:13.570 network unreachable resolving './DNSKEY/IN': 2001:503:c27::2:30#53
+ns3         | 2026-10-27T18:31:13.573904760Z 27-Oct-2026 18:31:13.570 network unreachable resolving './NS/IN': 2001:503:c27::2:30#53
+ns3         | 2026-10-27T18:31:13.573996465Z 27-Oct-2026 18:31:13.570 network unreachable resolving './DNSKEY/IN': 2001:500:2::c#53
+ns3         | 2026-10-27T18:31:13.574001465Z 27-Oct-2026 18:31:13.570 network unreachable resolving './NS/IN': 2001:500:2::c#53
+ns3         | 2026-10-27T18:31:13.574119971Z 27-Oct-2026 18:31:13.570 network unreachable resolving './DNSKEY/IN': 2001:500:12::d0d#53
+ns3         | 2026-10-27T18:31:13.574124771Z 27-Oct-2026 18:31:13.570 network unreachable resolving './NS/IN': 2001:500:12::d0d#53
+ns3         | 2026-10-27T18:31:13.574212475Z 27-Oct-2026 18:31:13.570 network unreachable resolving './DNSKEY/IN': 2001:503:ba3e::2:30#53
+ns3         | 2026-10-27T18:31:13.574314181Z 27-Oct-2026 18:31:13.570 network unreachable resolving './NS/IN': 2001:503:ba3e::2:30#53
+ns3         | 2026-10-27T18:31:13.574319881Z 27-Oct-2026 18:31:13.570 network unreachable resolving './DNSKEY/IN': 2001:500:2f::f#53
+ns3         | 2026-10-27T18:31:13.574379484Z 27-Oct-2026 18:31:13.570 network unreachable resolving './NS/IN': 2001:500:2f::f#53
+ns3         | 2026-10-27T18:31:13.574527391Z 27-Oct-2026 18:31:13.570 network unreachable resolving './DNSKEY/IN': 2001:dc3::35#53
+ns3         | 2026-10-27T18:31:13.574531291Z 27-Oct-2026 18:31:13.570 network unreachable resolving './NS/IN': 2001:dc3::35#53
+ns3         | 2026-10-27T18:31:13.574532792Z 27-Oct-2026 18:31:13.570 network unreachable resolving './DNSKEY/IN': 2801:1b8:10::b#53
+ns3         | 2026-10-27T18:31:13.574567893Z 27-Oct-2026 18:31:13.570 network unreachable resolving './NS/IN': 2801:1b8:10::b#53
+ns3         | 2026-10-27T18:31:13.574705500Z 27-Oct-2026 18:31:13.570 network unreachable resolving './DNSKEY/IN': 2001:500:9f::42#53
+ns3         | 2026-10-27T18:31:13.574710501Z 27-Oct-2026 18:31:13.570 network unreachable resolving './NS/IN': 2001:500:9f::42#53
+ns3         | 2026-10-27T18:31:13.574856108Z 27-Oct-2026 18:31:13.570 network unreachable resolving './DNSKEY/IN': 2001:7fd::1#53
+ns3         | 2026-10-27T18:31:13.574862308Z 27-Oct-2026 18:31:13.570 network unreachable resolving './NS/IN': 2001:7fd::1#53
+ns3         | 2026-10-27T18:31:13.615218642Z 27-Oct-2026 18:31:13.610 managed-keys-zone: Initializing automatic trust anchor management for zone '.'; DNSKEY ID 20326 is now trusted, waiving the normal 30-day waiting period.
+ns3         | 2026-10-27T18:31:13.615235543Z 27-Oct-2026 18:31:13.610 managed-keys-zone: Initializing automatic trust anchor management for zone '.'; DNSKEY ID 38696 is now trusted, waiving the normal 30-day waiting period.
+ns3         | 2026-10-27T18:31:13.951765606Z 27-Oct-2026 18:31:13.946 zone sd.lab/IN: refresh: failure trying primary 172.30.0.11#53 (source 0.0.0.0#0): connection refused
+ns3         | 2026-10-27T18:31:14.285680737Z 27-Oct-2026 18:31:14.282 client @0x7fd2c14a32d0 172.31.0.12#51262: received notify for zone 'sd.lab'
+ns3         | 2026-10-27T18:31:14.285689938Z 27-Oct-2026 18:31:14.282 zone sd.lab/IN: refused notify from non-primary: 172.31.0.12#51262
+ns3         | 2026-10-27T18:31:14.604801922Z 27-Oct-2026 18:31:14.602 client @0x7fd2c14a12f0 172.31.0.11#52828: received notify for zone 'sd.lab'
+ns3         | 2026-10-27T18:31:14.604822023Z 27-Oct-2026 18:31:14.602 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#52828
+ns3         | 2026-10-27T18:31:14.604824324Z 27-Oct-2026 18:31:14.602 client @0x7fd2c1499310 172.30.0.11#50500: received notify for zone 'sd.lab'
+ns3         | 2026-10-27T18:31:14.604825124Z 27-Oct-2026 18:31:14.602 zone sd.lab/IN: notify from 172.30.0.11#50500: no serial
+ns3         | 2026-10-27T18:31:14.605294647Z 27-Oct-2026 18:31:14.602 zone sd.lab/IN: Transfer started.
+ns3         | 2026-10-27T18:31:14.605584462Z 27-Oct-2026 18:31:14.602 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns3         | 2026-10-27T18:31:14.606266596Z 27-Oct-2026 18:31:14.602 zone sd.lab/IN: transferred serial 2026101401
+ns3         | 2026-10-27T18:31:14.606272697Z 27-Oct-2026 18:31:14.602 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns3         | 2026-10-27T18:31:14.606274597Z 27-Oct-2026 18:31:14.602 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 9 records, 224 bytes, 0.001 secs (224000 bytes/sec) (serial 2026101401)
+ns3         | 2026-10-27T18:31:14.606428504Z 27-Oct-2026 18:31:14.602 zone sd.lab/IN: sending notifies (serial 2026101401)
+ns3         | 2026-10-27T18:31:19.605301323Z 27-Oct-2026 18:31:19.602 client @0x7fd2bb448470 172.30.0.11#53758: received notify for zone 'sd.lab'
+ns3         | 2026-10-27T18:31:19.605325625Z 27-Oct-2026 18:31:19.602 zone sd.lab/IN: notify from 172.30.0.11#53758: serial 2026101402
+ns3         | 2026-10-27T18:31:19.605330025Z 27-Oct-2026 18:31:19.602 client @0x7fd2bb44a470 172.31.0.11#57517: received notify for zone 'sd.lab'
+ns3         | 2026-10-27T18:31:19.605471132Z 27-Oct-2026 18:31:19.602 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#57517
+ns3         | 2026-10-27T18:31:19.606064662Z 27-Oct-2026 18:31:19.602 zone sd.lab/IN: Transfer started.
+ns3         | 2026-10-27T18:31:19.606305975Z 27-Oct-2026 18:31:19.602 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns3         | 2026-10-27T18:31:19.606907105Z 27-Oct-2026 18:31:19.602 zone sd.lab/IN: transferred serial 2026101402
+ns3         | 2026-10-27T18:31:19.606979009Z 27-Oct-2026 18:31:19.602 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns3         | 2026-10-27T18:31:19.606987109Z 27-Oct-2026 18:31:19.602 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 10 records, 246 bytes, 0.001 secs (246000 bytes/sec) (serial 2026101402)
+ns3         | 2026-10-27T18:31:19.607035912Z 27-Oct-2026 18:31:19.602 zone sd.lab/IN: sending notifies (serial 2026101402)
+ns3         | 2026-10-27T18:31:22.586263367Z 27-Oct-2026 18:31:22.582 client @0x7fd2bb43b100 172.31.0.12#55391: received notify for zone 'sd.lab'
+ns3         | 2026-10-27T18:31:22.586274668Z 27-Oct-2026 18:31:22.582 zone sd.lab/IN: refused notify from non-primary: 172.31.0.12#55391
+ns1         | 2026-10-27T18:31:14.018767883Z 27-Oct-2026 18:31:14.014 starting BIND 9.18.49 (Extended Support Version) <id:cd4a53b>
+ns1         | 2026-10-27T18:31:14.018801585Z 27-Oct-2026 18:31:14.014 running on Linux x86_64 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026
+ns1         | 2026-10-27T18:31:14.018805185Z 27-Oct-2026 18:31:14.014 built with  '--build=x86_64-alpine-linux-musl' '--host=x86_64-alpine-linux-musl' '--prefix=/usr' '--sysconfdir=/etc/bind' '--localstatedir=/var' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--with-gssapi=yes' '--with-libxml2' '--with-json-c' '--with-openssl=yes' '--enable-dnstap' '--enable-largefile' '--enable-linux-caps' '--enable-shared' '--disable-static' 'build_alias=x86_64-alpine-linux-musl' 'host_alias=x86_64-alpine-linux-musl' 'CC=gcc' 'CFLAGS=-Os -fstack-clash-protection -Wformat -Werror=format-security -fno-plt -g -D_GNU_SOURCE' 'LDFLAGS=-Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs'
+ns1         | 2026-10-27T18:31:14.018807385Z 27-Oct-2026 18:31:14.014 running as: named -g -u named -c /etc/bind/named.conf
+ns1         | 2026-10-27T18:31:14.018809185Z 27-Oct-2026 18:31:14.014 compiled by GCC 13.2.1 20240309
+ns1         | 2026-10-27T18:31:14.018810885Z 27-Oct-2026 18:31:14.014 compiled with OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns1         | 2026-10-27T18:31:14.018812286Z 27-Oct-2026 18:31:14.014 linked to OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns1         | 2026-10-27T18:31:14.018813586Z 27-Oct-2026 18:31:14.014 compiled with libuv version: 1.48.0
+ns1         | 2026-10-27T18:31:14.018814786Z 27-Oct-2026 18:31:14.014 linked to libuv version: 1.48.0
+ns1         | 2026-10-27T18:31:14.018891090Z 27-Oct-2026 18:31:14.014 compiled with libxml2 version: 2.12.10
+ns1         | 2026-10-27T18:31:14.018896390Z 27-Oct-2026 18:31:14.014 linked to libxml2 version: 21210
+ns1         | 2026-10-27T18:31:14.018897990Z 27-Oct-2026 18:31:14.014 compiled with json-c version: 0.17
+ns1         | 2026-10-27T18:31:14.018899490Z 27-Oct-2026 18:31:14.014 linked to json-c version: 0.17
+ns1         | 2026-10-27T18:31:14.018900990Z 27-Oct-2026 18:31:14.014 compiled with zlib version: 1.3.2
+ns1         | 2026-10-27T18:31:14.018902390Z 27-Oct-2026 18:31:14.014 linked to zlib version: 1.3.2
+ns1         | 2026-10-27T18:31:14.018903890Z 27-Oct-2026 18:31:14.014 ----------------------------------------------------
+ns1         | 2026-10-27T18:31:14.018905690Z 27-Oct-2026 18:31:14.014 BIND 9 is maintained by Internet Systems Consortium,
+ns1         | 2026-10-27T18:31:14.018907090Z 27-Oct-2026 18:31:14.014 Inc. (ISC), a non-profit 501(c)(3) public-benefit 
+ns1         | 2026-10-27T18:31:14.018908390Z 27-Oct-2026 18:31:14.014 corporation.  Support and training for BIND 9 are 
+ns1         | 2026-10-27T18:31:14.019072299Z 27-Oct-2026 18:31:14.014 available at https://www.isc.org/support
+ns1         | 2026-10-27T18:31:14.019079999Z 27-Oct-2026 18:31:14.014 ----------------------------------------------------
+ns1         | 2026-10-27T18:31:14.019109901Z 27-Oct-2026 18:31:14.014 found 12 CPUs, using 12 worker threads
+ns1         | 2026-10-27T18:31:14.019116901Z 27-Oct-2026 18:31:14.014 using 12 UDP listeners per interface
+ns1         | 2026-10-27T18:31:14.056305375Z 27-Oct-2026 18:31:14.054 DNSSEC algorithms: RSASHA1 NSEC3RSASHA1 RSASHA256 RSASHA512 ECDSAP256SHA256 ECDSAP384SHA384 ED25519 ED448
+ns1         | 2026-10-27T18:31:14.056321676Z 27-Oct-2026 18:31:14.054 DS algorithms: SHA-1 SHA-256 SHA-384
+ns1         | 2026-10-27T18:31:14.056324676Z 27-Oct-2026 18:31:14.054 HMAC algorithms: HMAC-MD5 HMAC-SHA1 HMAC-SHA224 HMAC-SHA256 HMAC-SHA384 HMAC-SHA512
+ns1         | 2026-10-27T18:31:14.056326576Z 27-Oct-2026 18:31:14.054 TKEY mode 2 support (Diffie-Hellman): yes
+ns1         | 2026-10-27T18:31:14.056328577Z 27-Oct-2026 18:31:14.054 TKEY mode 3 support (GSS-API): yes
+ns1         | 2026-10-27T18:31:14.058567189Z 27-Oct-2026 18:31:14.054 the initial working directory is '/'
+ns1         | 2026-10-27T18:31:14.058585790Z 27-Oct-2026 18:31:14.054 loading configuration from '/etc/bind/named.conf'
+ns1         | 2026-10-27T18:31:14.059232523Z 27-Oct-2026 18:31:14.054 the working directory is now '/var/bind'
+ns1         | 2026-10-27T18:31:14.059482836Z 27-Oct-2026 18:31:14.054 reading built-in trust anchors from file '/etc/bind/bind.keys'
+ns1         | 2026-10-27T18:31:14.060662795Z 27-Oct-2026 18:31:14.058 using default UDP/IPv4 port range: [32768, 60999]
+ns1         | 2026-10-27T18:31:14.060678496Z 27-Oct-2026 18:31:14.058 using default UDP/IPv6 port range: [32768, 60999]
+ns1         | 2026-10-27T18:31:14.061960660Z 27-Oct-2026 18:31:14.058 listening on IPv4 interface lo, 127.0.0.1#53
+ns1         | 2026-10-27T18:31:14.084531698Z 27-Oct-2026 18:31:14.082 listening on IPv4 interface eth0, 172.30.0.11#53
+ns1         | 2026-10-27T18:31:14.086350990Z 27-Oct-2026 18:31:14.082 listening on IPv4 interface eth1, 172.31.0.11#53
+ns1         | 2026-10-27T18:31:14.088060876Z 27-Oct-2026 18:31:14.082 IPv6 socket API is incomplete; explicitly binding to each IPv6 address separately
+ns1         | 2026-10-27T18:31:14.088081377Z 27-Oct-2026 18:31:14.082 listening on IPv6 interface lo, ::1#53
+ns1         | 2026-10-27T18:31:14.090853717Z 27-Oct-2026 18:31:14.086 generating session key for dynamic DNS
+ns1         | 2026-10-27T18:31:14.090981723Z 27-Oct-2026 18:31:14.086 sizing zone task pool based on 1 zones
+ns1         | 2026-10-27T18:31:14.095898371Z 27-Oct-2026 18:31:14.090 obtaining root key for view _default from '/etc/bind/bind.keys'
+ns1         | 2026-10-27T18:31:14.095942473Z 27-Oct-2026 18:31:14.090 set up managed keys zone for view _default, file 'managed-keys.bind'
+ns1         | 2026-10-27T18:31:14.100746215Z 27-Oct-2026 18:31:14.098 configuring command channel from '/etc/bind/rndc.key'
+ns1         | 2026-10-27T18:31:14.101037730Z 27-Oct-2026 18:31:14.098 command channel listening on 127.0.0.1#953
+ns1         | 2026-10-27T18:31:14.101045030Z 27-Oct-2026 18:31:14.098 configuring command channel from '/etc/bind/rndc.key'
+ns1         | 2026-10-27T18:31:14.101627660Z 27-Oct-2026 18:31:14.098 command channel listening on ::1#953
+ns1         | 2026-10-27T18:31:14.101636260Z 27-Oct-2026 18:31:14.098 not using config file logging statement for logging due to -g option
+ns1         | 2026-10-27T18:31:14.103566658Z 27-Oct-2026 18:31:14.098 managed-keys-zone: loaded serial 0
+ns1         | 2026-10-27T18:31:14.104391999Z 27-Oct-2026 18:31:14.102 zone sd.lab/IN: loaded serial 2026101401
+ns1         | 2026-10-27T18:31:14.104427501Z 27-Oct-2026 18:31:14.102 zone sd.lab/IN: sending notifies (serial 2026101401)
+ns1         | 2026-10-27T18:31:14.105191840Z 27-Oct-2026 18:31:14.102 all zones loaded
+ns1         | 2026-10-27T18:31:14.110567410Z 27-Oct-2026 18:31:14.106 running
+ns1         | 2026-10-27T18:31:14.110975831Z 27-Oct-2026 18:31:14.106 network unreachable resolving './DNSKEY/IN': 2001:500:2f::f#53
+ns1         | 2026-10-27T18:31:14.111186942Z 27-Oct-2026 18:31:14.106 network unreachable resolving './DNSKEY/IN': 2001:500:12::d0d#53
+ns1         | 2026-10-27T18:31:14.111194142Z 27-Oct-2026 18:31:14.106 network unreachable resolving './NS/IN': 2001:500:12::d0d#53
+ns1         | 2026-10-27T18:31:14.111374951Z 27-Oct-2026 18:31:14.106 network unreachable resolving './DNSKEY/IN': 2001:503:c27::2:30#53
+ns1         | 2026-10-27T18:31:14.111380151Z 27-Oct-2026 18:31:14.106 network unreachable resolving './NS/IN': 2001:503:c27::2:30#53
+ns1         | 2026-10-27T18:31:14.111539759Z 27-Oct-2026 18:31:14.106 network unreachable resolving './DNSKEY/IN': 2001:500:2::c#53
+ns1         | 2026-10-27T18:31:14.111546560Z 27-Oct-2026 18:31:14.106 network unreachable resolving './NS/IN': 2001:500:2::c#53
+ns1         | 2026-10-27T18:31:14.111630864Z 27-Oct-2026 18:31:14.106 network unreachable resolving './DNSKEY/IN': 2001:500:2d::d#53
+ns1         | 2026-10-27T18:31:14.111755970Z 27-Oct-2026 18:31:14.106 network unreachable resolving './NS/IN': 2001:500:2d::d#53
+ns1         | 2026-10-27T18:31:14.111780772Z 27-Oct-2026 18:31:14.106 network unreachable resolving './DNSKEY/IN': 2001:500:9f::42#53
+ns1         | 2026-10-27T18:31:14.111925079Z 27-Oct-2026 18:31:14.106 network unreachable resolving './NS/IN': 2001:500:9f::42#53
+ns1         | 2026-10-27T18:31:14.112011383Z 27-Oct-2026 18:31:14.110 network unreachable resolving './DNSKEY/IN': 2001:7fe::53#53
+ns1         | 2026-10-27T18:31:14.112102288Z 27-Oct-2026 18:31:14.110 network unreachable resolving './NS/IN': 2001:7fe::53#53
+ns1         | 2026-10-27T18:31:14.112177292Z 27-Oct-2026 18:31:14.110 network unreachable resolving './DNSKEY/IN': 2001:500:1::53#53
+ns1         | 2026-10-27T18:31:14.112246595Z 27-Oct-2026 18:31:14.110 network unreachable resolving './NS/IN': 2001:500:1::53#53
+ns1         | 2026-10-27T18:31:14.112392902Z 27-Oct-2026 18:31:14.110 network unreachable resolving './DNSKEY/IN': 2001:500:a8::e#53
+ns1         | 2026-10-27T18:31:14.112487907Z 27-Oct-2026 18:31:14.110 network unreachable resolving './NS/IN': 2001:500:a8::e#53
+ns1         | 2026-10-27T18:31:14.112624314Z 27-Oct-2026 18:31:14.110 network unreachable resolving './DNSKEY/IN': 2001:7fd::1#53
+ns1         | 2026-10-27T18:31:14.112628914Z 27-Oct-2026 18:31:14.110 network unreachable resolving './NS/IN': 2001:7fd::1#53
+ns1         | 2026-10-27T18:31:14.112726219Z 27-Oct-2026 18:31:14.110 network unreachable resolving './DNSKEY/IN': 2001:503:ba3e::2:30#53
+ns1         | 2026-10-27T18:31:14.112799423Z 27-Oct-2026 18:31:14.110 network unreachable resolving './NS/IN': 2001:503:ba3e::2:30#53
+ns1         | 2026-10-27T18:31:14.112922529Z 27-Oct-2026 18:31:14.110 network unreachable resolving './DNSKEY/IN': 2801:1b8:10::b#53
+ns1         | 2026-10-27T18:31:14.113063336Z 27-Oct-2026 18:31:14.110 network unreachable resolving './NS/IN': 2801:1b8:10::b#53
+ns1         | 2026-10-27T18:31:14.113233845Z 27-Oct-2026 18:31:14.110 network unreachable resolving './DNSKEY/IN': 2001:dc3::35#53
+ns1         | 2026-10-27T18:31:14.113239745Z 27-Oct-2026 18:31:14.110 network unreachable resolving './NS/IN': 2001:dc3::35#53
+ns1         | 2026-10-27T18:31:14.159821093Z 27-Oct-2026 18:31:14.154 managed-keys-zone: Initializing automatic trust anchor management for zone '.'; DNSKEY ID 20326 is now trusted, waiving the normal 30-day waiting period.
+ns1         | 2026-10-27T18:31:14.160081206Z 27-Oct-2026 18:31:14.158 managed-keys-zone: Initializing automatic trust anchor management for zone '.'; DNSKEY ID 38696 is now trusted, waiving the normal 30-day waiting period.
+ns1         | 2026-10-27T18:31:14.284751990Z 27-Oct-2026 18:31:14.282 client @0x7a849daf4340 172.30.0.12#45235 (sd.lab): transfer of 'sd.lab/IN': AXFR started (serial 2026101401)
+ns1         | 2026-10-27T18:31:14.284998303Z 27-Oct-2026 18:31:14.282 client @0x7a849daf4340 172.30.0.12#45235 (sd.lab): transfer of 'sd.lab/IN': AXFR ended: 1 messages, 9 records, 224 bytes, 0.001 secs (224000 bytes/sec) (serial 2026101401)
+ns1         | 2026-10-27T18:31:14.605785572Z 27-Oct-2026 18:31:14.602 client @0x7a849dac9480 172.30.0.13#41855 (sd.lab): transfer of 'sd.lab/IN': AXFR started (serial 2026101401)
+ns1         | 2026-10-27T18:31:14.606080587Z 27-Oct-2026 18:31:14.602 client @0x7a849dac9480 172.30.0.13#41855 (sd.lab): transfer of 'sd.lab/IN': AXFR ended: 1 messages, 9 records, 224 bytes, 0.001 secs (224000 bytes/sec) (serial 2026101401)
+ns1         | 2026-10-27T18:31:18.488886506Z 27-Oct-2026 18:31:18.486 received control channel command 'reload sd.lab'
+ns1         | 2026-10-27T18:31:18.489428233Z 27-Oct-2026 18:31:18.486 zone sd.lab/IN: loaded serial 2026101402
+ns1         | 2026-10-27T18:31:19.104323437Z 27-Oct-2026 18:31:19.102 zone sd.lab/IN: sending notifies (serial 2026101402)
+ns1         | 2026-10-27T18:31:19.606499385Z 27-Oct-2026 18:31:19.602 client @0x7a849dabb240 172.30.0.13#45719 (sd.lab): transfer of 'sd.lab/IN': IXFR version not in journal, falling back to AXFR
+ns1         | 2026-10-27T18:31:19.606511285Z 27-Oct-2026 18:31:19.602 client @0x7a849dabb240 172.30.0.13#45719 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR started (serial 2026101402)
+ns1         | 2026-10-27T18:31:19.606837202Z 27-Oct-2026 18:31:19.602 client @0x7a849dabb240 172.30.0.13#45719 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR ended: 1 messages, 10 records, 246 bytes, 0.001 secs (246000 bytes/sec) (serial 2026101402)
+ns1         | 2026-10-27T18:31:24.109623768Z 27-Oct-2026 18:31:24.106 client @0x7a849dab3330 172.30.0.12#36939 (sd.lab): transfer of 'sd.lab/IN': IXFR version not in journal, falling back to AXFR
+ns1         | 2026-10-27T18:31:24.109639469Z 27-Oct-2026 18:31:24.106 client @0x7a849dab3330 172.30.0.12#36939 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR started (serial 2026101402)
+ns1         | 2026-10-27T18:31:24.109972786Z 27-Oct-2026 18:31:24.106 client @0x7a849dab3330 172.30.0.12#36939 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR ended: 1 messages, 10 records, 246 bytes, 0.001 secs (246000 bytes/sec) (serial 2026101402)

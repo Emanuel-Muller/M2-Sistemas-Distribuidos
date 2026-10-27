@@ -1,0 +1,32 @@
+
+; <<>> DiG 9.18.49 <<>> @172.31.0.12 app.sd.lab A +norecurse +time=2 +tries=1
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 12919
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 4
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 8ae52e67f454c708010000006ae0e32437b674e74346dfdb (good)
+;; QUESTION SECTION:
+;app.sd.lab.			IN	A
+
+;; ANSWER SECTION:
+app.sd.lab.		60	IN	A	10.0.0.1
+
+;; AUTHORITY SECTION:
+sd.lab.			60	IN	NS	ns1.sd.lab.
+sd.lab.			60	IN	NS	ns2.sd.lab.
+sd.lab.			60	IN	NS	ns3.sd.lab.
+
+;; ADDITIONAL SECTION:
+ns1.sd.lab.		60	IN	A	172.31.0.11
+ns2.sd.lab.		60	IN	A	172.31.0.12
+ns3.sd.lab.		60	IN	A	172.31.0.13
+
+;; Query time: 0 msec
+;; SERVER: 172.31.0.12#53(172.31.0.12) (UDP)
+;; WHEN: Tue Oct 27 17:45:08 UTC 2026
+;; MSG SIZE  rcvd: 185
+

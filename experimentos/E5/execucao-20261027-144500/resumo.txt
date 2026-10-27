@@ -1,0 +1,26 @@
+[14:45:00] E5 iniciado. Saída: experimentos/E5/execucao-20261027-144500
+[14:45:00] commit: 0e1dfd9  variante: base
+[14:45:00] C1 (base): conferindo convergência
+[14:45:01] Convergência: serial 2026101401 em ns1, ns2 e ns3.
+[14:45:01] cache do resolvedor limpo
+[14:45:03] C1 leitura ns1=NOERROR/aa=sim/10.0.0.1 ns2=NOERROR/aa=sim/10.0.0.1 ns3=NOERROR/aa=sim/10.0.0.1 resolvedor=NOERROR/10.0.0.1/0ms | escrita=OK(serial 2026101402)
+[14:45:05] Convergência: serial 2026101402 em ns1, ns2 e ns3.
+[14:45:05] último refresh dos secundários salvo em zonestatus-*.txt (campos 'next refresh' e 'expires')
+[14:45:05] C2: parando ns1
+[14:45:08] C2 (t=2s) leitura ns1=TIMEOUT/aa=nao/- ns2=NOERROR/aa=sim/10.0.0.1 ns3=NOERROR/aa=sim/10.0.0.1 resolvedor=NOERROR/10.0.0.1/0ms | escrita=FALHOU(codigo 1)
+[14:45:08]     mensagem da escrita: service "ns1" is not running
+[14:45:08] C3: parando também ns2
+[14:45:14] C3 (t=8s) leitura ns1=TIMEOUT/aa=nao/- ns2=TIMEOUT/aa=nao/- ns3=NOERROR/aa=sim/10.0.0.1 resolvedor=NOERROR/10.0.0.1/0ms | escrita=FALHOU(codigo 1)
+[14:45:14] C4: observando ns3 a cada 5s até SERVFAIL (limite 420s desde a parada do ns1)
+[14:50:11] C4 ns3 passou a responder SERVFAIL em t=305s (resolução 5s) | ns3=SERVFAIL/aa=nao/- resolvedor=NOERROR/10.0.0.1/0ms
+[14:50:11] restaurando ns1 e ns2
+[14:53:09] AVISO: sem convergência em 120s (ns1=2026101402 ns2=2026101402 ns3=).
+[14:53:09] restauração levou 177s
+[14:53:09] C5 (extra): parando só ns2
+[14:53:15] C5 leitura ns1=NOERROR/aa=sim/10.0.0.1 ns3=SERVFAIL/aa=nao/- resolvedor=NOERROR/10.0.0.1/0ms | escrita=OK(serial 2026101403) | após 3s: serial ns1=2026101403 ns3=
+[14:53:15] C6 (extra): parando também ns3 (só ns1 ativo)
+[14:53:17] C6 leitura ns1=NOERROR/aa=sim/10.0.0.1 resolvedor=NOERROR/10.0.0.1/0ms | escrita=OK(serial 2026101404)
+[14:53:17] restaurando ns2 e ns3
+[14:53:21] Convergência: serial 2026101404 em ns1, ns2 e ns3.
+[14:53:21] restauração levou 3s
+[14:53:22] E5 terminado.

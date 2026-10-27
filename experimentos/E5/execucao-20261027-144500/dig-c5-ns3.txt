@@ -1,0 +1,19 @@
+
+; <<>> DiG 9.18.49 <<>> @172.31.0.13 app.sd.lab A +norecurse +time=2 +tries=1
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: SERVFAIL, id: 13768
+;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 01c0a6099670dcd6010000006ae0e5060ab0f736be2f1ad6 (good)
+;; QUESTION SECTION:
+;app.sd.lab.			IN	A
+
+;; Query time: 0 msec
+;; SERVER: 172.31.0.13#53(172.31.0.13) (UDP)
+;; WHEN: Tue Oct 27 17:53:10 UTC 2026
+;; MSG SIZE  rcvd: 67
+
