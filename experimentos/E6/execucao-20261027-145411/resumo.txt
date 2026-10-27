@@ -1,0 +1,80 @@
+[14:54:11] E6 iniciado. Saída: experimentos/E6/execucao-20261027-145411
+[14:54:11] commit: 0e1dfd9  variante: base
+[14:54:12] Convergência: serial 2026101401 em ns1, ns2 e ns3.
+[14:54:12] cache do resolvedor limpo
+[14:54:12] serial inicial em todos: 2026101401
+    t=   1s antes      ns1=10.0.0.1/2026101401 ns2=10.0.0.1/2026101401 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=58
+[14:54:14] P0: ns3 desconectado de sdlab_interna
+[14:54:16] isolamento confirmado (ns3 não alcança 172.30.0.11); detalhes em isolamento.txt
+    t=   3s isolado    ns1=10.0.0.1/2026101401 ns2=10.0.0.1/2026101401 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=55
+[14:54:18] P1 (t=4s): ns1 alterado: app.sd.lab=10.6.158.58 serial=2026101402
+    t=   5s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=53
+    t=  11s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=47
+    t=  17s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=41
+    t=  23s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=35
+    t=  29s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=29
+    t=  35s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=23
+    t=  41s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=17
+    t=  47s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=11
+    t=  53s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=5
+    t=  59s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=59
+    t=  65s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=53
+    t=  71s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=47
+    t=  77s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=41
+    t=  83s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=36
+    t=  89s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=29
+    t=  95s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=23
+    t= 101s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=17
+    t= 107s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=11
+    t= 113s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=5
+    t= 119s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=59
+    t= 125s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=53
+    t= 131s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=47
+    t= 137s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=42
+    t= 143s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=35
+    t= 149s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=29
+    t= 155s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=23
+    t= 161s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=17
+    t= 167s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=11
+    t= 173s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=5
+    t= 179s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=59
+    t= 185s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=53
+    t= 191s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=47
+    t= 197s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=41
+    t= 203s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=35
+    t= 209s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=29
+    t= 215s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=23
+    t= 221s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=17
+    t= 227s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=11
+    t= 233s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=5
+    t= 239s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=59
+    t= 245s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=53
+    t= 251s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=47
+    t= 257s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=41
+    t= 263s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=35
+    t= 269s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=29
+    t= 275s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=23
+    t= 281s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=17
+    t= 287s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=11
+    t= 293s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=NOERROR 10.0.0.1/2026101401 resolvedor=NOERROR 10.0.0.1 ttl=5
+    t= 299s particao   ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=SERVFAIL -/ resolvedor=NOERROR 10.6.158.58 ttl=59
+    t= 300s apos-expire ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=SERVFAIL -/ resolvedor=NOERROR 10.6.158.58 ttl=59
+    t= 306s apos-expire ns1=10.6.158.58/2026101402 ns2=10.6.158.58/2026101402 ns3=SERVFAIL -/ resolvedor=NOERROR 10.6.158.58 ttl=52
+[14:59:20] ns2 serviu o serial novo (2026101402) na amostra de t=5s (resolução 5s; tempo preciso de propagação é o do E3)
+[14:59:20] P2: ns3 passou a responder SERVFAIL em t=299s desde a desconexão (resolução 5s)
+[14:59:21] NOTIFY do ns1 para o ns3 (falhas esperadas):
+[14:59:21] ns3 tentando falar com o primário / expire:
+ns3  | 2026-10-27T17:55:40.942958024Z 27-Oct-2026 17:55:40.938 transfer of 'sd.lab/IN' from 172.30.0.11#53: failed to connect: timed out
+ns3  | 2026-10-27T17:55:40.942990726Z 27-Oct-2026 17:55:40.938 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: timed out
+ns3  | 2026-10-27T17:56:11.461513271Z 27-Oct-2026 17:56:11.460 zone sd.lab/IN: refresh: retry limit for primary 172.30.0.11#53 exceeded (source 0.0.0.0#0)
+ns3  | 2026-10-27T17:56:41.475000113Z 27-Oct-2026 17:56:41.473 transfer of 'sd.lab/IN' from 172.30.0.11#53: failed to connect: timed out
+ns3  | 2026-10-27T17:56:41.475031015Z 27-Oct-2026 17:56:41.473 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: timed out
+ns3  | 2026-10-27T17:57:11.994702981Z 27-Oct-2026 17:57:11.993 zone sd.lab/IN: refresh: retry limit for primary 172.30.0.11#53 exceeded (source 0.0.0.0#0)
+ns3  | 2026-10-27T17:57:42.515259648Z 27-Oct-2026 17:57:42.510 zone sd.lab/IN: refresh: retry limit for primary 172.30.0.11#53 exceeded (source 0.0.0.0#0)
+ns3  | 2026-10-27T17:58:13.023930554Z 27-Oct-2026 17:58:13.018 zone sd.lab/IN: refresh: retry limit for primary 172.30.0.11#53 exceeded (source 0.0.0.0#0)
+ns3  | 2026-10-27T17:58:43.544455599Z 27-Oct-2026 17:58:43.543 zone sd.lab/IN: refresh: retry limit for primary 172.30.0.11#53 exceeded (source 0.0.0.0#0)
+ns3  | 2026-10-27T17:59:10.903566560Z 27-Oct-2026 17:59:10.900 zone sd.lab/IN: expired
+[14:59:21] ns3 reconectado com o mesmo IP; esperando convergir (medição formal é no E7)
+[15:02:21] AVISO: sem convergência em 120s (ns1=2026101402 ns2=2026101402 ns3=).
+[15:02:21] convergência observada 180s depois da reconexão
+[15:02:21] E6 terminado. Arquivos em experimentos/E6/execucao-20261027-145411
