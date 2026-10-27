@@ -1,0 +1,35 @@
+Variante: base | TTL registros: 60s | TTL negativo (SOA minimum): 20s
+== Fase positiva: app.sd.lab, alteração 5s após o início da sondagem -> experimentos/E4/positivo-20261027-163502.csv
+  cache de app.sd.lab pronto (TTL 60 s)
+  rep. 1: 1ª leitura NOERROR (TTL 60 s) | ns1=130 ns2=130 ns3=540 ms | resolvedor=52550 ms (TTL antes=55 s, leituras divergentes=363, erro vs TTL=-2450 ms)
+  cache de app.sd.lab pronto (TTL 60 s)
+  rep. 2: 1ª leitura NOERROR (TTL 60 s) | ns1=40 ns2=40 ns3=480 ms | resolvedor=52580 ms (TTL antes=55 s, leituras divergentes=362, erro vs TTL=-2420 ms)
+  cache de app.sd.lab pronto (TTL 60 s)
+  rep. 3: 1ª leitura NOERROR (TTL 60 s) | ns1=120 ns2=120 ns3=550 ms | resolvedor=52690 ms (TTL antes=55 s, leituras divergentes=363, erro vs TTL=-2310 ms)
+  cache de app.sd.lab pronto (TTL 60 s)
+  rep. 4: 1ª leitura NOERROR (TTL 60 s) | ns1=90 ns2=510 ns3=510 ms | resolvedor=52670 ms (TTL antes=55 s, leituras divergentes=363, erro vs TTL=-2330 ms)
+  cache de app.sd.lab pronto (TTL 60 s)
+  rep. 5: 1ª leitura NOERROR (TTL 60 s) | ns1=130 ns2=130 ns3=550 ms | resolvedor=52590 ms (TTL antes=55 s, leituras divergentes=357, erro vs TTL=-2410 ms)
+
+janela_ms: n=5  media=52616.0  desvio_padrao=60.7  min=52550.0  max=52690.0  (NA=0)
+erro_vs_ttl_ms: n=5  media=-2384.0  desvio_padrao=60.7  min=-2450.0  max=-2310.0  (NA=0)
+ns2_ms: n=5  media=186.0  desvio_padrao=185.0  min=40.0  max=510.0  (NA=0)
+ns3_ms: n=5  media=526.0  desvio_padrao=30.5  min=480.0  max=550.0  (NA=0)
+Maior atraso de replicação observado: 550 ms
+Janela máxima teórica (TTL 60 s + maior atraso): 60550 ms
+
+== Fase negativa: novo.sd.lab (e novo2..), criação 3s após a 1ª consulta -> experimentos/E4/negativo-20261027-163502.csv
+  rep. 1: 1ª leitura NXDOMAIN (TTL 20 s) | ns1=110 ns2=110 ns3=510 ms | resolvedor=16640 ms (TTL antes=17 s, leituras divergentes=111, erro vs TTL=-360 ms)
+  rep. 2: 1ª leitura NXDOMAIN (TTL 20 s) | ns1=40 ns2=40 ns3=470 ms | resolvedor=16750 ms (TTL antes=17 s, leituras divergentes=113, erro vs TTL=-250 ms)
+  rep. 3: 1ª leitura NXDOMAIN (TTL 20 s) | ns1=40 ns2=40 ns3=470 ms | resolvedor=16740 ms (TTL antes=17 s, leituras divergentes=114, erro vs TTL=-260 ms)
+  rep. 4: 1ª leitura NXDOMAIN (TTL 20 s) | ns1=10 ns2=10 ns3=590 ms | resolvedor=16840 ms (TTL antes=17 s, leituras divergentes=113, erro vs TTL=-160 ms)
+  rep. 5: 1ª leitura NXDOMAIN (TTL 20 s) | ns1=120 ns2=120 ns3=540 ms | resolvedor=16800 ms (TTL antes=17 s, leituras divergentes=113, erro vs TTL=-200 ms)
+
+janela_ms: n=5  media=16754.0  desvio_padrao=75.4  min=16640.0  max=16840.0  (NA=0)
+erro_vs_ttl_ms: n=5  media=-246.0  desvio_padrao=75.4  min=-360.0  max=-160.0  (NA=0)
+ns2_ms: n=5  media=64.0  desvio_padrao=48.3  min=10.0  max=120.0  (NA=0)
+ns3_ms: n=5  media=516.0  desvio_padrao=50.8  min=470.0  max=590.0  (NA=0)
+Maior atraso de replicação observado: 590 ms
+Janela máxima teórica (TTL negativo 20 s + maior atraso): 20590 ms
+
+Zona alterada (app e nomes novo*). Para voltar ao estado-base: scripts/reset.sh
