@@ -90,8 +90,11 @@ escrita_com_primario() { # nome ip rotulo
 restaurar() {
     docker compose start ns1 ns2 ns3 > /dev/null 2>&1
     t=$(date +%s)
-    convergir 120
-    log "restauração levou $(( $(date +%s) - t ))s"
+    if convergir 120; then
+        log "restauração levou $(( $(date +%s) - t ))s"
+    else
+        log "restauração NÃO convergiu em 120s"
+    fi
 }
 
 log "E5 iniciado. Saída: $dir"

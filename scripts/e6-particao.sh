@@ -126,7 +126,10 @@ else
     docker network connect --ip 172.30.0.13 "$REDE" ns3
     t=$(date +%s)
     log "ns3 reconectado com o mesmo IP; esperando convergir (medição formal é no E7)"
-    convergir 120
-    log "convergência observada $(( $(date +%s) - t ))s depois da reconexão"
+    if convergir 120; then
+        log "convergência observada $(( $(date +%s) - t ))s depois da reconexão"
+    else
+        log "ns3 NÃO convergiu em 120s depois da reconexão"
+    fi
 fi
 log "E6 terminado. Arquivos em $dir"
