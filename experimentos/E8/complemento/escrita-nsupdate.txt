@@ -1,0 +1,10 @@
+== nsupdate ao ns2 (172.31.0.12), secundário
+update failed: REFUSED
+código de saída do nsupdate: 2 (0 = aceito)
+== nsupdate ao ns1 (172.31.0.11), primário com zona estática
+update failed: REFUSED
+código de saída do nsupdate: 2 (0 = aceito)
+== estado depois das tentativas
+172.31.0.11 serial=2026101402 app=10.0.0.2
+172.31.0.12 serial=2026101402 app=10.0.0.2
+172.31.0.13 serial=2026101402 app=10.0.0.2

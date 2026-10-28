@@ -1,0 +1,23 @@
+== ns1: named.conf (zona sd.lab)
+    type primary;
+== ns2: named.conf (zona sd.lab)
+    type secondary;
+    primaries { 172.30.0.11; };
+== ns3: named.conf (zona sd.lab)
+    type secondary;
+    primaries { 172.30.0.11; };
+== dig @172.31.0.11 sd.lab SOA +norecurse
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 24898
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 4
+;sd.lab.				IN	SOA
+sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101401 30 10 300 20
+== dig @172.31.0.12 sd.lab SOA +norecurse
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 29024
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 4
+;sd.lab.				IN	SOA
+sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101401 30 10 300 20
+== dig @172.31.0.13 sd.lab SOA +norecurse
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 13376
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 4
+;sd.lab.				IN	SOA
+sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101401 30 10 300 20

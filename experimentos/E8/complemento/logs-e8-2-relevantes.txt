@@ -1,0 +1,26 @@
+ns1  | 2026-10-28T21:56:33.425545969Z 28-Oct-2026 21:56:33.423 zone sd.lab/IN: zone serial (2026101301/2026101402) has gone backwards
+ns3  | 2026-10-28T21:56:35.050460136Z 28-Oct-2026 21:56:35.048 client @0xffff94f53220 172.30.0.11#43505: received notify for zone 'sd.lab'
+ns3  | 2026-10-28T21:56:35.050483344Z 28-Oct-2026 21:56:35.048 zone sd.lab/IN: notify from 172.30.0.11#43505: zone is up to date
+ns1  | 2026-10-28T21:56:33.425553677Z 28-Oct-2026 21:56:33.423 zone sd.lab/IN: loaded serial 2026101301
+ns3  | 2026-10-28T21:56:35.050485053Z 28-Oct-2026 21:56:35.048 client @0xffff94f67170 172.31.0.11#60261: received notify for zone 'sd.lab'
+ns3  | 2026-10-28T21:56:56.067588007Z 28-Oct-2026 21:56:56.066 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns3  | 2026-10-28T21:57:06.067779345Z 28-Oct-2026 21:57:06.066 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns3  | 2026-10-28T21:57:15.068099543Z 28-Oct-2026 21:57:15.066 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns3  | 2026-10-28T21:57:25.068400590Z 28-Oct-2026 21:57:25.066 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns3  | 2026-10-28T21:57:35.068843969Z 28-Oct-2026 21:57:35.066 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns3  | 2026-10-28T21:57:45.067596793Z 28-Oct-2026 21:57:45.066 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns3  | 2026-10-28T21:57:55.070270506Z 28-Oct-2026 21:57:55.069 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns3  | 2026-10-28T21:58:05.069581719Z 28-Oct-2026 21:58:05.068 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns2  | 2026-10-28T21:56:34.546462178Z 28-Oct-2026 21:56:34.544 client @0xffff7e93a220 172.30.0.11#43902: received notify for zone 'sd.lab'
+ns2  | 2026-10-28T21:56:34.546488803Z 28-Oct-2026 21:56:34.544 zone sd.lab/IN: notify from 172.30.0.11#43902: zone is up to date
+ns2  | 2026-10-28T21:56:35.050462928Z 28-Oct-2026 21:56:35.048 client @0xffff7e9441f0 172.31.0.11#45023: received notify for zone 'sd.lab'
+ns2  | 2026-10-28T21:56:55.554351465Z 28-Oct-2026 21:56:55.552 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns2  | 2026-10-28T21:57:05.555778803Z 28-Oct-2026 21:57:05.554 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns2  | 2026-10-28T21:57:14.555274001Z 28-Oct-2026 21:57:14.553 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns2  | 2026-10-28T21:57:24.558838506Z 28-Oct-2026 21:57:24.557 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns2  | 2026-10-28T21:57:33.565183010Z 28-Oct-2026 21:57:33.563 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns2  | 2026-10-28T21:57:42.569865709Z 28-Oct-2026 21:57:42.568 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns2  | 2026-10-28T21:57:52.571570964Z 28-Oct-2026 21:57:52.570 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns2  | 2026-10-28T21:58:02.569606927Z 28-Oct-2026 21:58:02.568 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns2  | 2026-10-28T21:58:11.576684250Z 28-Oct-2026 21:58:11.575 zone sd.lab/IN: serial number (2026101301) received from primary 172.30.0.11#53 < ours (2026101402)
+ns1  | 2026-10-28T21:56:34.546166261Z 28-Oct-2026 21:56:34.544 zone sd.lab/IN: sending notifies (serial 2026101301)

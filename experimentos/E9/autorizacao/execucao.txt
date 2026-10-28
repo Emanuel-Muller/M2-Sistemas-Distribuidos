@@ -1,0 +1,8 @@
+[18:59:55] Reset da variante e9
+[19:00:00] Chave cliente1, enviada ao ns1
+[19:00:01] Sem chave, enviada ao ns1
+[19:00:01] Chave inválida (nome cliente1), enviada ao ns1
+[19:00:02] Chave cliente1, enviada ao ns2 (secundário)
+[19:00:02] Propagação da escrita aceita
+[19:00:07] Restauração da variante base (unset COMPOSE_FILE + reset)
+Convergência: serial 2026101401 em ns1, ns2 e ns3.

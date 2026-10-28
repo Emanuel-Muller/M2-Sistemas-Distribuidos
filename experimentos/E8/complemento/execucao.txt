@@ -1,0 +1,7 @@
+[18:56:20] Reset da variante base
+[18:56:25] Coordenador: papéis configurados e SOA nos três autoritativos
+[18:56:26] E8.1: serial crescente (app = 10.0.0.2)
+[18:56:32] Escrita por nsupdate (sem chave) no secundário e no primário
+[18:56:33] E8.2: serial menor (2026101301, app = 10.0.0.3)
+[18:56:34] Observação por 90 s
+[18:58:12] Restauração: serial 2026101403, app = 10.0.0.1

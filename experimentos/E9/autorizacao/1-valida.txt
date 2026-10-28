@@ -1,0 +1,5 @@
+== Chave cliente1, enviada ao ns1
+Enviando de cliente (chave: cliente1) para 172.31.0.11: ordem.sd.lab TXT "teste-valida"
+código de saída do nsupdate: 0 (0 = aceito)
+serial do ns1: 2026101401 -> 2026101402
+valor no ns1: "teste-valida"

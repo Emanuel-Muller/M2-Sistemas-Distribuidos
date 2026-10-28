@@ -1,0 +1,7 @@
+Experimento E8 (complemento) — contexto
+data/hora local: 2026-10-28 18:56:20 -0300
+data/hora UTC:   2026-10-28 21:56:20
+máquina: Darwin arm64
+commit: 645475b
+variante: base
+observação: 90 s, intervalo 10 s
