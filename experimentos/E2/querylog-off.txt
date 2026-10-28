@@ -1,0 +1,12 @@
+== resolvedor
+== ns1
+== ns2
+== ns3
+== resolvedor
+query logging is OFF
+== ns1
+query logging is OFF
+== ns2
+query logging is OFF
+== ns3
+query logging is OFF

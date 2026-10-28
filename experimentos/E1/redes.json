@@ -1,0 +1,161 @@
+[
+    {
+        "Name": "sdlab_interna",
+        "Id": "d0ebcb15e8a2d62d587ccca8c423a71ece1df645a763cd9f4cc12cab5e7e8bfd",
+        "Created": "2026-10-27T22:24:49.285618169Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.30.0.0/24",
+                    "Gateway": "172.30.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+            "com.docker.network.enable_ipv4": "true",
+            "com.docker.network.enable_ipv6": "false"
+        },
+        "Labels": {
+            "com.docker.compose.config-hash": "966661e5df20ec1cf691a0645fd251ebab4b20c9b16efdd26b64c44897a78dc6",
+            "com.docker.compose.network": "interna",
+            "com.docker.compose.project": "sdlab",
+            "com.docker.compose.version": "5.6.1"
+        },
+        "Containers": {
+            "4fac4043adf03fc927eb49de7f3fee3e233a04069a125979a8f94ab4436606aa": {
+                "Name": "ns2",
+                "EndpointID": "ca659413ea0ab90e009902e224e70c5c5a05debe109c7e7e4ee5925471e40861",
+                "MacAddress": "96:4b:37:91:ad:10",
+                "IPv4Address": "172.30.0.12/24",
+                "IPv6Address": ""
+            },
+            "8f81f26fda25293c818cb72c5dfefc260ce9f9354099d6a47a726469225054fa": {
+                "Name": "ns1",
+                "EndpointID": "e8c37446727196f6f47133632d9613bc39a695b73ee83f2a27c11ef4551a5717",
+                "MacAddress": "b2:c0:d0:50:60:9b",
+                "IPv4Address": "172.30.0.11/24",
+                "IPv6Address": ""
+            },
+            "ae57ac92f8f56a0c241a5317e985898a817c139017ccda9bfd279149a50db6e5": {
+                "Name": "ns3",
+                "EndpointID": "c0797e0561a9bae115ea2bf8652c721a933f53aa51242ca11f942ec7242da03e",
+                "MacAddress": "2a:f8:99:8c:eb:05",
+                "IPv4Address": "172.30.0.13/24",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.30.0.0/24": {
+                        "IPsInUse": 6,
+                        "DynamicIPsAvailable": 250
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Name": "sdlab_clientes",
+        "Id": "a5ee0941200a17f48ed452e1e7be7cd80746dbe079ee259baf80a2527c297e84",
+        "Created": "2026-10-27T22:24:49.285278159Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.31.0.0/24",
+                    "Gateway": "172.31.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+            "com.docker.network.enable_ipv4": "true",
+            "com.docker.network.enable_ipv6": "false"
+        },
+        "Labels": {
+            "com.docker.compose.config-hash": "9bd5086a3370559ab85c9ec75c222e34a183f67938403985bae43763e1d67258",
+            "com.docker.compose.network": "clientes",
+            "com.docker.compose.project": "sdlab",
+            "com.docker.compose.version": "5.6.1"
+        },
+        "Containers": {
+            "0c7b0d1eaefd3faaf67210c69462080c15953b465d3744af03ba38dab680e54d": {
+                "Name": "resolvedor",
+                "EndpointID": "294777e56025258dedb8b2fc2d759b38c193fa5ecc739798bfef22bcb3d4a980",
+                "MacAddress": "ee:99:aa:9d:26:c1",
+                "IPv4Address": "172.31.0.53/24",
+                "IPv6Address": ""
+            },
+            "45ec184891bc464278e5d469ac45ce1596023ab8c7ffc99b5962b2d8f806085d": {
+                "Name": "cliente",
+                "EndpointID": "2239b2eca729345ab1669480cec3f05d67f07eb153fdc219a9fcb4c5dddf7977",
+                "MacAddress": "86:a6:c6:b8:cf:7a",
+                "IPv4Address": "172.31.0.100/24",
+                "IPv6Address": ""
+            },
+            "4fac4043adf03fc927eb49de7f3fee3e233a04069a125979a8f94ab4436606aa": {
+                "Name": "ns2",
+                "EndpointID": "2d195fa177e39a95f497c2af7d083b6112b685e8ca75fb63cf33201ec3c39c11",
+                "MacAddress": "ae:89:87:b2:01:e5",
+                "IPv4Address": "172.31.0.12/24",
+                "IPv6Address": ""
+            },
+            "8f81f26fda25293c818cb72c5dfefc260ce9f9354099d6a47a726469225054fa": {
+                "Name": "ns1",
+                "EndpointID": "27428f8a705935518a23e13a011e242b1b556e0f37ec859fa4543deb00a54b32",
+                "MacAddress": "32:93:fc:4d:f9:0e",
+                "IPv4Address": "172.31.0.11/24",
+                "IPv6Address": ""
+            },
+            "ae57ac92f8f56a0c241a5317e985898a817c139017ccda9bfd279149a50db6e5": {
+                "Name": "ns3",
+                "EndpointID": "6ea1bc00448e3f53bddad6c54ed471725b1fc57c3807167daddf294baaeee7be",
+                "MacAddress": "b2:b5:bf:72:f6:a9",
+                "IPv4Address": "172.31.0.13/24",
+                "IPv6Address": ""
+            },
+            "cd03ce20a10368937198ff738672d108086467a8d40632851deeceb8b3d64786": {
+                "Name": "cliente2",
+                "EndpointID": "9ebd5196b9b3f2eafc0c7918870e00af4d4048ec2a6194033a87178e4d65e42f",
+                "MacAddress": "9a:2c:df:e0:d9:9c",
+                "IPv4Address": "172.31.0.101/24",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.31.0.0/24": {
+                        "IPsInUse": 9,
+                        "DynamicIPsAvailable": 247
+                    }
+                }
+            }
+        }
+    }
+]
