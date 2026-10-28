@@ -1,0 +1,11 @@
+modo: mesmo | mensagens por cliente: 5
+serial: 2026101412 -> 2026101422 (delta 10)
+mensagens aceitas (NOERROR): 10 de 10
+linhas 'adding an RR' no log do ns1: 10
+transferências registradas: IXFR=3 AXFR-style=0
+secundários convergiram 5s após o fim dos envios
+estado final:
+172.31.0.11 serial=2026101422 ordem.sd.lab="c1-005"
+172.31.0.12 serial=2026101422 ordem.sd.lab="c1-005"
+172.31.0.13 serial=2026101422 ordem.sd.lab="c1-005"
+latencia_ms: n=10  media=30.0  desvio_padrao=0.0  min=30.0  max=30.0  (NA=0)

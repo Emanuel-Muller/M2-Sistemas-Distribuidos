@@ -1,0 +1,14 @@
+$TTL 60
+@   IN SOA ns1.sd.lab. admin.sd.lab. (
+        2026101401 ; serial (AAAAMMDDnn): versão da zona
+        30         ; refresh: secundário verifica o primário a cada 30 s
+        10         ; retry: nova tentativa após falha
+        300        ; expire: secundário sem contato para de responder após 300 s
+        20 )       ; TTL do cache negativo
+    IN NS ns1.sd.lab.
+    IN NS ns2.sd.lab.
+    IN NS ns3.sd.lab.
+ns1 IN A 172.31.0.11
+ns2 IN A 172.31.0.12
+ns3 IN A 172.31.0.13
+app IN A 10.0.0.1
