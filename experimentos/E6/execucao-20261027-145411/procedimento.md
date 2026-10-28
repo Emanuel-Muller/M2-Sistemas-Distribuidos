@@ -98,7 +98,7 @@ Critérios de invalidação: nenhum foi atingido. O ns3 não recebeu o serial no
 - antes disso, o ns3 registrou `refresh: skipping zone transfer as primary 172.30.0.11#53 ... is unreachable (cached)` às 17:59:24, 18:00:16, 18:01:51 e 18:05:49;
 - os intervalos entre tentativas cresceram: ~52 s, ~95 s, ~238 s e ~378 s até a transferência.
 
-O log mostra que o ns3 manteve o primário marcado como inalcançável e continuou pulando as transferências mesmo com a rede de volta. Interpretação provável: o BIND guarda em cache os primários que falharam e espaça as novas tentativas após falhas repetidas (a confirmar na documentação do BIND 9.18). A previsão de ~10 s considerava só o `retry` da zona e não esse efeito, que só aparece depois de um isolamento longo.
+O log mostra que o ns3 manteve o primário marcado como inalcançável e continuou pulando as transferências mesmo com a rede de volta. O código do BIND 9.18.49 explica o comportamento (detalhes na análise do E5): a partir da segunda falha de conexão na transferência, o primário fica marcado como inalcançável por 600 s; e, depois do expire, o `retry` volta a 60 s e dobra a cada tentativa, com até 25% de jitter para menos. No E6, as duas falhas foram às 17:55:40 e às 17:56:41 (`failed to connect: timed out`), então a marca valia até ~18:06:41. Os intervalos entre as tentativas (52, 95, 238 e 378 s) ficam dentro das faixas desse backoff (46–60, 91–120, 181–240 e 361–480 s), e a primeira tentativa depois de 18:06:41 foi a das 18:12:07, que transferiu a zona. A previsão de ~10 s considerava só o `retry` da zona e não esse efeito, que só aparece depois de falhas repetidas.
 
 Contraste com o E7: com isolamento de 20 s (antes do expire), o ns3 se recuperou em 1,5 a 3,6 s, sem a mensagem `unreachable (cached)`. A duração da partição muda o custo da recuperação de segundos para minutos.
 
@@ -124,5 +124,5 @@ O isolamento do ns3 apenas da rede interna produziu divergência entre autoritat
 - Uma única execução.
 - Amostragem a cada ~6 s: o instante do `SERVFAIL` vem do log (17:59:10.900), não da amostragem.
 - Log de consultas desligado: a escolha do forwarder pelo resolvedor é deduzida dos valores, não observada.
-- A causa do `unreachable (cached)` e do espaçamento crescente das tentativas é interpretada a partir dos logs.
+- O mecanismo do `unreachable (cached)` e do espaçamento crescente das tentativas foi lido no código-fonte do BIND 9.18.49 e é compatível com os horários dos logs, mas não foi testado isoladamente.
 - O alinhamento entre o vencimento do cache do resolvedor e o expire do ns3 foi coincidência desta execução.
