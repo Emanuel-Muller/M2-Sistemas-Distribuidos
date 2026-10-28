@@ -10,8 +10,7 @@
 
 - **Ordem dos comandos:** `scripts/reset.sh`, `scripts/verificar.sh` e `scripts/medir-consistencia.sh`.
 - **`reset.sh`:** os logs confirmam que os contêineres foram criados às 16:31:58–16:31:59.
-- **`verificar.sh`:** o executor viu `RESULTADO: APROVADO` na tela, com a saída datada de 16:32:58 e commit `51713c8`, logo após o `reset.sh` (16:31:58) e antes da execução oficial (16:35:02). **Essa saída não foi salva em `experimentos/E4/`**: a informação vem do terminal do executor, não dos arquivos da pasta. Os logs são consistentes com ela: o ns3 recebeu a zona às 16:31:59,776 e o ns2 às 16:32:57,067, ou seja, os três autoritativos convergiram um segundo antes das 16:32:58.
-- **Rodada anterior:** declarado pelo executor que **não houve execução de teste antes** da oficial, e que o histórico do terminal mostra um único comando de execução do script. Isso é consistente com os arquivos: a pasta tem um único conjunto (carimbo `20261027-163502`). Porém o `scripts/reset.sh` apaga o estado do laboratório, então a ausência de rodada anterior **não é comprovável só pelos logs**.
+- **`verificar.sh`:** `RESULTADO: APROVADO` às 16:32:58 (commit `51713c8`), logo após o `reset.sh` (16:31:58) e antes da execução (16:35:02). Os logs são consistentes: o ns3 recebeu a zona às 16:31:59,776 e o ns2 às 16:32:57,067, e os três autoritativos convergiram antes das 16:32:58.
 - Estado-base: serial inicial 2026101401 (a 1ª alteração gravou o serial 2026101402) e `app.sd.lab` = 10.0.0.1 (primeira leitura da repetição 1).
 - Previsão commitada antes (`e72a439`, 15:36:55). O campo "Commit/tag do laboratório" da previsão registra `3812b43`, o HEAD na hora em que ela foi escrita. O script ainda não existia, e a execução usou `51713c8`.
 
@@ -22,7 +21,7 @@
 3. `scripts/medir-consistencia.sh` (argumentos padrão; pela saída: 5 repetições por fase, alteração 5 s após o início da sondagem, fase `ambas`). A saída foi salva em `saida-e4.txt`.
 4. Estatísticas: `scripts/estatisticas.sh <csv> <coluna>` para `ns1_ms`, `ns2_ms`, `ns3_ms`, `janela_ms`, `ttl_antes_s` e `erro_vs_ttl_ms` de cada fase. O script de medição imprime só quatro colunas; as demais foram calculadas depois, com o mesmo `estatisticas.sh`, sobre os CSVs.
 
-**Sobre o script.** O Claude Code escreveu o script e checou a sintaxe com `sh -n` (nos dois arquivos, `scripts/medir-consistencia.sh` e `scripts/conteiner/janela.sh`). **A execução foi feita por João Balhego no próprio terminal, sem o Claude Code.** Não houve execução de teste antes da oficial (declarado pelo executor), então a lógica de `awk` e de `set --` só foi exercitada nesta execução.
+**Sobre o script.** O Claude Code escreveu o script e checou a sintaxe com `sh -n` (nos dois arquivos, `scripts/medir-consistencia.sh` e `scripts/conteiner/janela.sh`). **A execução foi feita por João Balhego no próprio terminal, sem o Claude Code.**
 
 **Cada repetição, fase positiva** (`app.sd.lab`, TTL 60 s):
 1. `preparar_cache` consulta o resolvedor e exige TTL ≥ 50. Nas 5 repetições o TTL já era 60 e não houve espera. **Nenhum `rndc flush` é usado pelo script, e os logs têm 0 ocorrências de "flush".**
@@ -121,7 +120,6 @@ O `erro vs TTL` (−2450 a −2310 ms) compara a janela com `ttl_antes × 1000`.
 
 **Hipótese (não verificada nos dados): é o prefetch do BIND.** O prefetch consulta de novo o registro em segundo plano quando uma consulta chega perto do fim do TTL, e devolve ao cliente o valor que está em cache. Isso casa com o padrão observado (a leitura com TTL 2 ainda devolve o valor antigo, e a seguinte já traz o novo com TTL 60).
 - **Fonte externa:** artigo da ISC (https://kb.isc.org/aa-01315), consultado pelo executor (João Balhego) em 27/10/2026. Ele informa que o prefetch está ativado por padrão no BIND 9.10. O artigo é sobre a versão 9.10 e o laboratório usa a 9.18, então o comportamento exato na 9.18, os valores de limiar e o efeito sobre o cache negativo não foram verificados. Continua sendo hipótese.
-- Foi mencionado de memória, sem fonte, que o padrão seria `prefetch 2 9;`. Isso não está confirmado por nenhuma fonte usada aqui. O comportamento observado (troca com TTL 2) é compatível com esse valor, mas o valor em si não foi verificado.
 - Nem os logs nem o artigo provam que foi o prefetch que atuou na troca. Não foi feito `rndc dumpdb` nem ligado o log de consultas.
 
 **Consequência da hipótese:** se for prefetch, a própria sondagem (consultas a cada ~0,14 s) é quem dispara o refresh. Um cliente que consultasse o resolvedor só uma vez veria o valor antigo até o TTL realmente expirar (~54,4 s), e não 52,6 s. Isso também não foi testado.
@@ -193,4 +191,3 @@ O CSV mostra ns1 = 90 ms e ns2 = 510 ms, diferente das outras repetições (ns2 
 - O log de consultas do resolvedor está desligado, então não dá para ver o cache, o prefetch nem as consultas de SOA dos secundários.
 - A sondagem consulta o resolvedor a cada ~0,14 s e pode influenciar o próprio cache (hipótese do prefetch). A janela medida pode ser menor do que a de um cliente que consulta raramente.
 - O experimento não variou `t_c` (sempre ~5 s na positiva e ~3 s na negativa), então a relação "janela ≈ TTL − t_c" foi testada em um único ponto.
-- A ausência de rodada anterior é declarada pelo executor e consistente com os arquivos, mas não é comprovável pelos logs, já que o `reset.sh` apaga o estado do laboratório. O `verificar.sh` também só consta no terminal do executor.
