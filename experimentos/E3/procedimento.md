@@ -1,6 +1,7 @@
 # Procedimento executado: E3 (Replicação primário → secundários)
 
 - Responsável: Taryck Gean (responsável principal do E3). Execução feita por João Balhego, com o Claude Code.
+- Revisão: Taryck Gean (complementos da análise)
 - Data/hora: 27/10/2026, série 1 às 13:43 e série 2 às 13:44 (UTC-3)
 - Máquina (ver docs/ambiente/joao-windows.md): WSL2 (Ubuntu 26.04), Docker 29.9.2, Compose v5.6.1, BIND 9.18.49
 - Commit/tag (git rev-parse --short HEAD): `4c77c19` (commit da previsão, anterior à execução)
@@ -42,6 +43,7 @@ Cada repetição: o script grava um valor novo em `app` e sobe o serial (`zona.s
 
 - O ns1 foi recriado instantes antes da série 2 para ativar `notify no`. A repetição 1 dessa série (25,5 s e 26,0 s) é a mais alta, e **não sabemos** se a recriação influenciou.
 - Os logs mostram `refused notify from non-primary` (20 linhas na série 1, 10 na série 2). É esperado: os secundários se notificam pela rede de clientes (ver README).
+- **NOTIFY desligado na série 2.** Em `logs-sem-notify.txt`, nenhuma das 10 linhas `sending notifies` é do ns1: 5 são do ns2 e 5 do ns3, que notificam depois de cada transferência recebida. Em `logs-com-notify.txt`, o ns1 registra `sending notifies` nos 5 reloads.
 - Todas as transferências nos logs foram "IXFR version not in journal, falling back to AXFR": a zona é estática e não tem journal, então o IXFR cai para AXFR.
 - O serial no fim das duas séries é 2026101411, e o `app.sd.lab` não voltou a 10.0.0.1. Antes de outro experimento, rodar `scripts/reset.sh`.
 

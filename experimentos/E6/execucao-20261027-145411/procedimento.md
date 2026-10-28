@@ -1,6 +1,7 @@
 # Procedimento executado: E6 (Partição de rede)
 
 - Responsável: Enzo Neumann
+- Análise previsão × resultado: Taryck Gean
 - Data/hora: 2026-10-27 14:54–15:02 (-0300); observação complementar até 15:12
 - Máquina (ver docs/ambiente/<pessoa>.md): docs/ambiente/enzo-windows.md
 - Commit/tag (git rev-parse --short HEAD): 0e1dfd9 (previsão no commit 662e825)
