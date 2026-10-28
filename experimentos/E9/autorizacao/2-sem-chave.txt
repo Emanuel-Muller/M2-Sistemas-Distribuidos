@@ -1,0 +1,6 @@
+== Sem chave, enviada ao ns1
+Enviando de cliente (chave: nenhuma) para 172.31.0.11: ordem.sd.lab TXT "teste-sem-chave"
+update failed: REFUSED
+código de saída do nsupdate: 2 (0 = aceito)
+serial do ns1: 2026101402 -> 2026101402
+valor no ns1: "teste-valida"

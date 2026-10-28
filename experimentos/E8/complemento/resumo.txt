@@ -1,0 +1,23 @@
+E8 (complemento) — resumo
+estado inicial:
+  172.31.0.11 serial=2026101401 app=10.0.0.1
+  172.31.0.12 serial=2026101401 app=10.0.0.1
+  172.31.0.13 serial=2026101401 app=10.0.0.1
+E8.1 (serial crescente):
+  172.31.0.11 serial=2026101402 app=10.0.0.2
+  172.31.0.12 serial=2026101402 app=10.0.0.2
+  172.31.0.13 serial=2026101402 app=10.0.0.2
+nsupdate ao ns2: update failed: REFUSED
+E8.2 (serial 2026101301): 10 amostras em 90 s
+  ns1 servindo 2026101301 / 10.0.0.3: 10 de 10
+  ns2 e ns3 mantendo 2026101402 / 10.0.0.2: 10 de 10
+  transferências concluídas em ns2/ns3 durante a observação: 0
+  ns1 'has gone backwards': 1
+  ns2/ns3 'received from primary ... < ours': 17
+  ns2/ns3 'notify ...: zone is up to date': 2
+restauração (2026101403):
+  172.31.0.11 serial=2026101403 app=10.0.0.1
+  172.31.0.12 serial=2026101403 app=10.0.0.1
+  172.31.0.13 serial=2026101403 app=10.0.0.1
+  resolvedor: app.sd.lab.		60	IN	A	10.0.0.1
+  tempo até convergir (resolução de 1 s): 1 s

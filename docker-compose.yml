@@ -1,5 +1,5 @@
 # Topologia-base do roteiro (p.12) para os experimentos E1 a E8.
-# Adaptações em relação ao trecho do PDF (ver docs/adaptacoes.md):
+# Adaptações em relação ao trecho do PDF (ver README.md, "Adaptações em relação ao roteiro"):
 #   A2  nome fixo do projeto (redes: sdlab_interna e sdlab_clientes)
 #   A3  zona do ns1 lida de runtime/ns1 (cópia de trabalho, fora do Git)
 #   A4  segundo cliente (cliente2) para o E9

@@ -1,0 +1,7 @@
+== Chave inválida (nome cliente1), enviada ao ns1
+Enviando de cliente (chave: invalida) para 172.31.0.11: ordem.sd.lab TXT "teste-invalida"
+; TSIG error with server: tsig indicates error
+update failed: NOTAUTH(BADSIG)
+código de saída do nsupdate: 2 (0 = aceito)
+serial do ns1: 2026101402 -> 2026101402
+valor no ns1: "teste-valida"

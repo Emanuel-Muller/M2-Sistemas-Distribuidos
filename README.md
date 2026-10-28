@@ -57,11 +57,13 @@ docker compose down           # remove os contêineres
 | `scripts/medir-recuperacao.sh [n] [espera_s]` | E7: tempo de recuperação do ns3 após partição |
 | `scripts/e5-falha.sh [int] [limite] [extras]` | E5: quadro nós ativos x leitura x escrita; ns3 até o expire |
 | `scripts/e6-particao.sh [int] [limite] [--manter-isolado]` | E6: ns3 isolado da rede interna, divergência e expire |
+| `scripts/e8-complemento.sh [dur] [int]` | E8: papéis, serial crescente, `nsupdate` no secundário, serial menor observado por `dur` s e restauração |
 | `scripts/estatisticas.sh <csv> <coluna>` | Média e desvio padrão de uma coluna |
 | `scripts/gerar-chaves-tsig.sh` | E9: chaves TSIG em `secrets/` (fora do Git) |
 | `scripts/e9-atualizar.sh ...` | E9: uma atualização dinâmica (validação e testes de autorização) |
 | `scripts/e9-concorrencia.sh [n] [mesmo\|distintos]` | E9: atualizações concorrentes dos dois clientes |
 | `scripts/e9-medir.sh [n]` | E9: tempo de confirmação e de propagação de um UPDATE |
+| `scripts/e9-autorizacao.sh [--sem-restaurar]` | E9: testes de autorização (chave válida, sem chave, chave inválida, envio ao secundário) |
 
 ## Variantes
 

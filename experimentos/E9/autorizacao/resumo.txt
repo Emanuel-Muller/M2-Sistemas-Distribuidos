@@ -1,0 +1,11 @@
+E9, etapa 1 (autorização) — resumo
+chave cliente1 -> ns1 | código 0 | serial do ns1 2026101401 -> 2026101402 | aceita
+sem chave -> ns1 | código 2 | serial do ns1 2026101402 -> 2026101402 | update failed: REFUSED
+chave inválida -> ns1 | código 2 | serial do ns1 2026101402 -> 2026101402 | update failed: NOTAUTH(BADSIG)
+chave cliente1 -> ns2 | código 2 | serial do ns1 2026101402 -> 2026101402 | update failed: REFUSED(BADKEY)
+transações no journal: 1
+propagação:
+  Convergência: serial 2026101402 em ns1, ns2 e ns3.
+  172.31.0.11 serial=2026101402 ordem.sd.lab="teste-valida"
+  172.31.0.12 serial=2026101402 ordem.sd.lab="teste-valida"
+  172.31.0.13 serial=2026101402 ordem.sd.lab="teste-valida"

@@ -1,0 +1,6 @@
+Arquivo alterado (sem reload). Serial no arquivo: 2026101302
+2026101302
+ns1 recarregado. Serial servido:
+2026101403
+Convergência: serial 2026101403 em ns1, ns2 e ns3.
+tempo até convergir (resolução de 1 s): 1 s

@@ -1,0 +1,4 @@
+Convergência: serial 2026101402 em ns1, ns2 e ns3.
+172.31.0.11 serial=2026101402 ordem.sd.lab="teste-valida"
+172.31.0.12 serial=2026101402 ordem.sd.lab="teste-valida"
+172.31.0.13 serial=2026101402 ordem.sd.lab="teste-valida"

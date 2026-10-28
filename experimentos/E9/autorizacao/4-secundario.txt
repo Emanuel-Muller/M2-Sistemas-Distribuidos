@@ -1,0 +1,7 @@
+== Chave cliente1, enviada ao ns2 (secundário)
+Enviando de cliente (chave: cliente1) para 172.31.0.12: ordem.sd.lab TXT "teste-secundario"
+; TSIG error with server: tsig indicates error
+update failed: REFUSED(BADKEY)
+código de saída do nsupdate: 2 (0 = aceito)
+serial do ns1: 2026101402 -> 2026101402
+valor no ns1: "teste-valida"

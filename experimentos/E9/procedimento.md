@@ -1,10 +1,11 @@
 # Procedimento executado: E9 — Atualizações dinâmicas autenticadas e concorrência
 
 - **Responsável:** Emanuel Müller Bueno
-- **Data/hora:** 27/10/2026 23:44
-- **Máquina (ver `docs/ambiente/emanuel-windows.md`):** 
-- **Commit/tag 3922579
+- **Data/hora:** 27/10/2026 (concorrência às 23:22 e 23:23; medições às 23:25; registro deste procedimento às 23:44)
+- **Máquina (ver `docs/ambiente/emanuel-windows.md`):** Windows (build 26200), Git Bash; Docker 29.9.2; Compose v5.6.1; BIND 9.18.49
+- **Commit/tag:** laboratório `c66fd2b` (informado na previsão); resultados commitados em `3922579`
 - **Variante (`COMPOSE_FILE`):** `docker-compose.yml;docker-compose.e9.yml` — base + E9
+- **Complemento e revisão:** Taryck Gean Santos Pego, 28/10/2026 (ver "Complemento: etapa 1" no fim deste arquivo)
 
 ## Condição inicial
 
@@ -128,7 +129,8 @@ Antes dos experimentos concorrentes, foi realizada uma atualização dinâmica a
 - Nas execuções concorrentes, foram observadas transferências IXFR, sem transferências AXFR-style registradas.
 - Nas cinco medições, a propagação para ns3 foi consideravelmente mais lenta que para ns2. As médias observadas foram de 622 ms e 44 ms, respectivamente.
 - As evidências dos experimentos concorrentes e das medições foram registradas no commit `3922579`.
-- Horários exatos de preparação do ambiente e dos testes de autenticação: não registrados neste procedimento.
+- Horários exatos de preparação do ambiente e dos testes de autenticação: não registrados na execução original. Os testes de autorização foram repetidos com script e registro de horários (ver "Complemento: etapa 1").
+- O teste de chave válida enviada ao secundário (item 4 da previsão) não foi feito na execução original; está no complemento.
 
 ## Restauração
 
@@ -138,4 +140,54 @@ O comando utilizado para restaurar a zona antes dos experimentos foi:
 & "C:\Program Files\Git\bin\bash.exe" -c 'export MSYS_NO_PATHCONV=1; ./scripts/reset.sh'
 ```
 
-**Observação:** esse comando foi executado na preparação do ambiente, antes dos testes. Uma restauração posterior aos experimentos não foi registrada aqui.
+**Observação:** esse comando foi executado na preparação do ambiente, antes dos testes. Uma restauração posterior aos experimentos não foi registrada na execução original. No complemento, o script termina restaurando a variante base (`unset COMPOSE_FILE` + `scripts/reset.sh`), com a saída em `autorizacao/restauracao.txt`.
+
+## Complemento: etapa 1 (autorização)
+
+- **Executor:** Taryck Gean Santos Pego
+- **Data:** 28/10/2026
+- **Máquina:** ver `docs/ambiente/taryck-mac.md`
+- **Commit e horários:** registrados em `autorizacao/contexto.txt` e `autorizacao/execucao.txt`
+- **Variante:** `docker-compose.yml:docker-compose.e9.yml`
+
+Motivo: a execução original registrou os testes de autorização só no texto deste procedimento, sem arquivo de evidência, e não testou o envio ao secundário.
+
+Comandos:
+
+```sh
+scripts/gerar-chaves-tsig.sh
+export COMPOSE_FILE=docker-compose.yml:docker-compose.e9.yml
+scripts/e9-autorizacao.sh
+unset COMPOSE_FILE
+```
+
+O script faz `scripts/reset.sh` na variante e9 e envia quatro UPDATEs com `scripts/e9-atualizar.sh`: chave `cliente1` ao ns1; sem chave ao ns1; chave inválida (nome `cliente1`, segredo diferente) ao ns1; chave `cliente1` ao ns2. Depois registra a propagação da escrita aceita, o journal e os logs, e restaura a variante base.
+
+| Arquivo (`autorizacao/`) | O que mostra |
+| ------- | ------------ |
+| `contexto.txt`, `execucao.txt` | Data, hora, máquina, commit, variante e horário de cada teste |
+| `1-valida.txt` a `4-secundario.txt` | Saída do `nsupdate`, código de saída, serial do ns1 antes e depois e valor de `ordem.sd.lab` |
+| `propagacao.txt` | Serial e `ordem.sd.lab` em ns1, ns2 e ns3 após a escrita aceita |
+| `journal.txt` | `named-journalprint` do ns1 (transações aplicadas) |
+| `logs.txt`, `logs-relevantes.txt` | Logs do BIND: `update ... denied`, `tsig verify failure`, transferências |
+| `restauracao.txt` | Saída do `scripts/reset.sh` na variante base |
+| `resumo.txt` | Uma linha por teste (código, serial, mensagem do servidor) |
+
+### Resultado do complemento
+
+Execução em 28/10/2026, das 18:59:55 às 19:00:07 (UTC−3), em Darwin arm64, sobre o commit `645475b` com os scripts do complemento aplicados e ainda não commitados; chaves geradas às 18:59 com `scripts/gerar-chaves-tsig.sh`.
+
+| Teste | Resposta | Código | Serial do ns1 |
+| ----- | -------- | ------ | ------------- |
+| Chave `cliente1`, ao ns1 | aceita | 0 | 2026101401 → 2026101402 |
+| Sem chave, ao ns1 | `update failed: REFUSED` | 2 | 2026101402 → 2026101402 |
+| Chave inválida (nome `cliente1`, segredo diferente), ao ns1 | `update failed: NOTAUTH(BADSIG)` | 2 | 2026101402 → 2026101402 |
+| Chave `cliente1`, ao ns2 (secundário) | `update failed: REFUSED(BADKEY)` | 2 | 2026101402 → 2026101402 |
+
+- A escrita aceita (`ordem.sd.lab` TXT "teste-valida") foi servida por ns1, ns2 e ns3 com o serial 2026101402 (`propagacao.txt`), e o journal registra uma transação (`journal.txt`).
+- As três tentativas recusadas não alteraram o serial nem o valor.
+- No ns2, a recusa veio da verificação TSIG (`BADKEY`): o secundário não tem as chaves dos clientes nem permissão de escrita.
+- Ao final, o script restaurou a variante base (serial 2026101401 nos três; `restauracao.txt`).
+
+**Comparação com a previsão.** Confirmados os quatro itens da etapa 1: aceitação com serial +1 e propagação aos secundários, REFUSED sem chave, NOTAUTH (BADSIG) com chave inválida e recusa no secundário (a previsão admitia REFUSED ou NOTAUTH; ocorreu REFUSED com erro TSIG BADKEY).
+

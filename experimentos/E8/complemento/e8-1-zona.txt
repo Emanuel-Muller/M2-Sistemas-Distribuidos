@@ -1,0 +1,3 @@
+ns1 recarregado. Serial servido:
+2026101402
+Convergência: serial 2026101402 em ns1, ns2 e ns3.

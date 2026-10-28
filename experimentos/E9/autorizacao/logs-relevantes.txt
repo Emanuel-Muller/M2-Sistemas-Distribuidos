@@ -1,0 +1,8 @@
+ns1  | 2026-10-28T22:00:01.289083968Z 28-Oct-2026 22:00:01.288 client @0xffffb816f340 172.31.0.100#55745: update 'sd.lab/IN' denied
+ns1  | 2026-10-28T22:00:01.874160926Z 28-Oct-2026 22:00:01.873 client @0xffffb8171340 172.31.0.100#54289: request has invalid signature: TSIG cliente1: tsig verify failure (BADSIG)
+ns1  | 2026-10-28T22:00:04.511710636Z 28-Oct-2026 22:00:04.510 client @0xffffb8155430 172.30.0.12#42695 (sd.lab): transfer of 'sd.lab/IN': IXFR started (serial 2026101401 -> 2026101402)
+ns1  | 2026-10-28T22:00:04.511719428Z 28-Oct-2026 22:00:04.510 client @0xffffb8155430 172.30.0.12#42695 (sd.lab): transfer of 'sd.lab/IN': IXFR ended: 1 messages, 5 records, 209 bytes, 0.001 secs (209000 bytes/sec) (serial 2026101402)
+ns1  | 2026-10-28T22:00:05.021210386Z 28-Oct-2026 22:00:05.020 client @0xffffb8155500 172.30.0.13#38237 (sd.lab): transfer of 'sd.lab/IN': IXFR started (serial 2026101401 -> 2026101402)
+ns1  | 2026-10-28T22:00:05.021570386Z 28-Oct-2026 22:00:05.020 client @0xffffb8155500 172.30.0.13#38237 (sd.lab): transfer of 'sd.lab/IN': IXFR ended: 1 messages, 5 records, 209 bytes, 0.001 secs (209000 bytes/sec) (serial 2026101402)
+ns2  | 2026-10-28T22:00:02.424734885Z 28-Oct-2026 22:00:02.423 client @0xffff9f5180d0 172.31.0.100#32980: request has invalid signature: TSIG cliente1: tsig verify failure (BADKEY)
+ns2  | 2026-10-28T22:00:02.424749510Z 28-Oct-2026 22:00:02.423 client @0xffff9f5180d0 172.31.0.100#32980: update forwarding 'sd.lab/IN' denied
