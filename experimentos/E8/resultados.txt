@@ -1,0 +1,92 @@
+Experimento E8 — Coordenação e ordem
+Data: 2026-10-27
+Branch: exp/e8-e9
+Variante: base
+
+E8.1 — Publicação de versão crescente
+Data: 2026-10-27
+
+Estado anterior:
+Serial SOA: 2026101401
+app.sd.lab: 10.0.0.1
+
+Estado após a publicação:
+ns1 — 172.31.0.11: serial 2026101402
+ns2 — 172.31.0.12: serial 2026101402
+ns3 — 172.31.0.13: serial 2026101402
+app.sd.lab no ns3: 10.0.0.2
+
+Ação: alteração da zona no primário e execução de rndc reload sd.lab.
+
+Resultado: os três servidores passaram a servir a versão 2026101402.
+Conclusão: os secundários aceitaram a versão com serial superior e passaram a servir os novos dados.
+
+E8.2 — Publicação de versão com serial regressivo
+Data: 2026-10-27
+
+Estado antes da alteração:
+Serial SOA: 2026101402
+app.sd.lab: 10.0.0.2
+
+Alteração realizada no primário:
+Serial SOA: 2026101301
+app.sd.lab: 10.0.0.3
+
+Estado após rndc reload sd.lab:
+ns1 — primário:
+  Serial SOA: 2026101301
+  app.sd.lab: 10.0.0.3
+
+ns2 — secundário:
+  Serial SOA: 2026101402
+  app.sd.lab: 10.0.0.2
+
+ns3 — secundário:
+  Serial SOA: 2026101402
+  app.sd.lab: 10.0.0.2
+
+Resultado:
+O primário aceitou a zona com serial inferior, mas os dois secundários
+preservaram a versão anterior, de serial 2026101402. Os servidores
+passaram a responder com versões diferentes da zona.
+
+Conclusão:
+O serial SOA funciona como identificador de versão da zona DNS. Neste
+experimento, a regressão do serial impediu que os secundários adotassem
+a versão alterada, causando inconsistência entre os servidores
+autoritativos. A publicação deve manter a progressão das versões.
+E8.3 — Concorrência entre dois primários sem coordenação
+
+Cenário:
+Considere dois servidores atuando como primários da mesma zona DNS,
+permitindo alterações independentes nos registros e no serial SOA.
+
+Problema identificado:
+Se os dois primários modificarem a zona simultaneamente, poderão
+publicar versões diferentes dos registros. Mesmo que ambos incrementem
+o serial, as alterações podem divergir, e um servidor poderá sobrescrever
+ou deixar de incorporar mudanças realizadas pelo outro.
+
+Relação com relógios lógicos e coordenação:
+O serial SOA permite comparar versões da zona, mas não coordena, por si
+só, alterações concorrentes nem garante que todos os servidores partam
+do mesmo estado. Aumentar o serial não resolve automaticamente conflitos
+entre duas fontes independentes de atualização.
+
+Solução conceitual:
+Uma estratégia é manter um único líder autorizado a publicar alterações
+por vez. A mudança de liderança deve usar uma época (term/epoch) ou
+outro mecanismo de geração que permita distinguir líderes antigos de
+novos. Ao assumir, o novo líder deve impedir que um líder antigo continue
+publicando atualizações válidas. As alterações precisam seguir uma ordem
+consistente, com regras para recuperar ou reconciliar versões divergentes.
+
+Limitação do experimento:
+Este cenário foi analisado conceitualmente e não foi simulado com dois
+primários no Docker Compose.
+
+Conclusão:
+A coordenação é necessária para evitar publicações concorrentes e
+inconsistências. O controle de versões ajuda a detectar a ordem das
+atualizações, enquanto a eleição de líder e as épocas ajudam a controlar
+quem pode publicar alterações em determinado período.
