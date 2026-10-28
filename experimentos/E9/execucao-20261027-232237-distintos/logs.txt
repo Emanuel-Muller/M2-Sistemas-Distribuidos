@@ -1,0 +1,68 @@
+ns2  | 2026-10-28T02:22:40.033694129Z 28-Oct-2026 02:22:40.031 client @0x772ea7a3f0d0 172.30.0.11#43076: received notify for zone 'sd.lab'
+ns2  | 2026-10-28T02:22:40.033944542Z 28-Oct-2026 02:22:40.031 zone sd.lab/IN: notify from 172.30.0.11#43076: serial 2026101404
+ns2  | 2026-10-28T02:22:40.034121551Z 28-Oct-2026 02:22:40.031 zone sd.lab/IN: Transfer started.
+ns2  | 2026-10-28T02:22:40.034323961Z 28-Oct-2026 02:22:40.031 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns2  | 2026-10-28T02:22:40.043811358Z 28-Oct-2026 02:22:40.039 zone sd.lab/IN: transferred serial 2026101404
+ns2  | 2026-10-28T02:22:40.043827059Z 28-Oct-2026 02:22:40.039 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns2  | 2026-10-28T02:22:40.043877862Z 28-Oct-2026 02:22:40.039 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 8 records, 294 bytes, 0.008 secs (36750 bytes/sec) (serial 2026101404)
+ns2  | 2026-10-28T02:22:40.044029670Z 28-Oct-2026 02:22:40.039 zone sd.lab/IN: sending notifies (serial 2026101404)
+ns3  | 2026-10-28T02:22:40.044368287Z 28-Oct-2026 02:22:40.039 client @0x742182d0f2f0 172.31.0.12#33700: received notify for zone 'sd.lab'
+ns1  | 2026-10-28T02:22:40.020698848Z 28-Oct-2026 02:22:40.015 client @0x7d7ee34fe530 172.31.0.100#57630/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-28T02:22:40.020728550Z 28-Oct-2026 02:22:40.015 client @0x7d7ee34fe530 172.31.0.100#57630/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-001"
+ns1  | 2026-10-28T02:22:40.025184883Z 28-Oct-2026 02:22:40.023 zone sd.lab/IN: sending notifies (serial 2026101403)
+ns1  | 2026-10-28T02:22:40.025215385Z 28-Oct-2026 02:22:40.023 client @0x7d7ee34b5420 172.31.0.101#36085/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns2  | 2026-10-28T02:22:40.525434572Z 28-Oct-2026 02:22:40.523 client @0x772eada85430 172.31.0.11#55961: received notify for zone 'sd.lab'
+ns2  | 2026-10-28T02:22:40.525467674Z 28-Oct-2026 02:22:40.523 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#55961
+ns3  | 2026-10-28T02:22:40.044584999Z 28-Oct-2026 02:22:40.039 zone sd.lab/IN: refused notify from non-primary: 172.31.0.12#33700
+ns1  | 2026-10-28T02:22:40.025221485Z 28-Oct-2026 02:22:40.023 client @0x7d7ee34b5420 172.31.0.101#36085/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-001"
+ns3  | 2026-10-28T02:22:40.525440773Z 28-Oct-2026 02:22:40.523 client @0x742182d06330 172.30.0.11#47647: received notify for zone 'sd.lab'
+ns3  | 2026-10-28T02:22:40.525476774Z 28-Oct-2026 02:22:40.523 zone sd.lab/IN: notify from 172.30.0.11#47647: serial 2026101412
+ns2  | 2026-10-28T02:22:40.551228223Z 28-Oct-2026 02:22:40.547 client @0x772ea7a3d200 172.31.0.13#41725: received notify for zone 'sd.lab'
+ns2  | 2026-10-28T02:22:40.551242123Z 28-Oct-2026 02:22:40.547 zone sd.lab/IN: refused notify from non-primary: 172.31.0.13#41725
+ns2  | 2026-10-28T02:22:45.025382110Z 28-Oct-2026 02:22:45.023 client @0x772ea7a2b260 172.30.0.11#44139: received notify for zone 'sd.lab'
+ns2  | 2026-10-28T02:22:45.025394110Z 28-Oct-2026 02:22:45.023 zone sd.lab/IN: notify from 172.30.0.11#44139: serial 2026101412
+ns2  | 2026-10-28T02:22:45.025908342Z 28-Oct-2026 02:22:45.023 zone sd.lab/IN: Transfer started.
+ns3  | 2026-10-28T02:22:40.525587080Z 28-Oct-2026 02:22:40.523 client @0x742182d0f2f0 172.31.0.11#35056: received notify for zone 'sd.lab'
+ns3  | 2026-10-28T02:22:40.525796291Z 28-Oct-2026 02:22:40.523 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#35056
+ns2  | 2026-10-28T02:22:45.026146357Z 28-Oct-2026 02:22:45.023 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns2  | 2026-10-28T02:22:45.045739873Z 28-Oct-2026 02:22:45.043 zone sd.lab/IN: transferred serial 2026101412
+ns2  | 2026-10-28T02:22:45.045817478Z 28-Oct-2026 02:22:45.043 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns3  | 2026-10-28T02:22:40.526151110Z 28-Oct-2026 02:22:40.523 zone sd.lab/IN: Transfer started.
+ns3  | 2026-10-28T02:22:40.526501228Z 28-Oct-2026 02:22:40.523 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns3  | 2026-10-28T02:22:40.550649992Z 28-Oct-2026 02:22:40.547 zone sd.lab/IN: transferred serial 2026101412
+ns3  | 2026-10-28T02:22:40.550692194Z 28-Oct-2026 02:22:40.547 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns3  | 2026-10-28T02:22:40.550717096Z 28-Oct-2026 02:22:40.547 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 40 records, 1174 bytes, 0.024 secs (48916 bytes/sec) (serial 2026101412)
+ns3  | 2026-10-28T02:22:40.550896905Z 28-Oct-2026 02:22:40.547 zone sd.lab/IN: sending notifies (serial 2026101412)
+ns1  | 2026-10-28T02:22:40.039746545Z 28-Oct-2026 02:22:40.035 client @0x7d7ee34bb0c0 172.30.0.12#43893 (sd.lab): transfer of 'sd.lab/IN': IXFR started (serial 2026101402 -> 2026101404)
+ns1  | 2026-10-28T02:22:40.040218270Z 28-Oct-2026 02:22:40.035 client @0x7d7ee34bb0c0 172.30.0.12#43893 (sd.lab): transfer of 'sd.lab/IN': IXFR ended: 1 messages, 8 records, 294 bytes, 0.001 secs (294000 bytes/sec) (serial 2026101404)
+ns1  | 2026-10-28T02:22:40.051345553Z 28-Oct-2026 02:22:40.047 client @0x7d7ee34d4370 172.31.0.100#47479/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-28T02:22:40.051361453Z 28-Oct-2026 02:22:40.047 client @0x7d7ee34d4370 172.31.0.100#47479/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-002"
+ns3  | 2026-10-28T02:22:45.046330510Z 28-Oct-2026 02:22:45.043 client @0x742182d15420 172.31.0.12#38666: received notify for zone 'sd.lab'
+ns3  | 2026-10-28T02:22:45.046341711Z 28-Oct-2026 02:22:45.043 zone sd.lab/IN: refused notify from non-primary: 172.31.0.12#38666
+ns3  | 2026-10-28T02:22:45.525739970Z 28-Oct-2026 02:22:45.523 client @0x742182d08420 172.30.0.11#40791: received notify for zone 'sd.lab'
+ns3  | 2026-10-28T02:22:45.525759771Z 28-Oct-2026 02:22:45.523 zone sd.lab/IN: notify from 172.30.0.11#40791: zone is up to date
+ns1  | 2026-10-28T02:22:40.059513480Z 28-Oct-2026 02:22:40.055 client @0x7d7ee34d0330 172.31.0.101#50162/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-28T02:22:40.059530481Z 28-Oct-2026 02:22:40.055 client @0x7d7ee34d0330 172.31.0.101#50162/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-002"
+ns3  | 2026-10-28T02:22:45.525762271Z 28-Oct-2026 02:22:45.523 client @0x742182d0f2f0 172.31.0.11#40585: received notify for zone 'sd.lab'
+ns3  | 2026-10-28T02:22:45.525763671Z 28-Oct-2026 02:22:45.523 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#40585
+ns1  | 2026-10-28T02:22:40.083835954Z 28-Oct-2026 02:22:40.079 client @0x7d7ee34b5420 172.31.0.100#34329/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-28T02:22:40.083849854Z 28-Oct-2026 02:22:40.079 client @0x7d7ee34b5420 172.31.0.100#34329/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-003"
+ns2  | 2026-10-28T02:22:45.045826079Z 28-Oct-2026 02:22:45.043 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 34 records, 992 bytes, 0.020 secs (49600 bytes/sec) (serial 2026101412)
+ns2  | 2026-10-28T02:22:45.046023991Z 28-Oct-2026 02:22:45.043 zone sd.lab/IN: sending notifies (serial 2026101412)
+ns2  | 2026-10-28T02:22:45.525773172Z 28-Oct-2026 02:22:45.523 client @0x772ea7a3d200 172.31.0.11#59634: received notify for zone 'sd.lab'
+ns2  | 2026-10-28T02:22:45.525786473Z 28-Oct-2026 02:22:45.523 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#59634
+ns1  | 2026-10-28T02:22:40.093299149Z 28-Oct-2026 02:22:40.091 client @0x7d7ee34b5420 172.31.0.101#36498/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-28T02:22:40.093314850Z 28-Oct-2026 02:22:40.091 client @0x7d7ee34b5420 172.31.0.101#36498/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-003"
+ns1  | 2026-10-28T02:22:40.113029082Z 28-Oct-2026 02:22:40.111 client @0x7d7ee34b90e0 172.31.0.100#45990/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-28T02:22:40.113043683Z 28-Oct-2026 02:22:40.111 client @0x7d7ee34b90e0 172.31.0.100#45990/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-004"
+ns1  | 2026-10-28T02:22:40.122202362Z 28-Oct-2026 02:22:40.119 client @0x7d7ee34b90e0 172.31.0.101#54695/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-28T02:22:40.122218963Z 28-Oct-2026 02:22:40.119 client @0x7d7ee34b90e0 172.31.0.101#54695/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-004"
+ns1  | 2026-10-28T02:22:40.142289114Z 28-Oct-2026 02:22:40.139 client @0x7d7ee34b5420 172.31.0.100#53138/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-28T02:22:40.142302714Z 28-Oct-2026 02:22:40.139 client @0x7d7ee34b5420 172.31.0.100#53138/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-005"
+ns1  | 2026-10-28T02:22:40.152079526Z 28-Oct-2026 02:22:40.147 client @0x7d7ee34bb0d0 172.31.0.101#49821/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-28T02:22:40.152095627Z 28-Oct-2026 02:22:40.147 client @0x7d7ee34bb0d0 172.31.0.101#49821/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-005"
+ns1  | 2026-10-28T02:22:40.531094269Z 28-Oct-2026 02:22:40.527 client @0x7d7ee34aa300 172.30.0.13#33371 (sd.lab): transfer of 'sd.lab/IN': IXFR started (serial 2026101402 -> 2026101412)
+ns1  | 2026-10-28T02:22:40.531667799Z 28-Oct-2026 02:22:40.527 client @0x7d7ee34aa300 172.30.0.13#33371 (sd.lab): transfer of 'sd.lab/IN': IXFR ended: 1 messages, 40 records, 1174 bytes, 0.001 secs (1174000 bytes/sec) (serial 2026101412)
+ns1  | 2026-10-28T02:22:45.025038488Z 28-Oct-2026 02:22:45.023 zone sd.lab/IN: sending notifies (serial 2026101412)
+ns1  | 2026-10-28T02:22:45.031008159Z 28-Oct-2026 02:22:45.027 client @0x7d7ee34aa3e0 172.30.0.12#42445 (sd.lab): transfer of 'sd.lab/IN': IXFR started (serial 2026101404 -> 2026101412)
+ns1  | 2026-10-28T02:22:45.031660999Z 28-Oct-2026 02:22:45.027 client @0x7d7ee34aa3e0 172.30.0.12#42445 (sd.lab): transfer of 'sd.lab/IN': IXFR ended: 1 messages, 34 records, 992 bytes, 0.001 secs (992000 bytes/sec) (serial 2026101412)

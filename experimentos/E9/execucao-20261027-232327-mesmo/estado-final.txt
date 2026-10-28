@@ -1,0 +1,3 @@
+172.31.0.11 serial=2026101422 ordem.sd.lab="c1-005"
+172.31.0.12 serial=2026101422 ordem.sd.lab="c1-005"
+172.31.0.13 serial=2026101422 ordem.sd.lab="c1-005"
