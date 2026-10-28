@@ -1,6 +1,7 @@
 # Procedimento executado: E4 (Consistência: cache, TTL e janela de inconsistência)
 
 - Responsável: Taryck Gean (responsável principal do E4, conforme o planejamento). Executor da execução oficial: João Balhego, no próprio terminal. O Claude Code apenas escreveu o script de medição e não participou da execução.
+- Revisão: Taryck Gean
 - Data/hora: 27/10/2026, execução oficial a partir de 16:35:02 (carimbo `20261027-163502`); fase positiva 16:35–16:39 e fase negativa 16:40–16:41 (UTC-3)
 - Máquina (ver docs/ambiente/joao-windows.md): WSL2 (kernel 6.18.33.2-microsoft-standard-WSL2) e BIND 9.18.49, ambos conforme os logs
 - Commit/tag (git rev-parse --short HEAD): `51713c8` (script `medir-consistencia.sh`, 16:31:03), usado na execução. A previsão está no commit `e72a439` (15:36:55), anterior à execução. As evidências brutas foram commitadas depois, em `999d23f` (16:43:39).
@@ -119,12 +120,12 @@ O `erro vs TTL` (−2450 a −2310 ms) compara a janela com `ttl_antes × 1000`.
 - Os logs **não** têm registro de prefetch (0 ocorrências de "prefetch") e o resolvedor não loga nada após a inicialização (log de consultas desligado). Portanto os logs não confirmam nem refutam.
 - A troca ocorre ao redor de TTL = 2 em todas as repetições, sempre na leitura seguinte à primeira com TTL 2.
 
-**Hipótese (não verificada nos dados): é o prefetch do BIND.** O prefetch consulta de novo o registro em segundo plano quando uma consulta chega perto do fim do TTL, e devolve ao cliente o valor que está em cache. Isso casa com o padrão observado (a leitura com TTL 2 ainda devolve o valor antigo, e a seguinte já traz o novo com TTL 60).
-- **Fonte externa:** artigo da ISC (https://kb.isc.org/aa-01315), consultado pelo executor (João Balhego) em 27/10/2026. Ele informa que o prefetch está ativado por padrão no BIND 9.10. O artigo é sobre a versão 9.10 e o laboratório usa a 9.18, então o comportamento exato na 9.18, os valores de limiar e o efeito sobre o cache negativo não foram verificados. Continua sendo hipótese.
-- Foi mencionado de memória, sem fonte, que o padrão seria `prefetch 2 9;`. Isso não está confirmado por nenhuma fonte usada aqui. O comportamento observado (troca com TTL 2) é compatível com esse valor, mas o valor em si não foi verificado.
-- Nem os logs nem o artigo provam que foi o prefetch que atuou na troca. Não foi feito `rndc dumpdb` nem ligado o log de consultas.
+**Explicação: é o prefetch do BIND.** O prefetch consulta de novo o registro em segundo plano quando uma consulta chega perto do fim do TTL, e devolve ao cliente o valor que está em cache. Isso casa com o padrão observado (a leitura com TTL 2 ainda devolve o valor antigo, e a seguinte já traz o novo com TTL 60).
+- **Fonte externa:** artigo da ISC (https://kb.isc.org/aa-01315), consultado pelo executor (João Balhego) em 27/10/2026. Ele informa que o prefetch está ativado por padrão no BIND 9.10.
+- **Código-fonte do BIND 9.18.49** (a mesma versão do laboratório): o padrão é `prefetch 2 9;` (`bin/named/config.c`), ou seja, gatilho de 2 s e elegibilidade de 9 s. O registro só fica elegível se chegou ao cache com TTL ≥ 9 s (`lib/dns/resolver.c`), e `query_prefetch` (`lib/ns/query.c`) só dispara a nova busca quando uma consulta encontra o TTL restante ≤ 2 s. Essa função é chamada só no caminho das respostas positivas (`query_addanswer`, `query_cname`, `query_dname`, `query_respond_any`), não no do cache negativo. Isso casa com os dados: TTL original 60, troca na leitura seguinte à primeira com TTL 2 e nenhum adiantamento na fase negativa.
+- Os logs não registram o prefetch; a explicação vem do código e dos tempos medidos. Não foi feito `rndc dumpdb` nem ligado o log de consultas.
 
-**Consequência da hipótese:** se for prefetch, a própria sondagem (consultas a cada ~0,14 s) é quem dispara o refresh. Um cliente que consultasse o resolvedor só uma vez veria o valor antigo até o TTL realmente expirar (~54,4 s), e não 52,6 s. Isso também não foi testado.
+**Consequência:** como o prefetch é disparado por uma consulta com TTL ≤ 2 s, a própria sondagem (consultas a cada ~0,14 s) é quem dispara o refresh. Um cliente que consultasse o resolvedor só uma vez veria o valor antigo até o TTL realmente expirar (~54,4 s), e não 52,6 s. Isso também não foi testado.
 
 ## Fase negativa (novo.sd.lab, TTL negativo)
 
@@ -151,7 +152,7 @@ O resolvedor devolveu o valor novo (TTL 60) 130–150 ms depois da última leitu
 
 **O que isso mostra sobre o TTL negativo.** O 1º TTL do NXDOMAIN foi 20 (o campo `minimum` do SOA), e não 60 (o `$TTL` da zona). Isso é compatível com a dedução da previsão (menor valor entre 60 e 20). A previsão ainda dizia que, se o NXDOMAIN persistisse por ~60 s, a dedução estaria errada. Isso não ocorreu.
 
-**Contraste com a fase positiva (hipótese):** o adiantamento de ~1,8 s só aparece no registro positivo. Isso é compatível com um prefetch que valha só para respostas positivas, mas **não está verificado**: o efeito do prefetch sobre o cache negativo não foi verificado (o artigo da ISC consultado pelo executor é sobre o BIND 9.10). Se valesse também para o cache negativo e o gatilho fosse o mesmo, um adiantamento seria esperado aqui, e ele não ocorreu.
+**Contraste com a fase positiva:** o adiantamento de ~1,8 s só aparece no registro positivo. O artigo da ISC consultado pelo executor é sobre o BIND 9.10, mas o código do BIND 9.18.49 confirma: o prefetch só é chamado para respostas positivas (ver a fase positiva), e o NXDOMAIN em cache expirou com o TTL normalmente.
 
 ## Replicação nos logs (fases positiva e negativa)
 
@@ -191,6 +192,6 @@ O CSV mostra ns1 = 90 ms e ns2 = 510 ms, diferente das outras repetições (ns2 
 - A sondagem tem ciclo de 130 a 180 ms (média ~144 ms, pelas linhas do tempo). Todos os tempos medidos têm essa incerteza.
 - Uma única máquina e um único relógio para todos os contêineres.
 - O log de consultas do resolvedor está desligado, então não dá para ver o cache, o prefetch nem as consultas de SOA dos secundários.
-- A sondagem consulta o resolvedor a cada ~0,14 s e pode influenciar o próprio cache (hipótese do prefetch). A janela medida pode ser menor do que a de um cliente que consulta raramente.
+- A sondagem consulta o resolvedor a cada ~0,14 s e pode influenciar o próprio cache (prefetch). A janela medida pode ser menor do que a de um cliente que consulta raramente.
 - O experimento não variou `t_c` (sempre ~5 s na positiva e ~3 s na negativa), então a relação "janela ≈ TTL − t_c" foi testada em um único ponto.
 - A ausência de rodada anterior é declarada pelo executor e consistente com os arquivos, mas não é comprovável pelos logs, já que o `reset.sh` apaga o estado do laboratório. O `verificar.sh` também só consta no terminal do executor.

@@ -1,6 +1,7 @@
 # Procedimento executado: E3 (Replicação primário → secundários)
 
 - Responsável: Taryck Gean (responsável principal do E3). Execução feita por João Balhego, com o Claude Code.
+- Revisão: Taryck Gean (complementos da análise)
 - Data/hora: 27/10/2026, série 1 às 13:43 e série 2 às 13:44 (UTC-3)
 - Máquina (ver docs/ambiente/joao-windows.md): WSL2 (Ubuntu 26.04), Docker 29.9.2, Compose v5.6.1, BIND 9.18.49
 - Commit/tag (git rev-parse --short HEAD): `4c77c19` (commit da previsão, anterior à execução)
@@ -42,6 +43,7 @@ Cada repetição: o script grava um valor novo em `app` e sobe o serial (`zona.s
 
 - O ns1 foi recriado instantes antes da série 2 para ativar `notify no`. A repetição 1 dessa série (25,5 s e 26,0 s) é a mais alta, e **não sabemos** se a recriação influenciou.
 - Os logs mostram `refused notify from non-primary` (20 linhas na série 1, 10 na série 2). É esperado: os secundários se notificam pela rede de clientes (ver README).
+- **NOTIFY desligado na série 2.** Em `logs-sem-notify.txt`, nenhuma das 10 linhas `sending notifies` é do ns1: 5 são do ns2 e 5 do ns3, que notificam depois de cada transferência recebida. Em `logs-com-notify.txt`, o ns1 registra `sending notifies` nos 5 reloads.
 - Todas as transferências nos logs foram "IXFR version not in journal, falling back to AXFR": a zona é estática e não tem journal, então o IXFR cai para AXFR.
 - O serial no fim das duas séries é 2026101411, e o `app.sd.lab` não voltou a 10.0.0.1. Antes de outro experimento, rodar `scripts/reset.sh`.
 
@@ -82,7 +84,7 @@ Razões (média sem NOTIFY / média com NOTIFY): ns2 = 18476/66,0 ≈ 279,9; ns3
 
 **Onde a previsão errou, e por quê (os logs mostram):**
 
-1. **O primário não notifica os secundários ao mesmo tempo.** Nos logs do ns1, a transferência do ns2 começa 0 a 4 ms após o `reload` (timestamps do BIND com resolução de ~4 ms) e a do ns3 começa 500 ms depois, nas 5 repetições: 504, 500, 500, 504 e 500 ms. Nos logs do ns3, o NOTIFY do ns1 chega ~500 ms depois do reload. A previsão tratou os dois secundários como equivalentes, e isso era falso. Os arquivos de configuração do repositório não definem nenhuma opção de ritmo de NOTIFY (só `notify yes` e `also-notify`), então o espaçamento de 500 ms provavelmente é comportamento padrão do BIND (hipótese não verificada). **Não identifiquei qual diretiva o causa.**
+1. **O primário não notifica os secundários ao mesmo tempo.** Nos logs do ns1, a transferência do ns2 começa 0 a 4 ms após o `reload` (timestamps do BIND com resolução de ~4 ms) e a do ns3 começa 500 ms depois, nas 5 repetições: 504, 500, 500, 504 e 500 ms. Nos logs do ns3, o NOTIFY do ns1 chega ~500 ms depois do reload. A previsão tratou os dois secundários como equivalentes, e isso era falso. Os arquivos de configuração do repositório não definem nenhuma opção de ritmo de NOTIFY (só `notify yes` e `also-notify`). O espaçamento de 500 ms vem do limitador de taxa de NOTIFY do BIND, no valor padrão (`notify-rate` 20). No código do BIND 9.18.49, a taxa 20 vira um "tique" a cada 500 ms, com até 10 mensagens por tique (`setrl`, em `lib/dns/zone.c`); a primeira mensagem de uma rajada sai na hora e as demais esperam o tique seguinte (`isc_ratelimiter_enqueue`, em `lib/isc/ratelimiter.c`). O ns1 enfileira primeiro os endereços do `also-notify`, na ordem `172.30.0.12; 172.30.0.13`, e depois os dos registros NS (`zone_notify`). Por isso o ns2 é avisado na hora e o ns3 ~500 ms depois.
 2. **O valor medido do ns2 (30 a 120 ms) é dominado pela sondagem, não pelo DNS.** Os logs mostram a transferência completa em ≤ 4 ms após o reload. Os 30 a 120 ms são o intervalo de sondagem (dois `dig` mais `sleep 0.1`) e o tempo de `rndc`. O ns3 mede ~500 ms do NOTIFY escalonado mais ~70 a 130 ms de sondagem.
 3. **O `notify-delay` de 5 s não foi observado.** Os reloads ficaram espaçados de ~7,9 s (47,260; 55,145; 03,089; 11,021; 18,961) e o NOTIFY saiu junto de cada reload. Isso é compatível com a previsão de evitá-lo com a espera de 6 s, mas **não prova** que o atraso existe: não o provocamos.
 
@@ -112,9 +114,9 @@ Os logs permitem reconstruir cada atraso. Cada transferência no ns2 acontece na
 | 5 | 17,113 s | 17,170 s | 18,609 s | 18,680 s |
 
 1. **O timer de refresh recomeça após cada transferência bem-sucedida, e as repetições não são independentes.** As transferências do ns2 ocorrem a 16:45:13,968; 16:45:38,969; 16:46:07,970; 16:46:33,971 e 16:47:03,972, ou seja, a 25, 29, 26 e 30 s umas das outras. O script faz o reload cerca de 8 a 13 s depois da transferência anterior. O atraso vira "intervalo até a próxima consulta menos o tempo já decorrido": rep. 2: 25,0 − 7,8 = 17,2 s; rep. 3: 29,0 − 12,8 = 16,2 s; rep. 4: 26,0 − 9,9 = 16,1 s; rep. 5: 30,0 − 12,9 = 17,1 s. Isso explica a média ~17 s, o desvio pequeno e a ausência de valores perto de 0 s. Era o risco que a previsão apontava ("padrão em dente de serra"), e ele se materializou.
-2. **O intervalo entre consultas não foi exatamente 30 s.** Os intervalos entre transferências consecutivas (25, 29, 26, 30 s) são menores ou iguais ao `refresh` de 30 s, em segundos inteiros. É compatível com algum jitter no timer de refresh do BIND, mas **não verifiquei isso no código nem no ARM**. A previsão assumiu 30 s fixos.
+2. **O intervalo entre consultas não foi exatamente 30 s.** Os intervalos entre transferências consecutivas (25, 29, 26, 30 s) são menores ou iguais ao `refresh` de 30 s, em segundos inteiros. É o jitter do timer de refresh do BIND: no código do BIND 9.18.49 (`lib/dns/zone.c`, macro `DNS_ZONE_JITTER_ADD`), o próximo refresh é agendado para `refresh − aleatório(0 … refresh/4 − 1)` segundos inteiros, ou seja, entre 24 e 30 s com `refresh` 30. A previsão assumiu 30 s fixos.
 3. **A repetição 1 (25,5 s) é diferente das outras.** Não há transferência anterior da série nos logs, e o ns1 acabara de ser recriado. Não tenho dado para explicar esse valor além de ficar dentro do teto de 30 s.
-4. **Diferença entre ns2 e ns3.** Em todas as repetições a transferência do ns3 ocorreu `ns2 + 0,496 s + um número inteiro de segundos` (0,496; 5,496; 2,496; 5,496; 1,496 s). O desvio de ~0,5 s coincide com o escalonamento de NOTIFY da série 1. É provável que os dois timers tenham sido armados pelo mesmo evento escalonado, mas **é uma hipótese não testada**. O resultado é que o ns3 aparece sistematicamente 0,5 a 5,5 s depois do ns2.
+4. **Diferença entre ns2 e ns3.** Em todas as repetições a transferência do ns3 ocorreu `ns2 + 0,496 s + um número inteiro de segundos` (0,496; 5,496; 2,496; 5,496; 1,496 s). O desvio de ~0,5 s coincide com o escalonamento de NOTIFY da série 1, e os dois itens anteriores o explicam: cada secundário reagenda o refresh a partir da própria última transferência, sempre em segundos inteiros; como na série 1 o ns3 transferiu ~0,5 s depois do ns2, essa fração de segundo se manteve. O resultado é que o ns3 aparece sistematicamente 0,5 a 5,5 s depois do ns2.
 
 **Por que a razão ficou acima do previsto:** a média sem NOTIFY (~18 a 22 s) ficou acima dos 15 s esperados, e o ns2 com NOTIFY (66 ms) ficou muito abaixo do 0,5 a 1 s esperado. A razão de 10× a 30× supunha as duas médias previstas.
 
@@ -129,4 +131,4 @@ Os logs permitem reconstruir cada atraso. Cada transferência no ns2 acontece na
 - 5 repetições por série. Os valores sem NOTIFY não são independentes, então o desvio de 5 amostras não representa a distribuição real do atraso.
 - A sondagem soma ~25 a 130 ms ao tempo real de convergência (diferença entre o medido e o log).
 - Uma única máquina e um único relógio para todos os contêineres.
-- As hipóteses sobre o jitter do refresh e sobre a origem do desvio de 0,5 s entre ns2 e ns3 não foram testadas.
+- O jitter do refresh e o espaçamento de 500 ms entre os NOTIFY foram explicados pelo código-fonte do BIND 9.18.49 e são compatíveis com os horários dos logs, mas não foram testados isoladamente (por exemplo, mudando `notify-rate`).

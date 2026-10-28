@@ -1,0 +1,472 @@
+ns2  | 2026-10-27T17:45:04.172841299Z 27-Oct-2026 17:45:04.169 client @0x7fdd558a2400 172.30.0.11#48901: received notify for zone 'sd.lab'
+ns2  | 2026-10-27T17:45:04.172855600Z 27-Oct-2026 17:45:04.169 zone sd.lab/IN: notify from 172.30.0.11#48901: serial 2026101402
+ns2  | 2026-10-27T17:45:04.173426331Z 27-Oct-2026 17:45:04.169 zone sd.lab/IN: Transfer started.
+ns2  | 2026-10-27T17:45:04.173762149Z 27-Oct-2026 17:45:04.169 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns2  | 2026-10-27T17:45:04.174149071Z 27-Oct-2026 17:45:04.169 zone sd.lab/IN: transferred serial 2026101402
+ns2  | 2026-10-27T17:45:04.174154071Z 27-Oct-2026 17:45:04.169 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns2  | 2026-10-27T17:45:04.174155271Z 27-Oct-2026 17:45:04.169 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 10 records, 246 bytes, 0.001 secs (246000 bytes/sec) (serial 2026101402)
+ns2  | 2026-10-27T17:45:04.534681797Z 27-Oct-2026 17:45:04.532 zone sd.lab/IN: sending notifies (serial 2026101402)
+ns2  | 2026-10-27T17:45:04.675267153Z 27-Oct-2026 17:45:04.672 client @0x7fdd55898520 172.31.0.11#46794: received notify for zone 'sd.lab'
+ns2  | 2026-10-27T17:45:04.675281654Z 27-Oct-2026 17:45:04.672 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#46794
+ns2  | 2026-10-27T17:45:04.677012648Z 27-Oct-2026 17:45:04.672 client @0x7fdd5b8e33c0 172.31.0.13#53082: received notify for zone 'sd.lab'
+ns2  | 2026-10-27T17:45:04.677019048Z 27-Oct-2026 17:45:04.672 zone sd.lab/IN: refused notify from non-primary: 172.31.0.13#53082
+ns2  | 2026-10-27T17:45:05.586148359Z 27-Oct-2026 17:45:05.580 received control channel command 'zonestatus sd.lab'
+ns2  | 2026-10-27T17:45:09.065787755Z 27-Oct-2026 17:45:09.060 no longer listening on 127.0.0.1#53
+ns2  | 2026-10-27T17:45:09.066155571Z 27-Oct-2026 17:45:09.060 no longer listening on 172.31.0.12#53
+ns2  | 2026-10-27T17:45:09.066624491Z 27-Oct-2026 17:45:09.064 no longer listening on 172.30.0.12#53
+ns2  | 2026-10-27T17:45:09.067548031Z 27-Oct-2026 17:45:09.064 no longer listening on ::1#53
+ns2  | 2026-10-27T17:45:09.069468014Z 27-Oct-2026 17:45:09.064 shutting down
+ns2  | 2026-10-27T17:45:09.069491115Z 27-Oct-2026 17:45:09.064 stopping command channel on 127.0.0.1#953
+ns2  | 2026-10-27T17:45:09.069923034Z 27-Oct-2026 17:45:09.064 stopping command channel on ::1#953
+ns2  | 2026-10-27T17:45:09.089492381Z 27-Oct-2026 17:45:09.084 exiting
+ns2  | 2026-10-27T17:50:12.432459891Z 27-Oct-2026 17:50:12.426 starting BIND 9.18.49 (Extended Support Version) <id:cd4a53b>
+ns2  | 2026-10-27T17:50:12.432717704Z 27-Oct-2026 17:50:12.426 running on Linux x86_64 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026
+ns2  | 2026-10-27T17:50:12.432729905Z 27-Oct-2026 17:50:12.426 built with  '--build=x86_64-alpine-linux-musl' '--host=x86_64-alpine-linux-musl' '--prefix=/usr' '--sysconfdir=/etc/bind' '--localstatedir=/var' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--with-gssapi=yes' '--with-libxml2' '--with-json-c' '--with-openssl=yes' '--enable-dnstap' '--enable-largefile' '--enable-linux-caps' '--enable-shared' '--disable-static' 'build_alias=x86_64-alpine-linux-musl' 'host_alias=x86_64-alpine-linux-musl' 'CC=gcc' 'CFLAGS=-Os -fstack-clash-protection -Wformat -Werror=format-security -fno-plt -g -D_GNU_SOURCE' 'LDFLAGS=-Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs'
+ns2  | 2026-10-27T17:50:12.432731805Z 27-Oct-2026 17:50:12.426 running as: named -g -u named -c /etc/bind/named.conf
+ns2  | 2026-10-27T17:50:12.432733005Z 27-Oct-2026 17:50:12.426 compiled by GCC 13.2.1 20240309
+ns2  | 2026-10-27T17:50:12.432734005Z 27-Oct-2026 17:50:12.426 compiled with OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns2  | 2026-10-27T17:50:12.432734705Z 27-Oct-2026 17:50:12.426 linked to OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns2  | 2026-10-27T17:50:12.432735505Z 27-Oct-2026 17:50:12.426 compiled with libuv version: 1.48.0
+ns2  | 2026-10-27T17:50:12.432736406Z 27-Oct-2026 17:50:12.426 linked to libuv version: 1.48.0
+ns2  | 2026-10-27T17:50:12.432737206Z 27-Oct-2026 17:50:12.426 compiled with libxml2 version: 2.12.10
+ns2  | 2026-10-27T17:50:12.432738006Z 27-Oct-2026 17:50:12.426 linked to libxml2 version: 21210
+ns2  | 2026-10-27T17:50:12.432738906Z 27-Oct-2026 17:50:12.426 compiled with json-c version: 0.17
+ns2  | 2026-10-27T17:50:12.432739606Z 27-Oct-2026 17:50:12.426 linked to json-c version: 0.17
+ns2  | 2026-10-27T17:50:12.432744306Z 27-Oct-2026 17:50:12.426 compiled with zlib version: 1.3.2
+ns2  | 2026-10-27T17:50:12.432745206Z 27-Oct-2026 17:50:12.426 linked to zlib version: 1.3.2
+ns2  | 2026-10-27T17:50:12.432746006Z 27-Oct-2026 17:50:12.426 ----------------------------------------------------
+ns2  | 2026-10-27T17:50:12.432746806Z 27-Oct-2026 17:50:12.426 BIND 9 is maintained by Internet Systems Consortium,
+ns2  | 2026-10-27T17:50:12.432747606Z 27-Oct-2026 17:50:12.426 Inc. (ISC), a non-profit 501(c)(3) public-benefit 
+ns2  | 2026-10-27T17:50:12.432748406Z 27-Oct-2026 17:50:12.426 corporation.  Support and training for BIND 9 are 
+ns2  | 2026-10-27T17:50:12.432749206Z 27-Oct-2026 17:50:12.426 available at https://www.isc.org/support
+ns2  | 2026-10-27T17:50:12.432749906Z 27-Oct-2026 17:50:12.426 ----------------------------------------------------
+ns2  | 2026-10-27T17:50:12.432750706Z 27-Oct-2026 17:50:12.426 found 12 CPUs, using 12 worker threads
+ns2  | 2026-10-27T17:50:12.432751506Z 27-Oct-2026 17:50:12.426 using 12 UDP listeners per interface
+ns2  | 2026-10-27T17:50:12.461300050Z 27-Oct-2026 17:50:12.454 DNSSEC algorithms: RSASHA1 NSEC3RSASHA1 RSASHA256 RSASHA512 ECDSAP256SHA256 ECDSAP384SHA384 ED25519 ED448
+ns2  | 2026-10-27T17:50:12.461317151Z 27-Oct-2026 17:50:12.454 DS algorithms: SHA-1 SHA-256 SHA-384
+ns2  | 2026-10-27T17:50:12.461318851Z 27-Oct-2026 17:50:12.454 HMAC algorithms: HMAC-MD5 HMAC-SHA1 HMAC-SHA224 HMAC-SHA256 HMAC-SHA384 HMAC-SHA512
+ns2  | 2026-10-27T17:50:12.461319951Z 27-Oct-2026 17:50:12.454 TKEY mode 2 support (Diffie-Hellman): yes
+ns2  | 2026-10-27T17:50:12.461321051Z 27-Oct-2026 17:50:12.454 TKEY mode 3 support (GSS-API): yes
+ns2  | 2026-10-27T17:50:12.463544071Z 27-Oct-2026 17:50:12.458 the initial working directory is '/'
+ns2  | 2026-10-27T17:50:12.463558572Z 27-Oct-2026 17:50:12.458 loading configuration from '/etc/bind/named.conf'
+ns2  | 2026-10-27T17:50:12.464393517Z 27-Oct-2026 17:50:12.458 the working directory is now '/var/bind'
+ns2  | 2026-10-27T17:50:12.464625930Z 27-Oct-2026 17:50:12.458 reading built-in trust anchors from file '/etc/bind/bind.keys'
+ns2  | 2026-10-27T17:50:12.465655285Z 27-Oct-2026 17:50:12.458 using default UDP/IPv4 port range: [32768, 60999]
+ns2  | 2026-10-27T17:50:12.465662386Z 27-Oct-2026 17:50:12.458 using default UDP/IPv6 port range: [32768, 60999]
+ns2  | 2026-10-27T17:50:12.466254018Z 27-Oct-2026 17:50:12.458 listening on IPv4 interface lo, 127.0.0.1#53
+ns2  | 2026-10-27T17:50:12.483204334Z 27-Oct-2026 17:50:12.478 listening on IPv4 interface eth0, 172.30.0.12#53
+ns2  | 2026-10-27T17:50:12.484862224Z 27-Oct-2026 17:50:12.478 listening on IPv4 interface eth1, 172.31.0.12#53
+ns2  | 2026-10-27T17:50:12.486106091Z 27-Oct-2026 17:50:12.478 IPv6 socket API is incomplete; explicitly binding to each IPv6 address separately
+ns2  | 2026-10-27T17:50:12.486114691Z 27-Oct-2026 17:50:12.478 listening on IPv6 interface lo, ::1#53
+ns2  | 2026-10-27T17:50:12.488275608Z 27-Oct-2026 17:50:12.482 generating session key for dynamic DNS
+ns2  | 2026-10-27T17:50:12.488719432Z 27-Oct-2026 17:50:12.482 sizing zone task pool based on 1 zones
+ns2  | 2026-10-27T17:50:12.494251231Z 27-Oct-2026 17:50:12.486 obtaining root key for view _default from '/etc/bind/bind.keys'
+ns2  | 2026-10-27T17:50:12.494276933Z 27-Oct-2026 17:50:12.486 set up managed keys zone for view _default, file 'managed-keys.bind'
+ns2  | 2026-10-27T17:50:12.499483414Z 27-Oct-2026 17:50:12.494 configuring command channel from '/etc/bind/rndc.key'
+ns2  | 2026-10-27T17:50:12.500101248Z 27-Oct-2026 17:50:12.494 command channel listening on 127.0.0.1#953
+ns2  | 2026-10-27T17:50:12.500113448Z 27-Oct-2026 17:50:12.494 configuring command channel from '/etc/bind/rndc.key'
+ns2  | 2026-10-27T17:50:12.500774184Z 27-Oct-2026 17:50:12.494 command channel listening on ::1#953
+ns2  | 2026-10-27T17:50:12.500781884Z 27-Oct-2026 17:50:12.494 not using config file logging statement for logging due to -g option
+ns2  | 2026-10-27T17:50:12.503188414Z 27-Oct-2026 17:50:12.498 managed-keys-zone: loaded serial 2
+ns2  | 2026-10-27T17:50:12.504306175Z 27-Oct-2026 17:50:12.498 zone sd.lab/IN: loaded serial 2026101402
+ns2  | 2026-10-27T17:50:12.504313875Z 27-Oct-2026 17:50:12.498 zone sd.lab/IN: expired
+ns2  | 2026-10-27T17:50:12.504454383Z 27-Oct-2026 17:50:12.498 all zones loaded
+ns2  | 2026-10-27T17:50:12.504622192Z 27-Oct-2026 17:50:12.498 running
+ns2  | 2026-10-27T17:50:12.504992912Z 27-Oct-2026 17:50:12.498 network unreachable resolving './DNSKEY/IN': 2001:500:2f::f#53
+ns2  | 2026-10-27T17:50:12.505318030Z 27-Oct-2026 17:50:12.498 zone sd.lab/IN: Transfer started.
+ns2  | 2026-10-27T17:50:12.505322930Z 27-Oct-2026 17:50:12.498 network unreachable resolving './DNSKEY/IN': 2001:500:1::53#53
+ns2  | 2026-10-27T17:50:12.505324230Z 27-Oct-2026 17:50:12.498 network unreachable resolving './NS/IN': 2001:500:1::53#53
+ns2  | 2026-10-27T17:50:12.505398734Z 27-Oct-2026 17:50:12.498 network unreachable resolving './DNSKEY/IN': 2001:503:ba3e::2:30#53
+ns2  | 2026-10-27T17:50:12.505480538Z 27-Oct-2026 17:50:12.498 network unreachable resolving './NS/IN': 2001:503:ba3e::2:30#53
+ns2  | 2026-10-27T17:50:12.505485439Z 27-Oct-2026 17:50:12.498 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns2  | 2026-10-27T17:50:12.505621246Z 27-Oct-2026 17:50:12.498 network unreachable resolving './DNSKEY/IN': 2001:500:a8::e#53
+ns2  | 2026-10-27T17:50:12.505626346Z 27-Oct-2026 17:50:12.498 network unreachable resolving './NS/IN': 2001:500:a8::e#53
+ns2  | 2026-10-27T17:50:12.505749253Z 27-Oct-2026 17:50:12.498 network unreachable resolving './DNSKEY/IN': 2001:7fd::1#53
+ns2  | 2026-10-27T17:50:12.505752953Z 27-Oct-2026 17:50:12.498 network unreachable resolving './NS/IN': 2001:7fd::1#53
+ns2  | 2026-10-27T17:50:12.505754153Z 27-Oct-2026 17:50:12.498 network unreachable resolving './DNSKEY/IN': 2801:1b8:10::b#53
+ns2  | 2026-10-27T17:50:12.505876360Z 27-Oct-2026 17:50:12.498 network unreachable resolving './NS/IN': 2801:1b8:10::b#53
+ns2  | 2026-10-27T17:50:12.506009367Z 27-Oct-2026 17:50:12.498 network unreachable resolving './DNSKEY/IN': 2001:500:2::c#53
+ns2  | 2026-10-27T17:50:12.506088371Z 27-Oct-2026 17:50:12.498 zone sd.lab/IN: transferred serial 2026101402
+ns2  | 2026-10-27T17:50:12.506093672Z 27-Oct-2026 17:50:12.498 network unreachable resolving './NS/IN': 2001:500:2::c#53
+ns2  | 2026-10-27T17:50:12.506123673Z 27-Oct-2026 17:50:12.498 network unreachable resolving './DNSKEY/IN': 2001:500:2d::d#53
+ns2  | 2026-10-27T17:50:12.506292982Z 27-Oct-2026 17:50:12.498 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns2  | 2026-10-27T17:50:12.506299983Z 27-Oct-2026 17:50:12.498 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 10 records, 246 bytes, 0.001 secs (246000 bytes/sec) (serial 2026101402)
+ns2  | 2026-10-27T17:50:12.506301483Z 27-Oct-2026 17:50:12.498 network unreachable resolving './NS/IN': 2001:500:2d::d#53
+ns2  | 2026-10-27T17:50:12.506411989Z 27-Oct-2026 17:50:12.502 network unreachable resolving './DNSKEY/IN': 2001:500:9f::42#53
+ns2  | 2026-10-27T17:50:12.506505694Z 27-Oct-2026 17:50:12.502 network unreachable resolving './NS/IN': 2001:500:9f::42#53
+ns2  | 2026-10-27T17:50:12.506543196Z 27-Oct-2026 17:50:12.502 network unreachable resolving './DNSKEY/IN': 2001:500:12::d0d#53
+ns2  | 2026-10-27T17:50:12.506668303Z 27-Oct-2026 17:50:12.502 network unreachable resolving './NS/IN': 2001:500:12::d0d#53
+ns2  | 2026-10-27T17:50:12.506672003Z 27-Oct-2026 17:50:12.502 network unreachable resolving './DNSKEY/IN': 2001:7fe::53#53
+ns2  | 2026-10-27T17:50:12.506747707Z 27-Oct-2026 17:50:12.502 network unreachable resolving './NS/IN': 2001:7fe::53#53
+ns2  | 2026-10-27T17:50:12.506752007Z 27-Oct-2026 17:50:12.502 network unreachable resolving './DNSKEY/IN': 2001:dc3::35#53
+ns2  | 2026-10-27T17:50:12.506829011Z 27-Oct-2026 17:50:12.502 network unreachable resolving './NS/IN': 2001:dc3::35#53
+ns2  | 2026-10-27T17:50:12.506958018Z 27-Oct-2026 17:50:12.502 network unreachable resolving './DNSKEY/IN': 2001:503:c27::2:30#53
+ns2  | 2026-10-27T17:50:12.506962319Z 27-Oct-2026 17:50:12.502 network unreachable resolving './NS/IN': 2001:503:c27::2:30#53
+ns2  | 2026-10-27T17:50:12.507208932Z 27-Oct-2026 17:50:12.502 network unreachable resolving './NS/IN': 2001:500:2f::f#53
+ns2  | 2026-10-27T17:50:12.644845073Z 27-Oct-2026 17:50:12.638 managed-keys-zone: Key 20326 for zone . is now trusted (acceptance timer complete)
+ns2  | 2026-10-27T17:50:12.644865474Z 27-Oct-2026 17:50:12.638 managed-keys-zone: Key 38696 for zone . is now trusted (acceptance timer complete)
+ns2  | 2026-10-27T17:50:12.811004157Z 27-Oct-2026 17:50:12.806 client @0x7f98fec122f0 172.31.0.11#58649: received notify for zone 'sd.lab'
+ns2  | 2026-10-27T17:50:12.811017157Z 27-Oct-2026 17:50:12.806 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#58649
+ns2  | 2026-10-27T17:50:17.502597708Z 27-Oct-2026 17:50:17.498 zone sd.lab/IN: sending notifies (serial 2026101402)
+ns2  | 2026-10-27T17:53:10.103628584Z 27-Oct-2026 17:53:10.098 no longer listening on 127.0.0.1#53
+ns2  | 2026-10-27T17:53:10.104668136Z 27-Oct-2026 17:53:10.098 no longer listening on 172.30.0.12#53
+ns2  | 2026-10-27T17:53:10.105384672Z 27-Oct-2026 17:53:10.102 no longer listening on 172.31.0.12#53
+ns2  | 2026-10-27T17:53:10.106185611Z 27-Oct-2026 17:53:10.102 no longer listening on ::1#53
+ns2  | 2026-10-27T17:53:10.107626583Z 27-Oct-2026 17:53:10.102 shutting down
+ns2  | 2026-10-27T17:53:10.107634483Z 27-Oct-2026 17:53:10.102 stopping command channel on 127.0.0.1#953
+ns2  | 2026-10-27T17:53:10.108000201Z 27-Oct-2026 17:53:10.102 stopping command channel on ::1#953
+ns2  | 2026-10-27T17:53:10.128303110Z 27-Oct-2026 17:53:10.122 exiting
+ns2  | 2026-10-27T17:53:18.083766657Z 27-Oct-2026 17:53:18.078 starting BIND 9.18.49 (Extended Support Version) <id:cd4a53b>
+ns2  | 2026-10-27T17:53:18.083790258Z 27-Oct-2026 17:53:18.078 running on Linux x86_64 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026
+ns2  | 2026-10-27T17:53:18.083796859Z 27-Oct-2026 17:53:18.078 built with  '--build=x86_64-alpine-linux-musl' '--host=x86_64-alpine-linux-musl' '--prefix=/usr' '--sysconfdir=/etc/bind' '--localstatedir=/var' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--with-gssapi=yes' '--with-libxml2' '--with-json-c' '--with-openssl=yes' '--enable-dnstap' '--enable-largefile' '--enable-linux-caps' '--enable-shared' '--disable-static' 'build_alias=x86_64-alpine-linux-musl' 'host_alias=x86_64-alpine-linux-musl' 'CC=gcc' 'CFLAGS=-Os -fstack-clash-protection -Wformat -Werror=format-security -fno-plt -g -D_GNU_SOURCE' 'LDFLAGS=-Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs'
+ns2  | 2026-10-27T17:53:18.083799559Z 27-Oct-2026 17:53:18.078 running as: named -g -u named -c /etc/bind/named.conf
+ns2  | 2026-10-27T17:53:18.083802159Z 27-Oct-2026 17:53:18.078 compiled by GCC 13.2.1 20240309
+ns2  | 2026-10-27T17:53:18.083804459Z 27-Oct-2026 17:53:18.078 compiled with OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns2  | 2026-10-27T17:53:18.083806459Z 27-Oct-2026 17:53:18.078 linked to OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns2  | 2026-10-27T17:53:18.083808559Z 27-Oct-2026 17:53:18.078 compiled with libuv version: 1.48.0
+ns2  | 2026-10-27T17:53:18.083810459Z 27-Oct-2026 17:53:18.078 linked to libuv version: 1.48.0
+ns2  | 2026-10-27T17:53:18.083812459Z 27-Oct-2026 17:53:18.078 compiled with libxml2 version: 2.12.10
+ns2  | 2026-10-27T17:53:18.083814360Z 27-Oct-2026 17:53:18.078 linked to libxml2 version: 21210
+ns2  | 2026-10-27T17:53:18.083828060Z 27-Oct-2026 17:53:18.078 compiled with json-c version: 0.17
+ns2  | 2026-10-27T17:53:18.083864362Z 27-Oct-2026 17:53:18.078 linked to json-c version: 0.17
+ns2  | 2026-10-27T17:53:18.083871863Z 27-Oct-2026 17:53:18.078 compiled with zlib version: 1.3.2
+ns2  | 2026-10-27T17:53:18.083874063Z 27-Oct-2026 17:53:18.078 linked to zlib version: 1.3.2
+ns2  | 2026-10-27T17:53:18.083875063Z 27-Oct-2026 17:53:18.078 ----------------------------------------------------
+ns2  | 2026-10-27T17:53:18.083876263Z 27-Oct-2026 17:53:18.078 BIND 9 is maintained by Internet Systems Consortium,
+ns2  | 2026-10-27T17:53:18.083877063Z 27-Oct-2026 17:53:18.078 Inc. (ISC), a non-profit 501(c)(3) public-benefit 
+ns2  | 2026-10-27T17:53:18.083877863Z 27-Oct-2026 17:53:18.078 corporation.  Support and training for BIND 9 are 
+ns2  | 2026-10-27T17:53:18.083908064Z 27-Oct-2026 17:53:18.078 available at https://www.isc.org/support
+ns2  | 2026-10-27T17:53:18.083915065Z 27-Oct-2026 17:53:18.078 ----------------------------------------------------
+ns2  | 2026-10-27T17:53:18.083916965Z 27-Oct-2026 17:53:18.078 found 12 CPUs, using 12 worker threads
+ns2  | 2026-10-27T17:53:18.083918665Z 27-Oct-2026 17:53:18.078 using 12 UDP listeners per interface
+ns2  | 2026-10-27T17:53:18.101028741Z 27-Oct-2026 17:53:18.094 DNSSEC algorithms: RSASHA1 NSEC3RSASHA1 RSASHA256 RSASHA512 ECDSAP256SHA256 ECDSAP384SHA384 ED25519 ED448
+ns2  | 2026-10-27T17:53:18.101051742Z 27-Oct-2026 17:53:18.094 DS algorithms: SHA-1 SHA-256 SHA-384
+ns2  | 2026-10-27T17:53:18.101054643Z 27-Oct-2026 17:53:18.094 HMAC algorithms: HMAC-MD5 HMAC-SHA1 HMAC-SHA224 HMAC-SHA256 HMAC-SHA384 HMAC-SHA512
+ns2  | 2026-10-27T17:53:18.101055943Z 27-Oct-2026 17:53:18.094 TKEY mode 2 support (Diffie-Hellman): yes
+ns2  | 2026-10-27T17:53:18.101057143Z 27-Oct-2026 17:53:18.094 TKEY mode 3 support (GSS-API): yes
+ns2  | 2026-10-27T17:53:18.102910438Z 27-Oct-2026 17:53:18.098 the initial working directory is '/'
+ns2  | 2026-10-27T17:53:18.102930239Z 27-Oct-2026 17:53:18.098 loading configuration from '/etc/bind/named.conf'
+ns2  | 2026-10-27T17:53:18.102932639Z 27-Oct-2026 17:53:18.098 the working directory is now '/var/bind'
+ns2  | 2026-10-27T17:53:18.103059045Z 27-Oct-2026 17:53:18.098 reading built-in trust anchors from file '/etc/bind/bind.keys'
+ns2  | 2026-10-27T17:53:18.104076397Z 27-Oct-2026 17:53:18.098 using default UDP/IPv4 port range: [32768, 60999]
+ns2  | 2026-10-27T17:53:18.104085298Z 27-Oct-2026 17:53:18.098 using default UDP/IPv6 port range: [32768, 60999]
+ns2  | 2026-10-27T17:53:18.104778733Z 27-Oct-2026 17:53:18.098 listening on IPv4 interface lo, 127.0.0.1#53
+ns2  | 2026-10-27T17:53:18.125898515Z 27-Oct-2026 17:53:18.122 listening on IPv4 interface eth0, 172.30.0.12#53
+ns2  | 2026-10-27T17:53:18.127338289Z 27-Oct-2026 17:53:18.122 listening on IPv4 interface eth1, 172.31.0.12#53
+ns2  | 2026-10-27T17:53:18.128688258Z 27-Oct-2026 17:53:18.122 IPv6 socket API is incomplete; explicitly binding to each IPv6 address separately
+ns2  | 2026-10-27T17:53:18.128702459Z 27-Oct-2026 17:53:18.122 listening on IPv6 interface lo, ::1#53
+ns2  | 2026-10-27T17:53:18.130311241Z 27-Oct-2026 17:53:18.126 generating session key for dynamic DNS
+ns2  | 2026-10-27T17:53:18.130532052Z 27-Oct-2026 17:53:18.126 sizing zone task pool based on 1 zones
+ns2  | 2026-10-27T17:53:18.136165141Z 27-Oct-2026 17:53:18.130 obtaining root key for view _default from '/etc/bind/bind.keys'
+ns2  | 2026-10-27T17:53:18.136185142Z 27-Oct-2026 17:53:18.130 set up managed keys zone for view _default, file 'managed-keys.bind'
+ns2  | 2026-10-27T17:53:18.141369407Z 27-Oct-2026 17:53:18.138 configuring command channel from '/etc/bind/rndc.key'
+ns2  | 2026-10-27T17:53:18.142074043Z 27-Oct-2026 17:53:18.138 command channel listening on 127.0.0.1#953
+ns2  | 2026-10-27T17:53:18.142085244Z 27-Oct-2026 17:53:18.138 configuring command channel from '/etc/bind/rndc.key'
+ns2  | 2026-10-27T17:53:18.142864784Z 27-Oct-2026 17:53:18.138 command channel listening on ::1#953
+ns2  | 2026-10-27T17:53:18.142875084Z 27-Oct-2026 17:53:18.138 not using config file logging statement for logging due to -g option
+ns2  | 2026-10-27T17:53:18.145385213Z 27-Oct-2026 17:53:18.138 managed-keys-zone: loaded serial 3
+ns2  | 2026-10-27T17:53:18.146416866Z 27-Oct-2026 17:53:18.142 zone sd.lab/IN: loaded serial 2026101402
+ns2  | 2026-10-27T17:53:18.146426266Z 27-Oct-2026 17:53:18.142 zone sd.lab/IN: sending notifies (serial 2026101402)
+ns2  | 2026-10-27T17:53:18.147352014Z 27-Oct-2026 17:53:18.142 all zones loaded
+ns2  | 2026-10-27T17:53:18.147676330Z 27-Oct-2026 17:53:18.142 running
+ns2  | 2026-10-27T17:53:18.147994847Z 27-Oct-2026 17:53:18.142 network unreachable resolving './DNSKEY/IN': 2001:500:2d::d#53
+ns2  | 2026-10-27T17:53:18.148197257Z 27-Oct-2026 17:53:18.142 network unreachable resolving './DNSKEY/IN': 2001:500:2f::f#53
+ns2  | 2026-10-27T17:53:18.148204357Z 27-Oct-2026 17:53:18.142 network unreachable resolving './NS/IN': 2001:500:2f::f#53
+ns2  | 2026-10-27T17:53:18.148299462Z 27-Oct-2026 17:53:18.142 network unreachable resolving './DNSKEY/IN': 2001:500:2::c#53
+ns2  | 2026-10-27T17:53:18.148304163Z 27-Oct-2026 17:53:18.142 network unreachable resolving './NS/IN': 2001:500:2::c#53
+ns2  | 2026-10-27T17:53:18.148409668Z 27-Oct-2026 17:53:18.142 network unreachable resolving './DNSKEY/IN': 2001:503:c27::2:30#53
+ns2  | 2026-10-27T17:53:18.148436469Z 27-Oct-2026 17:53:18.142 network unreachable resolving './NS/IN': 2001:503:c27::2:30#53
+ns2  | 2026-10-27T17:53:18.148618379Z 27-Oct-2026 17:53:18.142 network unreachable resolving './DNSKEY/IN': 2001:503:ba3e::2:30#53
+ns2  | 2026-10-27T17:53:18.148623579Z 27-Oct-2026 17:53:18.142 network unreachable resolving './NS/IN': 2001:503:ba3e::2:30#53
+ns2  | 2026-10-27T17:53:18.148698483Z 27-Oct-2026 17:53:18.142 network unreachable resolving './DNSKEY/IN': 2001:500:1::53#53
+ns2  | 2026-10-27T17:53:18.148804888Z 27-Oct-2026 17:53:18.142 network unreachable resolving './NS/IN': 2001:500:1::53#53
+ns2  | 2026-10-27T17:53:18.148809288Z 27-Oct-2026 17:53:18.142 network unreachable resolving './DNSKEY/IN': 2001:500:a8::e#53
+ns2  | 2026-10-27T17:53:18.149034800Z 27-Oct-2026 17:53:18.142 network unreachable resolving './NS/IN': 2001:500:a8::e#53
+ns2  | 2026-10-27T17:53:18.149039700Z 27-Oct-2026 17:53:18.142 network unreachable resolving './DNSKEY/IN': 2001:500:12::d0d#53
+ns2  | 2026-10-27T17:53:18.149040700Z 27-Oct-2026 17:53:18.142 network unreachable resolving './NS/IN': 2001:500:12::d0d#53
+ns2  | 2026-10-27T17:53:18.149169707Z 27-Oct-2026 17:53:18.142 network unreachable resolving './DNSKEY/IN': 2001:500:9f::42#53
+ns2  | 2026-10-27T17:53:18.149180607Z 27-Oct-2026 17:53:18.142 network unreachable resolving './NS/IN': 2001:500:9f::42#53
+ns2  | 2026-10-27T17:53:18.149281713Z 27-Oct-2026 17:53:18.146 network unreachable resolving './DNSKEY/IN': 2001:7fe::53#53
+ns2  | 2026-10-27T17:53:18.149309814Z 27-Oct-2026 17:53:18.146 network unreachable resolving './NS/IN': 2001:7fe::53#53
+ns2  | 2026-10-27T17:53:18.149312914Z 27-Oct-2026 17:53:18.146 network unreachable resolving './DNSKEY/IN': 2801:1b8:10::b#53
+ns2  | 2026-10-27T17:53:18.149466922Z 27-Oct-2026 17:53:18.146 network unreachable resolving './NS/IN': 2801:1b8:10::b#53
+ns2  | 2026-10-27T17:53:18.149542826Z 27-Oct-2026 17:53:18.146 network unreachable resolving './DNSKEY/IN': 2001:7fd::1#53
+ns2  | 2026-10-27T17:53:18.149634131Z 27-Oct-2026 17:53:18.146 network unreachable resolving './NS/IN': 2001:7fd::1#53
+ns2  | 2026-10-27T17:53:18.149763737Z 27-Oct-2026 17:53:18.146 network unreachable resolving './DNSKEY/IN': 2001:dc3::35#53
+ns2  | 2026-10-27T17:53:18.149771638Z 27-Oct-2026 17:53:18.146 network unreachable resolving './NS/IN': 2001:dc3::35#53
+ns2  | 2026-10-27T17:53:18.191599580Z 27-Oct-2026 17:53:18.186 managed-keys-zone: Key 20326 for zone . is now trusted (acceptance timer complete)
+ns2  | 2026-10-27T17:53:18.191715586Z 27-Oct-2026 17:53:18.186 managed-keys-zone: Key 38696 for zone . is now trusted (acceptance timer complete)
+ns2  | 2026-10-27T17:53:21.069857393Z 27-Oct-2026 17:53:21.066 client @0x71860df5b310 172.30.0.11#44893: received notify for zone 'sd.lab'
+ns2  | 2026-10-27T17:53:21.069890695Z 27-Oct-2026 17:53:21.066 zone sd.lab/IN: notify from 172.30.0.11#44893: serial 2026101403
+ns2  | 2026-10-27T17:53:21.070494026Z 27-Oct-2026 17:53:21.066 zone sd.lab/IN: Transfer started.
+ns2  | 2026-10-27T17:53:21.070620633Z 27-Oct-2026 17:53:21.066 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns2  | 2026-10-27T17:53:21.071276266Z 27-Oct-2026 17:53:21.066 zone sd.lab/IN: transferred serial 2026101404
+ns2  | 2026-10-27T17:53:21.071534379Z 27-Oct-2026 17:53:21.066 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns2  | 2026-10-27T17:53:21.071540680Z 27-Oct-2026 17:53:21.066 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 12 records, 290 bytes, 0.001 secs (290000 bytes/sec) (serial 2026101404)
+ns2  | 2026-10-27T17:53:21.478446120Z 27-Oct-2026 17:53:21.474 client @0x71860df50400 172.30.0.11#50077: received notify for zone 'sd.lab'
+ns2  | 2026-10-27T17:53:21.478468121Z 27-Oct-2026 17:53:21.474 zone sd.lab/IN: notify from 172.30.0.11#50077: zone is up to date
+ns2  | 2026-10-27T17:53:21.557957592Z 27-Oct-2026 17:53:21.554 client @0x718607f19420 172.31.0.11#60939: received notify for zone 'sd.lab'
+ns2  | 2026-10-27T17:53:21.557971893Z 27-Oct-2026 17:53:21.554 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#60939
+ns2  | 2026-10-27T17:53:21.976174212Z 27-Oct-2026 17:53:21.970 client @0x71860df543d0 172.31.0.11#48968: received notify for zone 'sd.lab'
+ns2  | 2026-10-27T17:53:21.976211314Z 27-Oct-2026 17:53:21.970 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#48968
+ns3  | 2026-10-27T17:45:04.535074218Z 27-Oct-2026 17:45:04.532 client @0x73fa18df93a0 172.31.0.12#49723: received notify for zone 'sd.lab'
+ns3  | 2026-10-27T17:45:04.535085619Z 27-Oct-2026 17:45:04.532 zone sd.lab/IN: refused notify from non-primary: 172.31.0.12#49723
+ns3  | 2026-10-27T17:45:04.675196049Z 27-Oct-2026 17:45:04.672 client @0x73fa18dfb3a0 172.30.0.11#32792: received notify for zone 'sd.lab'
+ns3  | 2026-10-27T17:45:04.675221950Z 27-Oct-2026 17:45:04.672 zone sd.lab/IN: notify from 172.30.0.11#32792: serial 2026101402
+ns3  | 2026-10-27T17:45:04.675506466Z 27-Oct-2026 17:45:04.672 client @0x73fa18df0410 172.31.0.11#51735: received notify for zone 'sd.lab'
+ns3  | 2026-10-27T17:45:04.675515766Z 27-Oct-2026 17:45:04.672 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#51735
+ns3  | 2026-10-27T17:45:04.675795382Z 27-Oct-2026 17:45:04.672 zone sd.lab/IN: Transfer started.
+ns3  | 2026-10-27T17:45:04.676044095Z 27-Oct-2026 17:45:04.672 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns3  | 2026-10-27T17:45:04.676491720Z 27-Oct-2026 17:45:04.672 zone sd.lab/IN: transferred serial 2026101402
+ns3  | 2026-10-27T17:45:04.676497920Z 27-Oct-2026 17:45:04.672 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns3  | 2026-10-27T17:45:04.676499820Z 27-Oct-2026 17:45:04.672 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 10 records, 246 bytes, 0.001 secs (246000 bytes/sec) (serial 2026101402)
+ns3  | 2026-10-27T17:45:04.676674330Z 27-Oct-2026 17:45:04.672 zone sd.lab/IN: sending notifies (serial 2026101402)
+ns3  | 2026-10-27T17:45:05.756761401Z 27-Oct-2026 17:45:05.752 received control channel command 'zonestatus sd.lab'
+ns3  | 2026-10-27T17:46:03.701401040Z 27-Oct-2026 17:46:03.697 zone sd.lab/IN: refresh: retry limit for primary 172.30.0.11#53 exceeded (source 0.0.0.0#0)
+ns3  | 2026-10-27T17:46:03.701429242Z 27-Oct-2026 17:46:03.697 zone sd.lab/IN: Transfer started.
+ns3  | 2026-10-27T17:46:06.769712452Z 27-Oct-2026 17:46:06.767 transfer of 'sd.lab/IN' from 172.30.0.11#53: failed to connect: host unreachable
+ns3  | 2026-10-27T17:46:06.769740554Z 27-Oct-2026 17:46:06.767 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: host unreachable
+ns3  | 2026-10-27T17:46:06.769741954Z 27-Oct-2026 17:46:06.767 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 0 messages, 0 records, 0 bytes, 3.069 secs (0 bytes/sec) (serial 0)
+ns3  | 2026-10-27T17:46:37.298673038Z 27-Oct-2026 17:46:37.294 zone sd.lab/IN: refresh: retry limit for primary 172.30.0.11#53 exceeded (source 0.0.0.0#0)
+ns3  | 2026-10-27T17:46:37.298698339Z 27-Oct-2026 17:46:37.294 zone sd.lab/IN: Transfer started.
+ns3  | 2026-10-27T17:46:40.369821206Z 27-Oct-2026 17:46:40.366 transfer of 'sd.lab/IN' from 172.30.0.11#53: failed to connect: host unreachable
+ns3  | 2026-10-27T17:46:40.369844507Z 27-Oct-2026 17:46:40.366 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: host unreachable
+ns3  | 2026-10-27T17:46:40.369846107Z 27-Oct-2026 17:46:40.366 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 0 messages, 0 records, 0 bytes, 3.072 secs (0 bytes/sec) (serial 0)
+ns3  | 2026-10-27T17:47:10.890223023Z 27-Oct-2026 17:47:10.886 zone sd.lab/IN: refresh: retry limit for primary 172.30.0.11#53 exceeded (source 0.0.0.0#0)
+ns3  | 2026-10-27T17:47:41.413986703Z 27-Oct-2026 17:47:41.408 zone sd.lab/IN: refresh: retry limit for primary 172.30.0.11#53 exceeded (source 0.0.0.0#0)
+ns3  | 2026-10-27T17:48:11.934086605Z 27-Oct-2026 17:48:11.929 zone sd.lab/IN: refresh: retry limit for primary 172.30.0.11#53 exceeded (source 0.0.0.0#0)
+ns3  | 2026-10-27T17:48:42.456495697Z 27-Oct-2026 17:48:42.453 zone sd.lab/IN: refresh: retry limit for primary 172.30.0.11#53 exceeded (source 0.0.0.0#0)
+ns3  | 2026-10-27T17:49:12.979000675Z 27-Oct-2026 17:49:12.977 zone sd.lab/IN: refresh: retry limit for primary 172.30.0.11#53 exceeded (source 0.0.0.0#0)
+ns3  | 2026-10-27T17:49:43.500751255Z 27-Oct-2026 17:49:43.498 zone sd.lab/IN: refresh: retry limit for primary 172.30.0.11#53 exceeded (source 0.0.0.0#0)
+ns3  | 2026-10-27T17:50:04.674582752Z 27-Oct-2026 17:50:04.674 zone sd.lab/IN: expired
+ns3  | 2026-10-27T17:50:12.810889850Z 27-Oct-2026 17:50:12.806 client @0x73fa1ee3c300 172.31.0.11#48192: received notify for zone 'sd.lab'
+ns3  | 2026-10-27T17:50:12.810914652Z 27-Oct-2026 17:50:12.806 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#48192
+ns3  | 2026-10-27T17:50:12.811041459Z 27-Oct-2026 17:50:12.806 client @0x73fa18dc6300 172.30.0.11#44778: received notify for zone 'sd.lab'
+ns3  | 2026-10-27T17:50:12.811049159Z 27-Oct-2026 17:50:12.806 zone sd.lab/IN: notify from 172.30.0.11#44778: refresh in progress, refresh check queued
+ns3  | 2026-10-27T17:50:14.020611554Z 27-Oct-2026 17:50:14.014 zone sd.lab/IN: refresh: skipping zone transfer as primary 172.30.0.11#53 (source 0.0.0.0#0) is unreachable (cached)
+ns3  | 2026-10-27T17:50:14.515633117Z 27-Oct-2026 17:50:14.514 zone sd.lab/IN: refresh: skipping zone transfer as primary 172.30.0.11#53 (source 0.0.0.0#0) is unreachable (cached)
+ns3  | 2026-10-27T17:50:17.502977328Z 27-Oct-2026 17:50:17.498 client @0x73fa1ee562c0 172.31.0.12#55858: received notify for zone 'sd.lab'
+ns3  | 2026-10-27T17:50:17.502989729Z 27-Oct-2026 17:50:17.498 zone sd.lab/IN: refused notify from non-primary: 172.31.0.12#55858
+ns3  | 2026-10-27T17:51:01.517202779Z 27-Oct-2026 17:51:01.516 zone sd.lab/IN: refresh: skipping zone transfer as primary 172.30.0.11#53 (source 0.0.0.0#0) is unreachable (cached)
+ns3  | 2026-10-27T17:52:50.519542598Z 27-Oct-2026 17:52:50.518 zone sd.lab/IN: refresh: skipping zone transfer as primary 172.30.0.11#53 (source 0.0.0.0#0) is unreachable (cached)
+ns3  | 2026-10-27T17:53:11.558028909Z 27-Oct-2026 17:53:11.554 client @0x73fa18dc8370 172.30.0.11#43515: received notify for zone 'sd.lab'
+ns3  | 2026-10-27T17:53:11.558052710Z 27-Oct-2026 17:53:11.554 zone sd.lab/IN: notify from 172.30.0.11#43515: no serial
+ns3  | 2026-10-27T17:53:11.558055211Z 27-Oct-2026 17:53:11.554 client @0x73fa18dd4170 172.31.0.11#48312: received notify for zone 'sd.lab'
+ns3  | 2026-10-27T17:53:11.558227319Z 27-Oct-2026 17:53:11.554 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#48312
+ns3  | 2026-10-27T17:53:11.558519134Z 27-Oct-2026 17:53:11.554 zone sd.lab/IN: refresh: skipping zone transfer as primary 172.30.0.11#53 (source 0.0.0.0#0) is unreachable (cached)
+ns3  | 2026-10-27T17:53:15.673431509Z 27-Oct-2026 17:53:15.670 no longer listening on 127.0.0.1#53
+ns3  | 2026-10-27T17:53:15.674407859Z 27-Oct-2026 17:53:15.670 no longer listening on 172.31.0.13#53
+ns3  | 2026-10-27T17:53:15.675096494Z 27-Oct-2026 17:53:15.670 no longer listening on 172.30.0.13#53
+ns3  | 2026-10-27T17:53:15.675769829Z 27-Oct-2026 17:53:15.670 no longer listening on ::1#53
+ns3  | 2026-10-27T17:53:15.677256805Z 27-Oct-2026 17:53:15.670 shutting down
+ns3  | 2026-10-27T17:53:15.677267605Z 27-Oct-2026 17:53:15.670 stopping command channel on 127.0.0.1#953
+ns3  | 2026-10-27T17:53:15.677684027Z 27-Oct-2026 17:53:15.674 stopping command channel on ::1#953
+ns3  | 2026-10-27T17:53:15.707111534Z 27-Oct-2026 17:53:15.702 exiting
+ns3  | 2026-10-27T17:53:17.919245731Z 27-Oct-2026 17:53:17.914 starting BIND 9.18.49 (Extended Support Version) <id:cd4a53b>
+ns3  | 2026-10-27T17:53:17.919264932Z 27-Oct-2026 17:53:17.914 running on Linux x86_64 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026
+ns3  | 2026-10-27T17:53:17.919268232Z 27-Oct-2026 17:53:17.914 built with  '--build=x86_64-alpine-linux-musl' '--host=x86_64-alpine-linux-musl' '--prefix=/usr' '--sysconfdir=/etc/bind' '--localstatedir=/var' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--with-gssapi=yes' '--with-libxml2' '--with-json-c' '--with-openssl=yes' '--enable-dnstap' '--enable-largefile' '--enable-linux-caps' '--enable-shared' '--disable-static' 'build_alias=x86_64-alpine-linux-musl' 'host_alias=x86_64-alpine-linux-musl' 'CC=gcc' 'CFLAGS=-Os -fstack-clash-protection -Wformat -Werror=format-security -fno-plt -g -D_GNU_SOURCE' 'LDFLAGS=-Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs'
+ns3  | 2026-10-27T17:53:17.919269732Z 27-Oct-2026 17:53:17.914 running as: named -g -u named -c /etc/bind/named.conf
+ns3  | 2026-10-27T17:53:17.919271432Z 27-Oct-2026 17:53:17.914 compiled by GCC 13.2.1 20240309
+ns3  | 2026-10-27T17:53:17.919272932Z 27-Oct-2026 17:53:17.914 compiled with OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns3  | 2026-10-27T17:53:17.919274332Z 27-Oct-2026 17:53:17.914 linked to OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns3  | 2026-10-27T17:53:17.919275733Z 27-Oct-2026 17:53:17.914 compiled with libuv version: 1.48.0
+ns3  | 2026-10-27T17:53:17.919277033Z 27-Oct-2026 17:53:17.914 linked to libuv version: 1.48.0
+ns3  | 2026-10-27T17:53:17.919278333Z 27-Oct-2026 17:53:17.914 compiled with libxml2 version: 2.12.10
+ns3  | 2026-10-27T17:53:17.919279533Z 27-Oct-2026 17:53:17.914 linked to libxml2 version: 21210
+ns3  | 2026-10-27T17:53:17.919280833Z 27-Oct-2026 17:53:17.914 compiled with json-c version: 0.17
+ns3  | 2026-10-27T17:53:17.919379738Z 27-Oct-2026 17:53:17.914 linked to json-c version: 0.17
+ns3  | 2026-10-27T17:53:17.919392839Z 27-Oct-2026 17:53:17.914 compiled with zlib version: 1.3.2
+ns3  | 2026-10-27T17:53:17.919397339Z 27-Oct-2026 17:53:17.914 linked to zlib version: 1.3.2
+ns3  | 2026-10-27T17:53:17.919400139Z 27-Oct-2026 17:53:17.914 ----------------------------------------------------
+ns3  | 2026-10-27T17:53:17.919402639Z 27-Oct-2026 17:53:17.914 BIND 9 is maintained by Internet Systems Consortium,
+ns3  | 2026-10-27T17:53:17.919517345Z 27-Oct-2026 17:53:17.914 Inc. (ISC), a non-profit 501(c)(3) public-benefit 
+ns3  | 2026-10-27T17:53:17.919546846Z 27-Oct-2026 17:53:17.914 corporation.  Support and training for BIND 9 are 
+ns3  | 2026-10-27T17:53:17.919551247Z 27-Oct-2026 17:53:17.914 available at https://www.isc.org/support
+ns3  | 2026-10-27T17:53:17.919553347Z 27-Oct-2026 17:53:17.914 ----------------------------------------------------
+ns3  | 2026-10-27T17:53:17.919555347Z 27-Oct-2026 17:53:17.914 found 12 CPUs, using 12 worker threads
+ns3  | 2026-10-27T17:53:17.919557747Z 27-Oct-2026 17:53:17.914 using 12 UDP listeners per interface
+ns3  | 2026-10-27T17:53:17.944479523Z 27-Oct-2026 17:53:17.938 DNSSEC algorithms: RSASHA1 NSEC3RSASHA1 RSASHA256 RSASHA512 ECDSAP256SHA256 ECDSAP384SHA384 ED25519 ED448
+ns3  | 2026-10-27T17:53:17.944492924Z 27-Oct-2026 17:53:17.938 DS algorithms: SHA-1 SHA-256 SHA-384
+ns3  | 2026-10-27T17:53:17.944495024Z 27-Oct-2026 17:53:17.938 HMAC algorithms: HMAC-MD5 HMAC-SHA1 HMAC-SHA224 HMAC-SHA256 HMAC-SHA384 HMAC-SHA512
+ns3  | 2026-10-27T17:53:17.944496524Z 27-Oct-2026 17:53:17.938 TKEY mode 2 support (Diffie-Hellman): yes
+ns3  | 2026-10-27T17:53:17.944498224Z 27-Oct-2026 17:53:17.938 TKEY mode 3 support (GSS-API): yes
+ns3  | 2026-10-27T17:53:17.946208912Z 27-Oct-2026 17:53:17.942 the initial working directory is '/'
+ns3  | 2026-10-27T17:53:17.946227313Z 27-Oct-2026 17:53:17.942 loading configuration from '/etc/bind/named.conf'
+ns3  | 2026-10-27T17:53:17.946918848Z 27-Oct-2026 17:53:17.942 the working directory is now '/var/bind'
+ns3  | 2026-10-27T17:53:17.947460976Z 27-Oct-2026 17:53:17.942 reading built-in trust anchors from file '/etc/bind/bind.keys'
+ns3  | 2026-10-27T17:53:17.948640436Z 27-Oct-2026 17:53:17.942 using default UDP/IPv4 port range: [32768, 60999]
+ns3  | 2026-10-27T17:53:17.948646337Z 27-Oct-2026 17:53:17.942 using default UDP/IPv6 port range: [32768, 60999]
+ns3  | 2026-10-27T17:53:17.949352073Z 27-Oct-2026 17:53:17.946 listening on IPv4 interface lo, 127.0.0.1#53
+ns3  | 2026-10-27T17:53:17.970053233Z 27-Oct-2026 17:53:17.966 listening on IPv4 interface eth0, 172.31.0.13#53
+ns3  | 2026-10-27T17:53:17.971324398Z 27-Oct-2026 17:53:17.966 listening on IPv4 interface eth1, 172.30.0.13#53
+ns3  | 2026-10-27T17:53:17.972320749Z 27-Oct-2026 17:53:17.966 IPv6 socket API is incomplete; explicitly binding to each IPv6 address separately
+ns3  | 2026-10-27T17:53:17.972332550Z 27-Oct-2026 17:53:17.966 listening on IPv6 interface lo, ::1#53
+ns3  | 2026-10-27T17:53:17.973883429Z 27-Oct-2026 17:53:17.970 generating session key for dynamic DNS
+ns3  | 2026-10-27T17:53:17.974243048Z 27-Oct-2026 17:53:17.970 sizing zone task pool based on 1 zones
+ns3  | 2026-10-27T17:53:17.978413961Z 27-Oct-2026 17:53:17.974 obtaining root key for view _default from '/etc/bind/bind.keys'
+ns3  | 2026-10-27T17:53:17.978432262Z 27-Oct-2026 17:53:17.974 set up managed keys zone for view _default, file 'managed-keys.bind'
+ns3  | 2026-10-27T17:53:17.982992996Z 27-Oct-2026 17:53:17.978 configuring command channel from '/etc/bind/rndc.key'
+ns3  | 2026-10-27T17:53:17.983615428Z 27-Oct-2026 17:53:17.978 command channel listening on 127.0.0.1#953
+ns3  | 2026-10-27T17:53:17.983622428Z 27-Oct-2026 17:53:17.978 configuring command channel from '/etc/bind/rndc.key'
+ns3  | 2026-10-27T17:53:17.984315364Z 27-Oct-2026 17:53:17.978 command channel listening on ::1#953
+ns3  | 2026-10-27T17:53:17.984347365Z 27-Oct-2026 17:53:17.978 not using config file logging statement for logging due to -g option
+ns3  | 2026-10-27T17:53:17.987153209Z 27-Oct-2026 17:53:17.982 managed-keys-zone: loaded serial 2
+ns3  | 2026-10-27T17:53:17.987972751Z 27-Oct-2026 17:53:17.982 zone sd.lab/IN: loaded serial 2026101402
+ns3  | 2026-10-27T17:53:17.987992952Z 27-Oct-2026 17:53:17.982 zone sd.lab/IN: expired
+ns3  | 2026-10-27T17:53:17.988491578Z 27-Oct-2026 17:53:17.982 all zones loaded
+ns3  | 2026-10-27T17:53:17.988663986Z 27-Oct-2026 17:53:17.982 zone sd.lab/IN: Transfer started.
+ns3  | 2026-10-27T17:53:17.988670987Z 27-Oct-2026 17:53:17.982 running
+ns3  | 2026-10-27T17:53:17.988955201Z 27-Oct-2026 17:53:17.982 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns3  | 2026-10-27T17:53:17.989529331Z 27-Oct-2026 17:53:17.986 zone sd.lab/IN: transferred serial 2026101404
+ns3  | 2026-10-27T17:53:17.989536931Z 27-Oct-2026 17:53:17.986 network unreachable resolving './DNSKEY/IN': 2001:500:2::c#53
+ns3  | 2026-10-27T17:53:17.989538431Z 27-Oct-2026 17:53:17.986 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns3  | 2026-10-27T17:53:17.989539331Z 27-Oct-2026 17:53:17.986 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 12 records, 290 bytes, 0.004 secs (72500 bytes/sec) (serial 2026101404)
+ns3  | 2026-10-27T17:53:17.989681838Z 27-Oct-2026 17:53:17.986 network unreachable resolving './DNSKEY/IN': 2001:500:12::d0d#53
+ns3  | 2026-10-27T17:53:17.989767643Z 27-Oct-2026 17:53:17.986 network unreachable resolving './NS/IN': 2001:500:12::d0d#53
+ns3  | 2026-10-27T17:53:17.989975454Z 27-Oct-2026 17:53:17.986 network unreachable resolving './DNSKEY/IN': 2001:500:1::53#53
+ns3  | 2026-10-27T17:53:17.989982854Z 27-Oct-2026 17:53:17.986 network unreachable resolving './NS/IN': 2001:500:1::53#53
+ns3  | 2026-10-27T17:53:17.989983954Z 27-Oct-2026 17:53:17.986 network unreachable resolving './DNSKEY/IN': 2001:7fd::1#53
+ns3  | 2026-10-27T17:53:17.990020656Z 27-Oct-2026 17:53:17.986 network unreachable resolving './NS/IN': 2001:7fd::1#53
+ns3  | 2026-10-27T17:53:17.990176064Z 27-Oct-2026 17:53:17.986 network unreachable resolving './DNSKEY/IN': 2801:1b8:10::b#53
+ns3  | 2026-10-27T17:53:17.990184164Z 27-Oct-2026 17:53:17.986 network unreachable resolving './NS/IN': 2801:1b8:10::b#53
+ns3  | 2026-10-27T17:53:17.990215666Z 27-Oct-2026 17:53:17.986 network unreachable resolving './DNSKEY/IN': 2001:500:2f::f#53
+ns3  | 2026-10-27T17:53:17.990333972Z 27-Oct-2026 17:53:17.986 network unreachable resolving './NS/IN': 2001:500:2f::f#53
+ns3  | 2026-10-27T17:53:17.990434377Z 27-Oct-2026 17:53:17.986 network unreachable resolving './DNSKEY/IN': 2001:500:a8::e#53
+ns3  | 2026-10-27T17:53:17.990438877Z 27-Oct-2026 17:53:17.986 network unreachable resolving './NS/IN': 2001:500:a8::e#53
+ns3  | 2026-10-27T17:53:17.990521381Z 27-Oct-2026 17:53:17.986 network unreachable resolving './DNSKEY/IN': 2001:503:c27::2:30#53
+ns3  | 2026-10-27T17:53:17.990527782Z 27-Oct-2026 17:53:17.986 network unreachable resolving './NS/IN': 2001:503:c27::2:30#53
+ns3  | 2026-10-27T17:53:17.990663389Z 27-Oct-2026 17:53:17.986 network unreachable resolving './DNSKEY/IN': 2001:7fe::53#53
+ns3  | 2026-10-27T17:53:17.990771094Z 27-Oct-2026 17:53:17.986 network unreachable resolving './NS/IN': 2001:7fe::53#53
+ns3  | 2026-10-27T17:53:17.990868199Z 27-Oct-2026 17:53:17.986 network unreachable resolving './DNSKEY/IN': 2001:503:ba3e::2:30#53
+ns3  | 2026-10-27T17:53:17.990872699Z 27-Oct-2026 17:53:17.986 network unreachable resolving './NS/IN': 2001:503:ba3e::2:30#53
+ns3  | 2026-10-27T17:53:17.990965704Z 27-Oct-2026 17:53:17.986 network unreachable resolving './DNSKEY/IN': 2001:dc3::35#53
+ns3  | 2026-10-27T17:53:17.990971605Z 27-Oct-2026 17:53:17.986 network unreachable resolving './NS/IN': 2001:dc3::35#53
+ns3  | 2026-10-27T17:53:17.991066209Z 27-Oct-2026 17:53:17.986 network unreachable resolving './DNSKEY/IN': 2001:500:2d::d#53
+ns3  | 2026-10-27T17:53:17.991072610Z 27-Oct-2026 17:53:17.986 network unreachable resolving './NS/IN': 2001:500:2d::d#53
+ns3  | 2026-10-27T17:53:17.991191016Z 27-Oct-2026 17:53:17.986 network unreachable resolving './DNSKEY/IN': 2001:500:9f::42#53
+ns3  | 2026-10-27T17:53:17.991256719Z 27-Oct-2026 17:53:17.986 network unreachable resolving './NS/IN': 2001:500:9f::42#53
+ns3  | 2026-10-27T17:53:18.146974194Z 27-Oct-2026 17:53:18.142 client @0x70f8169fd210 172.31.0.12#36864: received notify for zone 'sd.lab'
+ns3  | 2026-10-27T17:53:18.146989895Z 27-Oct-2026 17:53:18.142 zone sd.lab/IN: refused notify from non-primary: 172.31.0.12#36864
+ns3  | 2026-10-27T17:53:18.195347772Z 27-Oct-2026 17:53:18.190 network unreachable resolving './DNSKEY/IN': 2001:503:c27::2:30#53
+ns3  | 2026-10-27T17:53:18.195367373Z 27-Oct-2026 17:53:18.190 network unreachable resolving './DNSKEY/IN': 2001:503:ba3e::2:30#53
+ns3  | 2026-10-27T17:53:18.195452377Z 27-Oct-2026 17:53:18.190 network unreachable resolving './DNSKEY/IN': 2001:500:12::d0d#53
+ns3  | 2026-10-27T17:53:18.195538082Z 27-Oct-2026 17:53:18.190 network unreachable resolving './DNSKEY/IN': 2001:500:a8::e#53
+ns3  | 2026-10-27T17:53:18.195605485Z 27-Oct-2026 17:53:18.190 network unreachable resolving './DNSKEY/IN': 2001:dc3::35#53
+ns3  | 2026-10-27T17:53:18.202167521Z 27-Oct-2026 17:53:18.198 managed-keys-zone: Key 20326 for zone . is now trusted (acceptance timer complete)
+ns3  | 2026-10-27T17:53:18.202184422Z 27-Oct-2026 17:53:18.198 managed-keys-zone: Key 38696 for zone . is now trusted (acceptance timer complete)
+ns3  | 2026-10-27T17:53:21.976180312Z 27-Oct-2026 17:53:21.970 client @0x70f8109bd420 172.30.0.11#55928: received notify for zone 'sd.lab'
+ns3  | 2026-10-27T17:53:21.976210814Z 27-Oct-2026 17:53:21.970 zone sd.lab/IN: notify from 172.30.0.11#55928: zone is up to date
+ns3  | 2026-10-27T17:53:21.976212514Z 27-Oct-2026 17:53:21.970 client @0x70f816a193a0 172.31.0.11#55182: received notify for zone 'sd.lab'
+ns3  | 2026-10-27T17:53:21.976213514Z 27-Oct-2026 17:53:21.970 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#55182
+resolvedor  | 2026-10-27T17:45:01.367233909Z 27-Oct-2026 17:45:01.360 received control channel command 'flush'
+resolvedor  | 2026-10-27T17:45:01.368306967Z 27-Oct-2026 17:45:01.364 flushing caches in all views succeeded
+ns1         | 2026-10-27T17:45:02.288549183Z 27-Oct-2026 17:45:02.284 received control channel command 'reload sd.lab'
+ns1         | 2026-10-27T17:45:02.288927703Z 27-Oct-2026 17:45:02.284 zone sd.lab/IN: loaded serial 2026101402
+ns1         | 2026-10-27T17:45:04.172487580Z 27-Oct-2026 17:45:04.169 zone sd.lab/IN: sending notifies (serial 2026101402)
+ns1         | 2026-10-27T17:45:04.173812252Z 27-Oct-2026 17:45:04.169 client @0x7361072592d0 172.30.0.12#36447 (sd.lab): transfer of 'sd.lab/IN': IXFR version not in journal, falling back to AXFR
+ns1         | 2026-10-27T17:45:04.173894157Z 27-Oct-2026 17:45:04.169 client @0x7361072592d0 172.30.0.12#36447 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR started (serial 2026101402)
+ns1         | 2026-10-27T17:45:04.174057366Z 27-Oct-2026 17:45:04.169 client @0x7361072592d0 172.30.0.12#36447 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR ended: 1 messages, 10 records, 246 bytes, 0.001 secs (246000 bytes/sec) (serial 2026101402)
+ns1         | 2026-10-27T17:45:04.676300309Z 27-Oct-2026 17:45:04.672 client @0x7361072593e0 172.30.0.13#46513 (sd.lab): transfer of 'sd.lab/IN': IXFR version not in journal, falling back to AXFR
+ns1         | 2026-10-27T17:45:04.676314310Z 27-Oct-2026 17:45:04.672 client @0x7361072593e0 172.30.0.13#46513 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR started (serial 2026101402)
+ns1         | 2026-10-27T17:45:04.676315910Z 27-Oct-2026 17:45:04.672 client @0x7361072593e0 172.30.0.13#46513 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR ended: 1 messages, 10 records, 246 bytes, 0.001 secs (246000 bytes/sec) (serial 2026101402)
+ns1         | 2026-10-27T17:45:05.894212148Z 27-Oct-2026 17:45:05.888 no longer listening on 127.0.0.1#53
+ns1         | 2026-10-27T17:45:05.894882677Z 27-Oct-2026 17:45:05.892 no longer listening on 172.31.0.11#53
+ns1         | 2026-10-27T17:45:05.895607008Z 27-Oct-2026 17:45:05.892 no longer listening on 172.30.0.11#53
+ns1         | 2026-10-27T17:45:05.896375941Z 27-Oct-2026 17:45:05.892 no longer listening on ::1#53
+ns1         | 2026-10-27T17:45:05.897830804Z 27-Oct-2026 17:45:05.892 shutting down
+ns1         | 2026-10-27T17:45:05.897836705Z 27-Oct-2026 17:45:05.892 stopping command channel on 127.0.0.1#953
+ns1         | 2026-10-27T17:45:05.898239022Z 27-Oct-2026 17:45:05.892 stopping command channel on ::1#953
+ns1         | 2026-10-27T17:45:05.917824469Z 27-Oct-2026 17:45:05.912 exiting
+ns1         | 2026-10-27T17:50:12.248921068Z 27-Oct-2026 17:50:12.242 starting BIND 9.18.49 (Extended Support Version) <id:cd4a53b>
+ns1         | 2026-10-27T17:50:12.249261186Z 27-Oct-2026 17:50:12.242 running on Linux x86_64 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026
+ns1         | 2026-10-27T17:50:12.249269886Z 27-Oct-2026 17:50:12.242 built with  '--build=x86_64-alpine-linux-musl' '--host=x86_64-alpine-linux-musl' '--prefix=/usr' '--sysconfdir=/etc/bind' '--localstatedir=/var' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--with-gssapi=yes' '--with-libxml2' '--with-json-c' '--with-openssl=yes' '--enable-dnstap' '--enable-largefile' '--enable-linux-caps' '--enable-shared' '--disable-static' 'build_alias=x86_64-alpine-linux-musl' 'host_alias=x86_64-alpine-linux-musl' 'CC=gcc' 'CFLAGS=-Os -fstack-clash-protection -Wformat -Werror=format-security -fno-plt -g -D_GNU_SOURCE' 'LDFLAGS=-Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs'
+ns1         | 2026-10-27T17:50:12.249271686Z 27-Oct-2026 17:50:12.242 running as: named -g -u named -c /etc/bind/named.conf
+ns1         | 2026-10-27T17:50:12.249273387Z 27-Oct-2026 17:50:12.242 compiled by GCC 13.2.1 20240309
+ns1         | 2026-10-27T17:50:12.249275187Z 27-Oct-2026 17:50:12.242 compiled with OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns1         | 2026-10-27T17:50:12.249276587Z 27-Oct-2026 17:50:12.242 linked to OpenSSL version: OpenSSL 3.3.7 7 Apr 2026
+ns1         | 2026-10-27T17:50:12.249278087Z 27-Oct-2026 17:50:12.242 compiled with libuv version: 1.48.0
+ns1         | 2026-10-27T17:50:12.249279687Z 27-Oct-2026 17:50:12.242 linked to libuv version: 1.48.0
+ns1         | 2026-10-27T17:50:12.249302488Z 27-Oct-2026 17:50:12.242 compiled with libxml2 version: 2.12.10
+ns1         | 2026-10-27T17:50:12.249304288Z 27-Oct-2026 17:50:12.242 linked to libxml2 version: 21210
+ns1         | 2026-10-27T17:50:12.249305688Z 27-Oct-2026 17:50:12.242 compiled with json-c version: 0.17
+ns1         | 2026-10-27T17:50:12.249309589Z 27-Oct-2026 17:50:12.242 linked to json-c version: 0.17
+ns1         | 2026-10-27T17:50:12.249310989Z 27-Oct-2026 17:50:12.242 compiled with zlib version: 1.3.2
+ns1         | 2026-10-27T17:50:12.249312289Z 27-Oct-2026 17:50:12.242 linked to zlib version: 1.3.2
+ns1         | 2026-10-27T17:50:12.249313789Z 27-Oct-2026 17:50:12.242 ----------------------------------------------------
+ns1         | 2026-10-27T17:50:12.249315189Z 27-Oct-2026 17:50:12.242 BIND 9 is maintained by Internet Systems Consortium,
+ns1         | 2026-10-27T17:50:12.249316489Z 27-Oct-2026 17:50:12.242 Inc. (ISC), a non-profit 501(c)(3) public-benefit 
+ns1         | 2026-10-27T17:50:12.249317889Z 27-Oct-2026 17:50:12.242 corporation.  Support and training for BIND 9 are 
+ns1         | 2026-10-27T17:50:12.249319289Z 27-Oct-2026 17:50:12.242 available at https://www.isc.org/support
+ns1         | 2026-10-27T17:50:12.249323189Z 27-Oct-2026 17:50:12.242 ----------------------------------------------------
+ns1         | 2026-10-27T17:50:12.249324789Z 27-Oct-2026 17:50:12.242 found 12 CPUs, using 12 worker threads
+ns1         | 2026-10-27T17:50:12.249326289Z 27-Oct-2026 17:50:12.242 using 12 UDP listeners per interface
+ns1         | 2026-10-27T17:50:12.273378590Z 27-Oct-2026 17:50:12.266 DNSSEC algorithms: RSASHA1 NSEC3RSASHA1 RSASHA256 RSASHA512 ECDSAP256SHA256 ECDSAP384SHA384 ED25519 ED448
+ns1         | 2026-10-27T17:50:12.273394591Z 27-Oct-2026 17:50:12.266 DS algorithms: SHA-1 SHA-256 SHA-384
+ns1         | 2026-10-27T17:50:12.273396291Z 27-Oct-2026 17:50:12.266 HMAC algorithms: HMAC-MD5 HMAC-SHA1 HMAC-SHA224 HMAC-SHA256 HMAC-SHA384 HMAC-SHA512
+ns1         | 2026-10-27T17:50:12.273397591Z 27-Oct-2026 17:50:12.266 TKEY mode 2 support (Diffie-Hellman): yes
+ns1         | 2026-10-27T17:50:12.273398691Z 27-Oct-2026 17:50:12.266 TKEY mode 3 support (GSS-API): yes
+ns1         | 2026-10-27T17:50:12.275628811Z 27-Oct-2026 17:50:12.270 the initial working directory is '/'
+ns1         | 2026-10-27T17:50:12.275638712Z 27-Oct-2026 17:50:12.270 loading configuration from '/etc/bind/named.conf'
+ns1         | 2026-10-27T17:50:12.276046234Z 27-Oct-2026 17:50:12.270 the working directory is now '/var/bind'
+ns1         | 2026-10-27T17:50:12.277917735Z 27-Oct-2026 17:50:12.270 reading built-in trust anchors from file '/etc/bind/bind.keys'
+ns1         | 2026-10-27T17:50:12.279412616Z 27-Oct-2026 17:50:12.274 using default UDP/IPv4 port range: [32768, 60999]
+ns1         | 2026-10-27T17:50:12.279426217Z 27-Oct-2026 17:50:12.274 using default UDP/IPv6 port range: [32768, 60999]
+ns1         | 2026-10-27T17:50:12.280098653Z 27-Oct-2026 17:50:12.274 listening on IPv4 interface lo, 127.0.0.1#53
+ns1         | 2026-10-27T17:50:12.291041945Z 27-Oct-2026 17:50:12.286 listening on IPv4 interface eth0, 172.30.0.11#53
+ns1         | 2026-10-27T17:50:12.292443921Z 27-Oct-2026 17:50:12.286 listening on IPv4 interface eth1, 172.31.0.11#53
+ns1         | 2026-10-27T17:50:12.293771392Z 27-Oct-2026 17:50:12.286 IPv6 socket API is incomplete; explicitly binding to each IPv6 address separately
+ns1         | 2026-10-27T17:50:12.293779393Z 27-Oct-2026 17:50:12.286 listening on IPv6 interface lo, ::1#53
+ns1         | 2026-10-27T17:50:12.296051916Z 27-Oct-2026 17:50:12.290 generating session key for dynamic DNS
+ns1         | 2026-10-27T17:50:12.296660249Z 27-Oct-2026 17:50:12.290 sizing zone task pool based on 1 zones
+ns1         | 2026-10-27T17:50:12.302081242Z 27-Oct-2026 17:50:12.294 obtaining root key for view _default from '/etc/bind/bind.keys'
+ns1         | 2026-10-27T17:50:12.302250451Z 27-Oct-2026 17:50:12.294 set up managed keys zone for view _default, file 'managed-keys.bind'
+ns1         | 2026-10-27T17:50:12.306997907Z 27-Oct-2026 17:50:12.302 configuring command channel from '/etc/bind/rndc.key'
+ns1         | 2026-10-27T17:50:12.308206773Z 27-Oct-2026 17:50:12.302 command channel listening on 127.0.0.1#953
+ns1         | 2026-10-27T17:50:12.308212273Z 27-Oct-2026 17:50:12.302 configuring command channel from '/etc/bind/rndc.key'
+ns1         | 2026-10-27T17:50:12.308780604Z 27-Oct-2026 17:50:12.302 command channel listening on ::1#953
+ns1         | 2026-10-27T17:50:12.308786504Z 27-Oct-2026 17:50:12.302 not using config file logging statement for logging due to -g option
+ns1         | 2026-10-27T17:50:12.310799913Z 27-Oct-2026 17:50:12.306 managed-keys-zone: loaded serial 2
+ns1         | 2026-10-27T17:50:12.312197389Z 27-Oct-2026 17:50:12.306 zone sd.lab/IN: loaded serial 2026101402
+ns1         | 2026-10-27T17:50:12.312206289Z 27-Oct-2026 17:50:12.306 zone sd.lab/IN: sending notifies (serial 2026101402)
+ns1         | 2026-10-27T17:50:12.312494505Z 27-Oct-2026 17:50:12.306 all zones loaded
+ns1         | 2026-10-27T17:50:12.312557808Z 27-Oct-2026 17:50:12.306 running
+ns1         | 2026-10-27T17:50:12.312886626Z 27-Oct-2026 17:50:12.306 network unreachable resolving './DNSKEY/IN': 2001:500:12::d0d#53
+ns1         | 2026-10-27T17:50:12.312962330Z 27-Oct-2026 17:50:12.306 network unreachable resolving './DNSKEY/IN': 2001:503:ba3e::2:30#53
+ns1         | 2026-10-27T17:50:12.313074636Z 27-Oct-2026 17:50:12.306 network unreachable resolving './NS/IN': 2001:503:ba3e::2:30#53
+ns1         | 2026-10-27T17:50:12.313077736Z 27-Oct-2026 17:50:12.306 network unreachable resolving './DNSKEY/IN': 2001:500:9f::42#53
+ns1         | 2026-10-27T17:50:12.313193342Z 27-Oct-2026 17:50:12.306 network unreachable resolving './NS/IN': 2001:500:9f::42#53
+ns1         | 2026-10-27T17:50:12.313196543Z 27-Oct-2026 17:50:12.306 network unreachable resolving './DNSKEY/IN': 2001:7fd::1#53
+ns1         | 2026-10-27T17:50:12.313290448Z 27-Oct-2026 17:50:12.306 network unreachable resolving './NS/IN': 2001:7fd::1#53
+ns1         | 2026-10-27T17:50:12.313315549Z 27-Oct-2026 17:50:12.306 network unreachable resolving './DNSKEY/IN': 2001:503:c27::2:30#53
+ns1         | 2026-10-27T17:50:12.313319349Z 27-Oct-2026 17:50:12.306 network unreachable resolving './NS/IN': 2001:503:c27::2:30#53
+ns1         | 2026-10-27T17:50:12.313432255Z 27-Oct-2026 17:50:12.306 network unreachable resolving './DNSKEY/IN': 2001:500:2d::d#53
+ns1         | 2026-10-27T17:50:12.313503359Z 27-Oct-2026 17:50:12.306 network unreachable resolving './NS/IN': 2001:500:2d::d#53
+ns1         | 2026-10-27T17:50:12.313508359Z 27-Oct-2026 17:50:12.306 network unreachable resolving './DNSKEY/IN': 2001:500:a8::e#53
+ns1         | 2026-10-27T17:50:12.313629466Z 27-Oct-2026 17:50:12.306 network unreachable resolving './NS/IN': 2001:500:a8::e#53
+ns1         | 2026-10-27T17:50:12.313634566Z 27-Oct-2026 17:50:12.306 network unreachable resolving './DNSKEY/IN': 2001:7fe::53#53
+ns1         | 2026-10-27T17:50:12.313635566Z 27-Oct-2026 17:50:12.306 network unreachable resolving './NS/IN': 2001:7fe::53#53
+ns1         | 2026-10-27T17:50:12.313713571Z 27-Oct-2026 17:50:12.306 network unreachable resolving './DNSKEY/IN': 2801:1b8:10::b#53
+ns1         | 2026-10-27T17:50:12.313742172Z 27-Oct-2026 17:50:12.306 network unreachable resolving './NS/IN': 2801:1b8:10::b#53
+ns1         | 2026-10-27T17:50:12.313868379Z 27-Oct-2026 17:50:12.306 network unreachable resolving './DNSKEY/IN': 2001:500:2f::f#53
+ns1         | 2026-10-27T17:50:12.313871279Z 27-Oct-2026 17:50:12.306 network unreachable resolving './NS/IN': 2001:500:2f::f#53
+ns1         | 2026-10-27T17:50:12.313872179Z 27-Oct-2026 17:50:12.306 network unreachable resolving './DNSKEY/IN': 2001:500:2::c#53
+ns1         | 2026-10-27T17:50:12.313971384Z 27-Oct-2026 17:50:12.306 network unreachable resolving './NS/IN': 2001:500:2::c#53
+ns1         | 2026-10-27T17:50:12.314008686Z 27-Oct-2026 17:50:12.306 network unreachable resolving './DNSKEY/IN': 2001:500:1::53#53
+ns1         | 2026-10-27T17:50:12.314129893Z 27-Oct-2026 17:50:12.306 network unreachable resolving './NS/IN': 2001:500:1::53#53
+ns1         | 2026-10-27T17:50:12.314136893Z 27-Oct-2026 17:50:12.306 network unreachable resolving './DNSKEY/IN': 2001:dc3::35#53
+ns1         | 2026-10-27T17:50:12.314222898Z 27-Oct-2026 17:50:12.306 network unreachable resolving './NS/IN': 2001:dc3::35#53
+ns1         | 2026-10-27T17:50:12.329716336Z 27-Oct-2026 17:50:12.322 managed-keys-zone: Key 20326 for zone . is now trusted (acceptance timer complete)
+ns1         | 2026-10-27T17:50:12.329743837Z 27-Oct-2026 17:50:12.322 managed-keys-zone: Key 38696 for zone . is now trusted (acceptance timer complete)
+ns1         | 2026-10-27T17:50:12.505775954Z 27-Oct-2026 17:50:12.498 client @0x788991b2d350 172.30.0.12#35735 (sd.lab): transfer of 'sd.lab/IN': AXFR started (serial 2026101402)
+ns1         | 2026-10-27T17:50:12.505998366Z 27-Oct-2026 17:50:12.498 client @0x788991b2d350 172.30.0.12#35735 (sd.lab): transfer of 'sd.lab/IN': AXFR ended: 1 messages, 10 records, 246 bytes, 0.001 secs (246000 bytes/sec) (serial 2026101402)
+ns1         | 2026-10-27T17:53:11.060642209Z 27-Oct-2026 17:53:11.054 received control channel command 'reload sd.lab'
+ns1         | 2026-10-27T17:53:11.061004227Z 27-Oct-2026 17:53:11.054 zone sd.lab/IN: loaded serial 2026101403
+ns1         | 2026-10-27T17:53:11.061178536Z 27-Oct-2026 17:53:11.054 zone sd.lab/IN: sending notifies (serial 2026101403)
+ns1         | 2026-10-27T17:53:16.476966863Z 27-Oct-2026 17:53:16.470 received control channel command 'reload sd.lab'
+ns1         | 2026-10-27T17:53:16.477487990Z 27-Oct-2026 17:53:16.474 zone sd.lab/IN: loaded serial 2026101404
+ns1         | 2026-10-27T17:53:16.477540892Z 27-Oct-2026 17:53:16.474 zone sd.lab/IN: sending notifies (serial 2026101404)
+ns1         | 2026-10-27T17:53:17.989170912Z 27-Oct-2026 17:53:17.982 client @0x78898ba980d0 172.30.0.13#42279 (sd.lab): transfer of 'sd.lab/IN': AXFR started (serial 2026101404)
+ns1         | 2026-10-27T17:53:17.989381623Z 27-Oct-2026 17:53:17.986 client @0x78898ba980d0 172.30.0.13#42279 (sd.lab): transfer of 'sd.lab/IN': AXFR ended: 1 messages, 12 records, 290 bytes, 0.004 secs (72500 bytes/sec) (serial 2026101404)
+ns1         | 2026-10-27T17:53:21.070906147Z 27-Oct-2026 17:53:21.066 client @0x78898ba7a150 172.30.0.12#38879 (sd.lab): transfer of 'sd.lab/IN': IXFR version not in journal, falling back to AXFR
+ns1         | 2026-10-27T17:53:21.070922348Z 27-Oct-2026 17:53:21.066 client @0x78898ba7a150 172.30.0.12#38879 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR started (serial 2026101404)
+ns1         | 2026-10-27T17:53:21.071259265Z 27-Oct-2026 17:53:21.066 client @0x78898ba7a150 172.30.0.12#38879 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR ended: 1 messages, 12 records, 290 bytes, 0.001 secs (290000 bytes/sec) (serial 2026101404)

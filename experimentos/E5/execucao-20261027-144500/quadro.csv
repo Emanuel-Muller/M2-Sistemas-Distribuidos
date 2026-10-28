@@ -1,0 +1,7 @@
+cenario,nos_ativos,leitura_ns1,leitura_ns2,leitura_ns3,leitura_resolvedor,escrita,observacao
+C1,ns1+ns2+ns3,NOERROR/aa=sim/10.0.0.1,NOERROR/aa=sim/10.0.0.1,NOERROR/aa=sim/10.0.0.1,NOERROR/10.0.0.1/0ms,OK(serial 2026101402),base
+C2,ns2+ns3,TIMEOUT/aa=nao/-,NOERROR/aa=sim/10.0.0.1,NOERROR/aa=sim/10.0.0.1,NOERROR/10.0.0.1/0ms,FALHOU(codigo 1),t=2s desde a parada do ns1
+C3,ns3,TIMEOUT/aa=nao/-,TIMEOUT/aa=nao/-,NOERROR/aa=sim/10.0.0.1,NOERROR/10.0.0.1/0ms,FALHOU(codigo 1),t=8s desde a parada do ns1
+C4,ns3 (após expire),-,-,SERVFAIL/aa=nao/-,NOERROR/10.0.0.1/0ms,FALHOU(codigo 1),SERVFAIL em t=305s desde a parada do ns1
+C5,ns1+ns3,NOERROR/aa=sim/10.0.0.1,-,SERVFAIL/aa=nao/-,NOERROR/10.0.0.1/0ms,OK(serial 2026101403),após 3s serial ns1=2026101403 ns3=
+C6,ns1,NOERROR/aa=sim/10.0.0.1,-,-,NOERROR/10.0.0.1/0ms,OK(serial 2026101404),sem nenhuma réplica ativa

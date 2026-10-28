@@ -1,0 +1,6 @@
+;; communications error to 172.31.0.11#53: timed out
+
+; <<>> DiG 9.18.49 <<>> @172.31.0.11 app.sd.lab A +norecurse +time=2 +tries=1
+; (1 server found)
+;; global options: +cmd
+;; no servers could be reached

@@ -2,6 +2,7 @@
 
 - Responsável: João Balhego
 - Execução: João Balhego, no próprio terminal (WSL2). A redação deste procedimento e da análise foi feita com apoio do assistente de IA Claude, a partir das evidências desta pasta.
+- Revisão: Taryck Gean (nota sobre a flag `aa`, em Limitações)
 - Data/hora: 27/10/2026, `reset.sh` iniciado às 19:24:44 (UTC-3). Os logs do BIND estão em UTC (22:24 = 19:24 local).
 - Máquina (ver `docs/ambiente/joao-windows.md`): WSL2 (Ubuntu 26.04), Docker 29.9.2, Compose v5.6.1, BIND 9.18.49
 - Commit/tag: laboratório `8c48e53`; previsão `ea9d14f` (commit das 19:15:35, anterior à execução)
@@ -127,4 +128,5 @@ O ambiente sobe do zero com seis contêineres. Os dois secundários obtêm a zon
 - Uma única execução do `reset.sh`.
 - O arquivo `logs-transferencia.txt` (filtro do roteiro) mostra só o lado dos secundários. O tipo AXFR e os endereços de origem das transferências vêm do log completo do ns1 (`20261027-192655-subida.txt`, linhas 328 a 331).
 - Os logs completos foram lidos por `grep` de padrões específicos, não linha a linha.
+- O `soa.txt` usa `+short` e não mostra a flag `aa`. A resposta com autoridade dos três autoritativos aparece na validação do ambiente feita antes, na mesma máquina (`docs/ambiente/validacao-inicial-joao-windows.txt`: `SOA em 172.31.0.11`, `172.31.0.12` e `172.31.0.13`, serial 2026101401, `flag aa`) e, para o ns1, no E2 (`consultas-dig.txt`: `flags: qr aa`).
 - O diagrama retrata o estado desta execução. A configuração dos arquivos do kit não faz parte das evidências do E1.

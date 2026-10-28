@@ -1,0 +1,31 @@
+[15:31:15] Convergência: serial 2026101401 em ns1, ns2 e ns3.
+[15:31:15] C5 complementar: parando só ns2
+[15:31:18] leitura ns1: NOERROR, ns2: TIMEOUT ns3: NOERROR,
+[15:31:19] escrita (rc=0) serial 2026101402, zona.sh levou 1412 ms
+[15:31:19] ns3 com serial 2026101402: 188 ms após o fim da escrita (limite 10000 ms)
+[15:31:20] ns3 e5-c5.sd.lab = 10.5.5.5 (flags: qr aa
+flags:)
+[15:31:22] serial ns2 (parado): 
+[15:31:24] ns2 religado: Convergência: serial 2026101402 em ns1, ns2 e ns3.
+ns3         | 2026-10-27T18:31:14.285680737Z 27-Oct-2026 18:31:14.282 client @0x7fd2c14a32d0 172.31.0.12#51262: received notify for zone 'sd.lab'
+ns3         | 2026-10-27T18:31:14.285689938Z 27-Oct-2026 18:31:14.282 zone sd.lab/IN: refused notify from non-primary: 172.31.0.12#51262
+ns3         | 2026-10-27T18:31:14.604801922Z 27-Oct-2026 18:31:14.602 client @0x7fd2c14a12f0 172.31.0.11#52828: received notify for zone 'sd.lab'
+ns3         | 2026-10-27T18:31:14.604822023Z 27-Oct-2026 18:31:14.602 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#52828
+ns3         | 2026-10-27T18:31:14.604824324Z 27-Oct-2026 18:31:14.602 client @0x7fd2c1499310 172.30.0.11#50500: received notify for zone 'sd.lab'
+ns3         | 2026-10-27T18:31:14.604825124Z 27-Oct-2026 18:31:14.602 zone sd.lab/IN: notify from 172.30.0.11#50500: no serial
+ns3         | 2026-10-27T18:31:14.605294647Z 27-Oct-2026 18:31:14.602 zone sd.lab/IN: Transfer started.
+ns3         | 2026-10-27T18:31:14.605584462Z 27-Oct-2026 18:31:14.602 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns3         | 2026-10-27T18:31:14.606266596Z 27-Oct-2026 18:31:14.602 zone sd.lab/IN: transferred serial 2026101401
+ns3         | 2026-10-27T18:31:14.606272697Z 27-Oct-2026 18:31:14.602 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns3         | 2026-10-27T18:31:14.606274597Z 27-Oct-2026 18:31:14.602 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 9 records, 224 bytes, 0.001 secs (224000 by
+ns3         | 2026-10-27T18:31:19.605301323Z 27-Oct-2026 18:31:19.602 client @0x7fd2bb448470 172.30.0.11#53758: received notify for zone 'sd.lab'
+ns3         | 2026-10-27T18:31:19.605325625Z 27-Oct-2026 18:31:19.602 zone sd.lab/IN: notify from 172.30.0.11#53758: serial 2026101402
+ns3         | 2026-10-27T18:31:19.605330025Z 27-Oct-2026 18:31:19.602 client @0x7fd2bb44a470 172.31.0.11#57517: received notify for zone 'sd.lab'
+ns3         | 2026-10-27T18:31:19.605471132Z 27-Oct-2026 18:31:19.602 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#57517
+ns3         | 2026-10-27T18:31:19.606064662Z 27-Oct-2026 18:31:19.602 zone sd.lab/IN: Transfer started.
+ns3         | 2026-10-27T18:31:19.606305975Z 27-Oct-2026 18:31:19.602 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns3         | 2026-10-27T18:31:19.606907105Z 27-Oct-2026 18:31:19.602 zone sd.lab/IN: transferred serial 2026101402
+ns3         | 2026-10-27T18:31:19.606979009Z 27-Oct-2026 18:31:19.602 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns3         | 2026-10-27T18:31:19.606987109Z 27-Oct-2026 18:31:19.602 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 10 records, 246 bytes, 0.001 secs (246000 b
+ns3         | 2026-10-27T18:31:22.586263367Z 27-Oct-2026 18:31:22.582 client @0x7fd2bb43b100 172.31.0.12#55391: received notify for zone 'sd.lab'
+ns3         | 2026-10-27T18:31:22.586274668Z 27-Oct-2026 18:31:22.582 zone sd.lab/IN: refused notify from non-primary: 172.31.0.12#55391

@@ -1,0 +1,11 @@
+name: sd.lab
+type: secondary
+files: db.sd.lab
+serial: 2026101402
+nodes: 6
+last loaded: Tue, 27 Oct 2026 17:45:04 GMT
+next refresh: Tue, 27 Oct 2026 17:45:30 GMT
+expires: Tue, 27 Oct 2026 17:50:04 GMT
+secure: no
+dynamic: no
+reconfigurable via modzone: no
