@@ -1,0 +1,6 @@
+ns1  | 2026-10-29T00:27:25.028465088Z 29-Oct-2026 00:27:25.027 client @0xffffa74cf3a0 172.30.0.12#45447 (sd.lab): transfer of 'sd.lab/IN': IXFR started (serial 2026101401 -> 2026101402)
+ns1  | 2026-10-29T00:27:25.028575088Z 29-Oct-2026 00:27:25.027 client @0xffffa74cf3a0 172.30.0.12#45447 (sd.lab): transfer of 'sd.lab/IN': IXFR ended: 1 messages, 5 records, 200 bytes, 0.001 secs (200000 bytes/sec) (serial 2026101402)
+ns1  | 2026-10-29T00:27:25.531241588Z 29-Oct-2026 00:27:25.530 client @0xffffa7492200 172.30.0.13#32979 (sd.lab): transfer of 'sd.lab/IN': IXFR started (serial 2026101401 -> 2026101441)
+ns1  | 2026-10-29T00:27:25.531558755Z 29-Oct-2026 00:27:25.530 client @0xffffa7492200 172.30.0.13#32979 (sd.lab): transfer of 'sd.lab/IN': IXFR ended: 1 messages, 160 records, 4474 bytes, 0.001 secs (4474000 bytes/sec) (serial 2026101441)
+ns1  | 2026-10-29T00:27:30.027934132Z 29-Oct-2026 00:27:30.027 client @0xffffa74823d0 172.30.0.12#45091 (sd.lab): transfer of 'sd.lab/IN': IXFR started (serial 2026101402 -> 2026101441)
+ns1  | 2026-10-29T00:27:30.028320007Z 29-Oct-2026 00:27:30.027 client @0xffffa74823d0 172.30.0.12#45091 (sd.lab): transfer of 'sd.lab/IN': IXFR ended: 1 messages, 157 records, 4383 bytes, 0.001 secs (4383000 bytes/sec) (serial 2026101441)

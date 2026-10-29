@@ -6,6 +6,7 @@
 - Máquina (ver docs/ambiente/<pessoa>.md): docs/ambiente/enzo-windows.md
 - Commit/tag (git rev-parse --short HEAD): 0e1dfd9 (previsão no commit 662e825)
 - Variante (COMPOSE_FILE): base
+- Execução complementar: 28/10/2026, Taryck Gean, com o script corrigido, que consulta o estado final nos três servidores (ver `../execucao-20261028-205638/procedimento.md`)
 
 ## Condição inicial
 
@@ -63,7 +64,7 @@ O script deixa o ns3 reconectado e sincronizado (serial 2026101406 nos três). P
 | 1. Recuperação sem intervenção | Em todas as repetições | 5 de 5 (`NA = 0`) | **Confirmado** |
 | 2. Tempo de recuperação | ~0 a ~10 s, espalhado; média ~5 000 ms; desvio ~2 900 ms | 1 550 a 3 550 ms; média 2 232 ms; desvio 859,5 ms | **Faixa confirmada; distribuição divergente** (detalhe abaixo) |
 | 3. Tipo de transferência | AXFR-style IXFR | Nas 5: `IXFR version not in journal, falling back to AXFR` e `AXFR-style IXFR started` no ns1; 9 registros, 224 bytes, 0,001 s | **Confirmado** |
-| 4. Estado final | Mesmo serial e mesmo valor nos três | Serial 2026101406 em ns1, ns2 e ns3 | **Confirmado** |
+| 4. Estado final | Mesmo serial e mesmo valor nos três | Serial 2026101406 em ns1, ns2 e ns3 (nesta execução, pelos logs do ns1; a consulta direta aos três está na execução complementar de 28/10) | **Confirmado** |
 | Custo da transferência | Milissegundos | 0,001 s em todas | **Confirmado** |
 | Gatilho da sincronização | `retry` (10 s), se o refresh falhou no isolamento; senão, o próximo refresh regular | Nenhuma falha de refresh no ns3 durante os isolamentos (0 linhas com `retry`, `failed` ou `unreachable`); a sincronização veio do refresh regular | A previsão admitia os dois caminhos; ocorreu o do refresh regular |
 
