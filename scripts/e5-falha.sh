@@ -48,6 +48,7 @@ log() { echo "[$(date '+%H:%M:%S')] $*" | tee -a "$resumo"; }
 
 # espera_convergencia com registro no resumo, preservando o código de saída.
 convergir() { r=$(espera_convergencia "$1"); rc=$?; log "$r"; return "$rc"; }
+convergir_serial() { r=$(espera_serial "$1" "$2"); rc=$?; log "$r"; return "$rc"; }
 
 # Consulta direta (sem recursão) a um autoritativo. Salva a saída completa.
 # saída: "STATUS/aa=sim|nao/valor"
@@ -130,7 +131,15 @@ l1=$(ler 172.31.0.11 c1-ns1); l2=$(ler 172.31.0.12 c1-ns2); l3=$(ler 172.31.0.13
 w=$(escrita_com_primario e5-c1 10.5.1.1 c1)
 log "C1 leitura ns1=$l1 ns2=$l2 ns3=$l3 resolvedor=$lr | escrita=$w"
 echo "C1,ns1+ns2+ns3,$l1,$l2,$l3,$lr,$w,base" >> "$quadro"
-convergir 60 || { log "ERRO: a escrita do C1 não chegou aos secundários; cenários seguintes não executados"; encerrar 1; }
+case "$w" in
+    OK*) ;;
+    *) log "ERRO: a escrita do C1 falhou ($w); cenários seguintes não executados"; encerrar 1 ;;
+esac
+serial_c1=${w#OK(serial }; serial_c1=${serial_c1%)}
+case "$serial_c1" in
+    ''|*[!0-9]*) log "ERRO: serial da escrita do C1 não identificado ($w); cenários seguintes não executados"; encerrar 1 ;;
+esac
+convergir_serial "$serial_c1" 60 || { log "ERRO: a escrita do C1 (serial $serial_c1) não chegou aos secundários; cenários seguintes não executados"; encerrar 1; }
 
 for s in ns2 ns3; do no "$s" rndc zonestatus sd.lab > "$dir/zonestatus-$s-antes.txt" 2>&1; done
 log "último refresh dos secundários salvo em zonestatus-*.txt (campos 'next refresh' e 'expires')"

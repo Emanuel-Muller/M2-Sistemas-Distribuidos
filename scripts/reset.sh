@@ -36,7 +36,14 @@ if [ "$SO_PREPARAR" -eq 0 ]; then
         docker compose logs --no-color --timestamps > "logs/$(carimbo)-antes-do-reset.txt" 2>&1
         echo "Logs anteriores salvos em logs/."
     fi
-    docker compose down --remove-orphans
+    if ! docker compose down --remove-orphans; then
+        echo "ERRO: não foi possível parar o laboratório (docker compose down falhou). Nada foi alterado em runtime/."
+        exit 1
+    fi
+    if [ -n "$(docker compose ps -aq 2>/dev/null)" ]; then
+        echo "ERRO: ainda há contêineres do laboratório depois do down. Nada foi alterado em runtime/."
+        exit 1
+    fi
 fi
 
 # Cópia de trabalho da zona do ns1 (fora do Git). Permissão aberta para que o
@@ -50,5 +57,5 @@ echo "Zona de trabalho recriada a partir de $ZONA_BASE (serial $SERIAL_BASE)."
 
 [ "$SO_PREPARAR" -eq 1 ] && exit 0
 
-docker compose up -d
+docker compose up -d || { echo "ERRO: docker compose up falhou."; exit 1; }
 espera_convergencia 120

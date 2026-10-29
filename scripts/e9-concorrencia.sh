@@ -69,3 +69,24 @@ done > "$dir/estado-final.txt"
 } | tee "$dir/resumo.txt"
 echo
 scripts/estatisticas.sh "$dir/envios.csv" latencia_ms | tee -a "$dir/resumo.txt"
+
+# Conferência do resultado: todas aceitas, serial +1 por mensagem, secundários
+# convergidos e os três servidores com o mesmo estado final.
+rc=0
+numero() { case "$1" in ''|*[!0-9]*) return 1 ;; esac; }
+# As verificações vão para um arquivo (e não para um pipe) para que "rc" valha no shell principal.
+{
+    echo "Verificação do resultado"
+    if [ "$aceitos" -eq $(( 2 * n )) ]; then echo "OK     mensagens aceitas: $aceitos de $(( 2 * n ))"
+    else echo "FALHOU mensagens aceitas: $aceitos de $(( 2 * n ))"; rc=1; fi
+    if numero "$s0" && numero "$s1" && [ $(( s1 - s0 )) -eq $(( 2 * n )) ]; then echo "OK     delta do serial: $(( s1 - s0 ))"
+    else echo "FALHOU delta do serial: de '$s0' para '$s1' (esperado $(( 2 * n )))"; rc=1; fi
+    if [ "$conv" != NA ]; then echo "OK     secundários convergiram ${conv}s após o fim dos envios"
+    else echo "FALHOU secundários não convergiram em 60 s"; rc=1; fi
+    if [ "$(sed 's/^[0-9.]* //' "$dir/estado-final.txt" | sort -u | wc -l | tr -d ' ')" -eq 1 ] && grep -q "serial=$s1 " "$dir/estado-final.txt"; then echo "OK     estado final idêntico nos três (serial $s1)"
+    else echo "FALHOU estado final diferente entre ns1, ns2 e ns3, ou serial diferente de $s1"; rc=1; fi
+    [ "$rc" -eq 0 ] && echo "RESULTADO: concorrência conforme o esperado" || echo "RESULTADO: concorrência DIFERENTE do esperado"
+} > "$dir/.verificacao"
+tee -a "$dir/resumo.txt" < "$dir/.verificacao"
+rm -f "$dir/.verificacao"
+exit "$rc"

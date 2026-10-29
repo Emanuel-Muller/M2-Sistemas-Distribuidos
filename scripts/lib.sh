@@ -60,6 +60,24 @@ espera_convergencia() {
     return 1
 }
 
+# Espera os três autoritativos servirem exatamente o serial $1 (até $2 segundos
+# de relógio). Diferente de espera_convergencia, não aceita "iguais entre si"
+# num serial antigo: serve para confirmar que uma escrita foi publicada e replicada.
+espera_serial() {
+    alvo_s=$1; lim=${2:-60}; fim=$(( $(date +%s) + lim ))
+    while :; do
+        s1=$(serial_de 172.31.0.11); s2=$(serial_de 172.31.0.12); s3=$(serial_de 172.31.0.13)
+        if [ "$s1" = "$alvo_s" ] && [ "$s2" = "$alvo_s" ] && [ "$s3" = "$alvo_s" ]; then
+            echo "Convergência: serial $alvo_s em ns1, ns2 e ns3."
+            return 0
+        fi
+        [ "$(date +%s)" -ge "$fim" ] && break
+        sleep 1
+    done
+    echo "AVISO: serial esperado $alvo_s não alcançado em ${lim}s (ns1=$s1 ns2=$s2 ns3=$s3)."
+    return 1
+}
+
 # Prepara uma pasta de saída de nome fixo sem apagar a execução anterior:
 # se ela já existir, é renomeada para <pasta>-anterior-<carimbo>.
 preparar_pasta() {
