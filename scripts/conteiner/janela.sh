@@ -6,7 +6,10 @@
 # novo ou quando o prazo estoura. Não usa rndc flush nem altera nada.
 # uso: janela.sh <nome> <valor_novo> <timeout_ms> [tipo=A]
 # saída CSV: t_ms,res_status,res_valor,res_ttl,ns1_status,ns1_valor,
-#            ns2_status,ns2_valor,ns3_status,ns3_valor
+#            ns2_status,ns2_valor,ns3_status,ns3_valor,
+#            t_res_ms,t_ns1_ms,t_ns2_ms,t_ns3_ms
+#   t_ms: início da amostra (as quatro consultas são feitas em sequência)
+#   t_<servidor>_ms: instante em que a resposta daquele servidor chegou
 #   res_ttl: TTL do registro (resposta positiva) ou do SOA (resposta NXDOMAIN)
 
 # Tempo em milissegundos pelo relógio do kernel (o mesmo para todos os
@@ -36,15 +39,15 @@ consulta() { # ip opcoes -> "status valor ttl"
               print st, v, ttl }'
 }
 
-echo "t_ms,res_status,res_valor,res_ttl,ns1_status,ns1_valor,ns2_status,ns2_valor,ns3_status,ns3_valor"
+echo "t_ms,res_status,res_valor,res_ttl,ns1_status,ns1_valor,ns2_status,ns2_valor,ns3_status,ns3_valor,t_res_ms,t_ns1_ms,t_ns2_ms,t_ns3_ms"
 ini=$(agora_ms)
 while :; do
     t=$(agora_ms)
-    set -- $(consulta 172.31.0.53 "");      rs=$1; rv=$2; rt=$3
-    set -- $(consulta 172.31.0.11 +norecurse); a1="$1,$2"
-    set -- $(consulta 172.31.0.12 +norecurse); a2="$1,$2"
-    set -- $(consulta 172.31.0.13 +norecurse); a3="$1,$2"
-    echo "$t,$rs,$rv,$rt,$a1,$a2,$a3"
+    set -- $(consulta 172.31.0.53 "");      rs=$1; rv=$2; rt=$3; tr0=$(agora_ms)
+    set -- $(consulta 172.31.0.11 +norecurse); a1="$1,$2"; t1=$(agora_ms)
+    set -- $(consulta 172.31.0.12 +norecurse); a2="$1,$2"; t2=$(agora_ms)
+    set -- $(consulta 172.31.0.13 +norecurse); a3="$1,$2"; t3=$(agora_ms)
+    echo "$t,$rs,$rv,$rt,$a1,$a2,$a3,$tr0,$t1,$t2,$t3"
     [ "$rv" = "$alvo" ] && break
     [ $((t - ini)) -gt "$lim" ] && break
     sleep 0.1

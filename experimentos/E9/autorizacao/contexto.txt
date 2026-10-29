@@ -1,6 +1,6 @@
 Experimento E9, etapa 1 (autorização) — contexto
-data/hora local: 2026-10-28 18:59:55 -0300
-data/hora UTC:   2026-10-28 21:59:55
+data/hora local: 2026-10-28 20:51:32 -0300
+data/hora UTC:   2026-10-28 23:51:32
 máquina: Darwin arm64
-commit: 645475b
+commit: 05f68f1
 variante: e9 (atualizacao dinamica)

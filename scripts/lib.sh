@@ -43,17 +43,30 @@ modo_dinamico() {
     return 1
 }
 
-# Espera os três autoritativos servirem o mesmo serial (até $1 segundos).
+# Espera os três autoritativos servirem o mesmo serial (até $1 segundos de
+# relógio; o prazo é medido pelo tempo decorrido, não pelo número de tentativas).
 espera_convergencia() {
-    lim=${1:-60}; i=0
-    while [ "$i" -lt "$lim" ]; do
+    lim=${1:-60}; fim=$(( $(date +%s) + lim ))
+    while :; do
         s1=$(serial_de 172.31.0.11); s2=$(serial_de 172.31.0.12); s3=$(serial_de 172.31.0.13)
         if [ -n "$s1" ] && [ "$s1" = "$s2" ] && [ "$s1" = "$s3" ]; then
             echo "Convergência: serial $s1 em ns1, ns2 e ns3."
             return 0
         fi
-        sleep 1; i=$((i + 1))
+        [ "$(date +%s)" -ge "$fim" ] && break
+        sleep 1
     done
     echo "AVISO: sem convergência em ${lim}s (ns1=$s1 ns2=$s2 ns3=$s3)."
     return 1
+}
+
+# Prepara uma pasta de saída de nome fixo sem apagar a execução anterior:
+# se ela já existir, é renomeada para <pasta>-anterior-<carimbo>.
+preparar_pasta() {
+    if [ -e "$1" ]; then
+        ant="$1-anterior-$(carimbo)"
+        mv "$1" "$ant" || return 1
+        echo "Execução anterior preservada em $ant"
+    fi
+    mkdir -p "$1"
 }

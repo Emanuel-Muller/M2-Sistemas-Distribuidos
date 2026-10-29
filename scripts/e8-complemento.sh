@@ -6,7 +6,8 @@
 #   4. E8.2: serial menor no primário (2026101301, app = 10.0.0.3) e
 #      observação de ns1, ns2 e ns3 a cada INT s durante DUR s;
 #   5. restauração com serial maior (2026101403, app = 10.0.0.1).
-# Saída: experimentos/E8/complemento/
+# Saída: experimentos/E8/complemento/ (uma execução anterior é preservada em
+#        experimentos/E8/complemento-anterior-<carimbo>/)
 #
 # uso: scripts/e8-complemento.sh [DUR=90] [INT=10]
 . "$(dirname "$0")/lib.sh"
@@ -16,7 +17,7 @@ SERIAL_MENOR=2026101301; SERIAL_RESTAURA=2026101403
 [ -z "${COMPOSE_FILE:-}" ] || { echo "ERRO: use a variante base (rode 'unset COMPOSE_FILE')."; exit 1; }
 
 dir=experimentos/E8/complemento
-rm -rf "$dir"; mkdir -p "$dir"
+preparar_pasta "$dir" || { echo "ERRO: não foi possível preparar $dir"; exit 1; }
 log() { echo "[$(date '+%H:%M:%S')] $*" | tee -a "$dir/execucao.txt"; }
 
 estado() {

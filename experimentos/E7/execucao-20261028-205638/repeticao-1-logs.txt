@@ -1,0 +1,21 @@
+ns3  | 2026-10-28T23:56:39.021299595Z 28-Oct-2026 23:56:39.020 no longer listening on 172.30.0.13#53
+ns3  | 2026-10-28T23:56:40.401320596Z 28-Oct-2026 23:56:40.399 client @0xffff8cbf8150 172.31.0.12#39286: received notify for zone 'sd.lab'
+ns3  | 2026-10-28T23:56:40.401326638Z 28-Oct-2026 23:56:40.400 zone sd.lab/IN: refused notify from non-primary: 172.31.0.12#39286
+ns3  | 2026-10-28T23:56:40.907417179Z 28-Oct-2026 23:56:40.905 client @0xffff90c3f330 172.31.0.11#44155: received notify for zone 'sd.lab'
+ns3  | 2026-10-28T23:56:40.907457846Z 28-Oct-2026 23:56:40.905 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#44155
+ns3  | 2026-10-28T23:57:02.681674967Z 28-Oct-2026 23:57:02.681 listening on IPv4 interface eth1, 172.30.0.13#53
+ns3  | 2026-10-28T23:57:04.337091676Z 28-Oct-2026 23:57:04.335 zone sd.lab/IN: Transfer started.
+ns3  | 2026-10-28T23:57:04.337143718Z 28-Oct-2026 23:57:04.335 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns3  | 2026-10-28T23:57:04.338299635Z 28-Oct-2026 23:57:04.336 zone sd.lab/IN: transferred serial 2026101402
+ns3  | 2026-10-28T23:57:04.338425843Z 28-Oct-2026 23:57:04.338 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns3  | 2026-10-28T23:57:04.338440135Z 28-Oct-2026 23:57:04.338 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 9 records, 224 bytes, 0.003 secs (74666 bytes/sec) (serial 2026101402)
+ns3  | 2026-10-28T23:57:04.338632635Z 28-Oct-2026 23:57:04.338 zone sd.lab/IN: sending notifies (serial 2026101402)
+ns1  | 2026-10-28T23:56:40.398671138Z 28-Oct-2026 23:56:40.397 received control channel command 'reload sd.lab'
+ns1  | 2026-10-28T23:56:40.399586179Z 28-Oct-2026 23:56:40.398 zone sd.lab/IN: loaded serial 2026101402
+ns1  | 2026-10-28T23:56:40.399710054Z 28-Oct-2026 23:56:40.398 zone sd.lab/IN: sending notifies (serial 2026101402)
+ns1  | 2026-10-28T23:56:40.400737513Z 28-Oct-2026 23:56:40.399 client @0xffff919a80a0 172.30.0.12#43389 (sd.lab): transfer of 'sd.lab/IN': IXFR version not in journal, falling back to AXFR
+ns1  | 2026-10-28T23:56:40.400745971Z 28-Oct-2026 23:56:40.399 client @0xffff919a80a0 172.30.0.12#43389 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR started (serial 2026101402)
+ns1  | 2026-10-28T23:56:40.400847846Z 28-Oct-2026 23:56:40.399 client @0xffff919a80a0 172.30.0.12#43389 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR ended: 1 messages, 9 records, 224 bytes, 0.001 secs (224000 bytes/sec) (serial 2026101402)
+ns1  | 2026-10-28T23:57:04.337678551Z 28-Oct-2026 23:57:04.336 client @0xffff919a80b0 172.30.0.13#40799 (sd.lab): transfer of 'sd.lab/IN': IXFR version not in journal, falling back to AXFR
+ns1  | 2026-10-28T23:57:04.337709885Z 28-Oct-2026 23:57:04.336 client @0xffff919a80b0 172.30.0.13#40799 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR started (serial 2026101402)
+ns1  | 2026-10-28T23:57:04.337945843Z 28-Oct-2026 23:57:04.336 client @0xffff919a80b0 172.30.0.13#40799 (sd.lab): transfer of 'sd.lab/IN': AXFR-style IXFR ended: 1 messages, 9 records, 224 bytes, 0.001 secs (224000 bytes/sec) (serial 2026101402)

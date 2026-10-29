@@ -26,6 +26,9 @@
 #
 # uso: scripts/e5-falha.sh [intervalo_s=5] [limite_expire_s=420] [extras=1]
 #   extras=0 pula C5 e C6.
+# Código de saída: 0 = todos os cenários executados e laboratório restaurado;
+#                  1 = laboratório não convergiu (C5/C6 não executados ou
+#                      restauração final incompleta).
 . "$(dirname "$0")/lib.sh"
 
 int=${1:-5}; lim=${2:-420}; extras=${3:-1}
@@ -86,15 +89,33 @@ escrita_com_primario() { # nome ip rotulo
     if [ "$rc" -eq 0 ]; then echo "OK(serial $s)"; else echo "FALHOU(codigo $rc)"; fi
 }
 
-# Religa contêineres parados e espera convergir.
+# Religa contêineres parados e espera convergir. Retorna 0 só se convergiu.
+# Se não convergir em 120 s, reinicia ns2 e ns3: um secundário que acumulou
+# falhas de transferência guarda o primário como inalcançável por 600 s
+# ("unreachable (cached)", ver análise do E5), e só o reinício limpa essa marca.
 restaurar() {
     docker compose start ns1 ns2 ns3 > /dev/null 2>&1
     t=$(date +%s)
     if convergir 120; then
         log "restauração levou $(( $(date +%s) - t ))s"
-    else
-        log "restauração NÃO convergiu em 120s"
+        return 0
     fi
+    log "restauração NÃO convergiu em 120s; reiniciando ns2 e ns3"
+    docker compose restart ns2 ns3 > /dev/null 2>&1
+    if convergir 60; then
+        log "restauração levou $(( $(date +%s) - t ))s (com reinício de ns2 e ns3)"
+        return 0
+    fi
+    log "ERRO: restauração NÃO convergiu nem após reiniciar ns2 e ns3"
+    return 1
+}
+
+# Salva os logs e encerra com o código dado.
+encerrar() {
+    sleep 1
+    docker compose logs --no-color --timestamps --since "$inicio" > "$dir/logs.txt" 2>&1
+    log "E5 encerrado (código $1). Arquivos em $dir"
+    exit "$1"
 }
 
 log "E5 iniciado. Saída: $dir"
@@ -109,7 +130,7 @@ l1=$(ler 172.31.0.11 c1-ns1); l2=$(ler 172.31.0.12 c1-ns2); l3=$(ler 172.31.0.13
 w=$(escrita_com_primario e5-c1 10.5.1.1 c1)
 log "C1 leitura ns1=$l1 ns2=$l2 ns3=$l3 resolvedor=$lr | escrita=$w"
 echo "C1,ns1+ns2+ns3,$l1,$l2,$l3,$lr,$w,base" >> "$quadro"
-convergir 60
+convergir 60 || { log "ERRO: a escrita do C1 não chegou aos secundários; cenários seguintes não executados"; encerrar 1; }
 
 for s in ns2 ns3; do no "$s" rndc zonestatus sd.lab > "$dir/zonestatus-$s-antes.txt" 2>&1; done
 log "último refresh dos secundários salvo em zonestatus-*.txt (campos 'next refresh' e 'expires')"
@@ -156,7 +177,10 @@ else
 fi
 
 log "restaurando ns1 e ns2"
-restaurar
+if ! restaurar; then
+    log "C5 e C6 NÃO executados: o laboratório não voltou a convergir (resultado de C5/C6 seria contaminado)"
+    encerrar 1
+fi
 
 # ---------------------------------------------------------------- C5 e C6
 if [ "$extras" = "1" ]; then
@@ -177,14 +201,11 @@ if [ "$extras" = "1" ]; then
     echo "C6,ns1,$l1,-,-,$lr,$w,sem nenhuma réplica ativa" >> "$quadro"
 
     log "restaurando ns2 e ns3"
-    restaurar
+    restaurar || rc_final=1
 fi
 
-sleep 1
-docker compose logs --no-color --timestamps --since "$inicio" > "$dir/logs.txt" 2>&1
-log "E5 terminado."
 echo
 echo "Quadro (dados observados):"
 column -s, -t < "$quadro" 2>/dev/null || cat "$quadro"
 echo
-echo "Arquivos em $dir"
+encerrar "${rc_final:-0}"
