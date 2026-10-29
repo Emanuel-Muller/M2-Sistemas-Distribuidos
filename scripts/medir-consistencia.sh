@@ -62,16 +62,21 @@ preparar_cache() {
 # Lê uma linha do tempo. Imprime, separados por espaço (tempos em ms após t0):
 #   ns1 ns2 ns3 resolvedor ttl_antes linhas_divergentes status_inicial ttl_inicial
 # "linhas divergentes": leituras com os 3 autoritativos já no valor novo e o resolvedor ainda no antigo.
+# Cada tempo é o instante da resposta daquele servidor (colunas t_*_ms), inclusive
+# numa amostra iniciada antes de t0 cuja resposta chegou depois. Linhas do tempo
+# antigas, sem essas colunas, usam o início da amostra (t_ms).
 analisa() { # arquivo t0 valor_novo
     awk -F, -v t0="$2" -v novo="$3" '
         NR == 1 { next }
         ini == "" { ini = $4; sti = $2 }
-        $1 < t0 { antes = $4; next }
+        $1 < t0 { antes = $4; if (NF < 14) next }
         {
-            if (n1 == "" && $6 == novo)  n1 = $1 - t0
-            if (n2 == "" && $8 == novo)  n2 = $1 - t0
-            if (n3 == "" && $10 == novo) n3 = $1 - t0
-            if (j == "" && $3 == novo)   j = $1 - t0
+            tr = (NF >= 14) ? $11 : $1; t1 = (NF >= 14) ? $12 : $1
+            t2 = (NF >= 14) ? $13 : $1; t3 = (NF >= 14) ? $14 : $1
+            if (n1 == "" && $6 == novo)  n1 = t1 - t0
+            if (n2 == "" && $8 == novo)  n2 = t2 - t0
+            if (n3 == "" && $10 == novo) n3 = t3 - t0
+            if (j == "" && $3 == novo)   j = tr - t0
             if ($3 != novo && $6 == novo && $8 == novo && $10 == novo) div++
         }
         END {

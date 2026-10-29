@@ -28,8 +28,8 @@ Limites de memória: 128 MB por servidor BIND, 32 MB por cliente.
 ## Subir do zero
 
 ```sh
-git clone <url-do-repositorio> sd-dns-t1
-cd sd-dns-t1
+git clone https://github.com/Emanuel-Muller/M2-Sistemas-Distribuidos.git
+cd M2-Sistemas-Distribuidos
 docker compose build          # constrói a imagem sd-bind (Alpine 3.20 + BIND)
 scripts/reset.sh              # cria a zona de trabalho, sobe tudo e espera convergir
 scripts/verificar.sh          # deve terminar com "RESULTADO: APROVADO"
@@ -54,12 +54,12 @@ docker compose down           # remove os contêineres
 | `scripts/observar.sh <nome> <int> <dur> <csv>` | Linha do tempo de ns1, ns2, ns3 e resolvedor |
 | `scripts/medir-propagacao.sh <rotulo> [n]` | E3: tempo primário → secundários |
 | `scripts/medir-consistencia.sh [repeticoes] [atraso_antes_s] [fase]` | E4: cache, TTL e janela de inconsistência (fase: `ambas`, `positivo` ou `negativo`) |
-| `scripts/medir-recuperacao.sh [n] [espera_s]` | E7: tempo de recuperação do ns3 após partição |
+| `scripts/medir-recuperacao.sh [n] [espera_s]` | E7: tempo de recuperação do ns3 após partição e estado final (serial e valor) nos três |
 | `scripts/e5-falha.sh [int] [limite] [extras]` | E5: quadro nós ativos x leitura x escrita; ns3 até o expire |
 | `scripts/e6-particao.sh [int] [limite] [--manter-isolado]` | E6: ns3 isolado da rede interna, divergência e expire |
 | `scripts/e8-complemento.sh [dur] [int]` | E8: papéis, serial crescente, `nsupdate` no secundário, serial menor observado por `dur` s e restauração |
 | `scripts/estatisticas.sh <csv> <coluna>` | Média e desvio padrão de uma coluna |
-| `scripts/gerar-chaves-tsig.sh` | E9: chaves TSIG em `secrets/` (fora do Git) |
+| `scripts/gerar-chaves-tsig.sh [--substituir]` | E9: chaves TSIG em `secrets/` (fora do Git); gera só as que faltam |
 | `scripts/e9-atualizar.sh ...` | E9: uma atualização dinâmica (validação e testes de autorização) |
 | `scripts/e9-concorrencia.sh [n] [mesmo\|distintos]` | E9: atualizações concorrentes dos dois clientes |
 | `scripts/e9-medir.sh [n]` | E9: tempo de confirmação e de propagação de um UPDATE |
@@ -72,7 +72,11 @@ docker compose down           # remove os contêineres
 | Sem NOTIFY (E3, 2ª série) | `export COMPOSE_FILE=docker-compose.yml:docker-compose.sem-notify.yml` e `docker compose up -d ns1` | `unset COMPOSE_FILE` e `docker compose up -d ns1` |
 | Atualização dinâmica (E9) | `scripts/gerar-chaves-tsig.sh`, `export COMPOSE_FILE=docker-compose.yml:docker-compose.e9.yml` e `scripts/reset.sh` | `unset COMPOSE_FILE` e `scripts/reset.sh` |
 
-`COMPOSE_FILE` vale só para o terminal onde foi definido.
+`COMPOSE_FILE` vale só para o terminal onde foi definido. O separador é `:` no Linux, no macOS e no WSL; no Git Bash ou no PowerShell do Windows (Docker do Windows), use `;` (ex.: `docker-compose.yml;docker-compose.e9.yml`).
+
+Códigos de saída: os scripts de experimento terminam com 0 quando tudo foi executado e o laboratório convergiu. `e5-falha.sh` e `medir-recuperacao.sh` retornam 1 quando o laboratório não converge (e interrompem os cenários seguintes); `e6-particao.sh` retorna 2 quando o experimento terminou mas o ns3 ainda não convergiu; `medir-recuperacao.sh` retorna 2 quando alguma repetição não termina com estado idêntico nos três. `e9-atualizar.sh` devolve o código do `nsupdate` (2 = recusado, esperado nos testes negativos).
+
+`e8-complemento.sh` e `e9-autorizacao.sh` gravam em pastas de nome fixo (`experimentos/E8/complemento/`, `experimentos/E9/autorizacao/`). Se a pasta já existir, a execução anterior é renomeada para `<pasta>-anterior-<data-hora>` em vez de apagada.
 
 ## Adaptações em relação ao roteiro
 

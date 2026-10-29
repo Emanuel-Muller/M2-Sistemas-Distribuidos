@@ -6,6 +6,8 @@
 #   ex.: scripts/e9-atualizar.sh cliente cliente1 172.31.0.11 ordem.sd.lab teste-1
 #        scripts/e9-atualizar.sh cliente nenhuma  172.31.0.11 ordem.sd.lab sem-chave
 #        scripts/e9-atualizar.sh cliente cliente1 172.31.0.12 ordem.sd.lab no-secundario
+# Código de saída: o mesmo do nsupdate (0 = aceito; 2 = recusado pelo servidor).
+# Nos testes negativos a recusa é o resultado esperado.
 . "$(dirname "$0")/lib.sh"
 
 c=${1:?}; k=${2:?}; srv=${3:?}; nome=${4:?}; v=${5:?}
@@ -19,3 +21,4 @@ depois=$(serial_de 172.31.0.11)
 echo "código de saída do nsupdate: $st (0 = aceito)"
 echo "serial do ns1: $antes -> $depois"
 echo "valor no ns1: $(no cliente dig @172.31.0.11 "$nome" TXT +short +norecurse | tr -d '\r')"
+exit "$st"

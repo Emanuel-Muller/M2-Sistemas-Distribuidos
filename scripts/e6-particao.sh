@@ -119,6 +119,12 @@ log "ns3 tentando falar com o primário / expire:"
 grep -E '^ns3' "$dir/logs.txt" | grep -iE 'sd.lab.*(refresh|retry|expire|timed out|failure)' | tail -10 | tee -a "$resumo"
 
 # ---------------------------------------------------------------- fim
+# Código de saída: 0 = experimento concluído e ns3 reconectado e convergido
+#                  (ou mantido isolado com --manter-isolado);
+#                  2 = experimento concluído, mas o ns3 NÃO convergiu depois da
+#                      reconexão (laboratório fora do estado-base: aguarde ou
+#                      rode scripts/reset.sh antes do próximo experimento).
+rc=0
 if [ "$manter" -eq 1 ]; then
     log "ns3 mantido DESCONECTADO (--manter-isolado). Para religar:"
     log "  docker network connect --ip 172.30.0.13 $REDE ns3"
@@ -129,7 +135,9 @@ else
     if convergir 120; then
         log "convergência observada $(( $(date +%s) - t ))s depois da reconexão"
     else
-        log "ns3 NÃO convergiu em 120s depois da reconexão"
+        log "ns3 NÃO convergiu em 120s depois da reconexão (recuperação pendente; ver recuperacao no E6/E7)"
+        rc=2
     fi
 fi
-log "E6 terminado. Arquivos em $dir"
+log "E6 terminado (código $rc). Arquivos em $dir"
+exit "$rc"

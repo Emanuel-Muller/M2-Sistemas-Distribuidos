@@ -6,7 +6,8 @@
 #        chave cliente1 -> ns2 (secundário);
 #   3. propagação da escrita aceita, journal e logs;
 #   4. restauração da variante base (unset COMPOSE_FILE + reset), salvo com --sem-restaurar.
-# Saída: experimentos/E9/autorizacao/
+# Saída: experimentos/E9/autorizacao/ (uma execução anterior é preservada em
+#        experimentos/E9/autorizacao-anterior-<carimbo>/)
 #
 # uso: scripts/e9-autorizacao.sh [--sem-restaurar]
 . "$(dirname "$0")/lib.sh"
@@ -18,7 +19,7 @@ for k in cliente1 cliente2 invalida; do
 done
 
 dir=experimentos/E9/autorizacao
-rm -rf "$dir"; mkdir -p "$dir"
+preparar_pasta "$dir" || { echo "ERRO: não foi possível preparar $dir"; exit 1; }
 log() { echo "[$(date '+%H:%M:%S')] $*" | tee -a "$dir/execucao.txt"; }
 
 {
@@ -55,8 +56,8 @@ cat "$dir/propagacao.txt"
 
 no ns1 named-journalprint /var/lib/bind/db.sd.lab.jnl > "$dir/journal.txt" 2>&1
 docker compose logs --no-color --timestamps --since "$inicio_log" ns1 ns2 ns3 2>&1 \
-    | awk -v t="$inicio_log" '$3 >= t' > "$dir/logs.txt"
-grep -iE "update|denied|refused|tsig|signature|badsig|bad key|IXFR|AXFR" "$dir/logs.txt" \
+    | awk -v t="$inicio_log" 'substr($3,1,19) >= substr(t,1,19)' > "$dir/logs.txt"
+grep -iE "updating zone|update|denied|refused|tsig|signature|badsig|bad key|IXFR|AXFR" "$dir/logs.txt" \
     | grep -v "refused notify from non-primary" > "$dir/logs-relevantes.txt"
 
 resultado() {

@@ -39,11 +39,11 @@ s1=$(serial_de 172.31.0.11)
   cat "$dir/cliente1.csv" "$dir/cliente2.csv" | tr -d '\r' | sort -t, -k4,4n; } > "$dir/envios.csv"
 aceitos=$(awk -F, 'NR > 1 && $7 == "NOERROR"' "$dir/envios.csv" | wc -l | tr -d ' ')
 
-# convergência dos secundários (até 60 s)
-conv=NA; i=0
-while [ "$i" -lt 600 ]; do
+# convergência dos secundários (até 60 s de relógio)
+conv=NA; fim=$(( t_fim + 60 ))
+while [ "$(date +%s)" -le "$fim" ]; do
     if [ "$(serial_de 172.31.0.12)" = "$s1" ] && [ "$(serial_de 172.31.0.13)" = "$s1" ]; then conv=$(( $(date +%s) - t_fim )); break; fi
-    sleep 0.1; i=$((i + 1))
+    sleep 0.1
 done
 
 docker compose logs --no-color --timestamps --since "$inicio_log" ns1 ns2 ns3 > "$dir/logs.txt" 2>&1

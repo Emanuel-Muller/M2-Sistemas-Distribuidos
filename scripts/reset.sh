@@ -6,13 +6,21 @@
 #   4. sobe tudo de novo e espera os três autoritativos convergirem.
 #
 # uso: scripts/reset.sh                 restaura e sobe
-#      scripts/reset.sh --so-preparar   só recria runtime/ns1 (não mexe nos contêineres)
+#      scripts/reset.sh --so-preparar   só recria runtime/ns1 (não mexe nos contêineres;
+#                                        recusa se o ns1 estiver em execução)
 #
 # A variante usada é a de COMPOSE_FILE (vazia = base dos E1-E8).
 . "$(dirname "$0")/lib.sh"
 
 SO_PREPARAR=0
 [ "${1:-}" = "--so-preparar" ] && SO_PREPARAR=1
+
+# Com o ns1 no ar, recriar runtime/ns1 trocaria a zona (e o journal) debaixo
+# do named em execução. Nesse caso, use o reset completo.
+if [ "$SO_PREPARAR" -eq 1 ] && [ -n "$(docker compose ps -q --status running ns1 2>/dev/null)" ]; then
+    echo "ERRO: o ns1 está em execução. Use scripts/reset.sh (sem --so-preparar) ou pare o ns1 antes."
+    exit 1
+fi
 
 if [ "$SO_PREPARAR" -eq 0 ]; then
     echo "Variante: $(variante)"
@@ -43,4 +51,4 @@ echo "Zona de trabalho recriada a partir de $ZONA_BASE (serial $SERIAL_BASE)."
 [ "$SO_PREPARAR" -eq 1 ] && exit 0
 
 docker compose up -d
-espera_convergencia 60
+espera_convergencia 120
