@@ -5,7 +5,7 @@
 - **Máquina (ver `docs/ambiente/emanuel-windows.md`):** Windows (build 26200), Git Bash; Docker 29.9.2; Compose v5.6.1; BIND 9.18.49
 - **Commit/tag:** laboratório `c66fd2b` (informado na previsão); resultados commitados em `3922579`
 - **Variante (`COMPOSE_FILE`):** `docker-compose.yml;docker-compose.e9.yml` — base + E9
-- **Complemento e revisão:** Taryck Gean Santos Pego, 28/10/2026 (ver "Complemento: etapa 1" no fim deste arquivo)
+- **Complemento e revisão:** Taryck Gean Santos Pego, 28/10/2026 (ver "Complemento: etapa 1" e "Complemento: etapas 2 e 3 com 20 mensagens por cliente" no fim deste arquivo)
 
 ## Condição inicial
 
@@ -175,7 +175,9 @@ O script faz `scripts/reset.sh` na variante e9 e envia quatro UPDATEs com `scrip
 
 ### Resultado do complemento
 
-Execução em 28/10/2026, das 18:59:55 às 19:00:07 (UTC−3), em Darwin arm64, sobre o commit `645475b` com os scripts do complemento aplicados e ainda não commitados; chaves geradas às 18:59 com `scripts/gerar-chaves-tsig.sh`.
+Execução em 28/10/2026, das 20:51:32 às 20:52:32 (UTC−3), em Darwin arm64, sobre o commit `05f68f1` com as correções dos scripts aplicadas e ainda não commitadas (elas foram commitadas depois, em `51562c8`). As chaves de `secrets/` são as geradas às 18:59 com `scripts/gerar-chaves-tsig.sh`; o script as manteve.
+
+Esta execução substitui a de 18:59:55 a 19:00:07 (commit `645475b`), que continua no histórico do Git. Naquela execução o filtro de horário de `logs.txt` descartava as linhas do mesmo segundo do início, e a linha da atualização aceita (`updating zone ... adding an RR ... "teste-valida"`) não aparecia. O script foi corrigido e o `logs.txt` novo traz essa linha (`grep -c teste-valida autorizacao/logs.txt` devolve 1). Os resultados dos quatro testes são os mesmos.
 
 | Teste | Resposta | Código | Serial do ns1 |
 | ----- | -------- | ------ | ------------- |
@@ -191,3 +193,92 @@ Execução em 28/10/2026, das 18:59:55 às 19:00:07 (UTC−3), em Darwin arm64, 
 
 **Comparação com a previsão.** Confirmados os quatro itens da etapa 1: aceitação com serial +1 e propagação aos secundários, REFUSED sem chave, NOTAUTH (BADSIG) com chave inválida e recusa no secundário (a previsão admitia REFUSED ou NOTAUTH; ocorreu REFUSED com erro TSIG BADKEY).
 
+## Complemento: etapas 2 e 3 com 20 mensagens por cliente
+
+- **Executor:** Taryck Gean Santos Pego
+- **Data/hora:** 28/10/2026, `distintos` às 21:27 e `mesmo` às 21:28 (UTC−3); os logs do BIND estão em UTC (00:27 de 29/10)
+- **Máquina:** ver `docs/ambiente/taryck-mac.md` (Darwin arm64)
+- **Commit/tag:** `b1840b7` (HEAD no momento da execução; os scripts de concorrência não gravam o commit)
+- **Variante:** `docker-compose.yml:docker-compose.e9.yml`
+
+Motivo: a previsão e o roteiro pedem 20 mensagens por cliente (40 por execução), mas a execução original de 27/10 usou 5 por cliente (10 por execução), e o motivo da redução não ficou registrado. Esta execução repete as etapas 2 e 3 na escala prevista. A original continua valendo como segunda amostra.
+
+Comandos:
+
+```sh
+export COMPOSE_FILE=docker-compose.yml:docker-compose.e9.yml
+scripts/reset.sh
+scripts/e9-concorrencia.sh 20 distintos
+scripts/e9-concorrencia.sh 20 mesmo
+unset COMPOSE_FILE
+scripts/reset.sh
+```
+
+As duas execuções rodaram em sequência, sem `reset.sh` entre elas. Por isso o serial continua de uma para a outra (1441 → 1481) e o `journal.txt` da segunda traz também as 40 transações da primeira.
+
+| Pasta | Conteúdo |
+| ----- | -------- |
+| `execucao-20261028-212722-distintos/` | Etapa 2: `cliente1.csv`, `cliente2.csv`, `envios.csv`, `ordem-aplicacao.txt`, `journal.txt`, `transferencias.txt`, `estado-final.txt`, `logs.txt`, `resumo.txt` |
+| `execucao-20261028-212750-mesmo/` | Etapa 3: os mesmos arquivos |
+
+### Resultado
+
+| | Etapa 2 (nomes distintos) | Etapa 3 (mesmo nome) |
+| - | ------------------------- | -------------------- |
+| Mensagens aceitas (`NOERROR`) | 40 de 40 | 40 de 40 |
+| Serial do ns1 | 2026101401 → 2026101441 (delta 40) | 2026101441 → 2026101481 (delta 40) |
+| Linhas `adding an RR` no ns1 | 40 | 40 |
+| Transações no journal | 40, seriais 1402 a 1441, consecutivos | 40 novas, seriais 1442 a 1481, consecutivas (80 no arquivo, desde o reset) |
+| Transferências (IXFR / AXFR-style) | 3 / 0 (ns2: 2, ns3: 1) | 3 / 0 (ns2: 2, ns3: 1) |
+| Convergência dos secundários após o fim dos envios | 5 s | 5 s |
+| Estado final em ns1, ns2 e ns3 | `c1.sd.lab = "c1-020"`, `c2.sd.lab = "c2-020"`, serial 2026101441 | `ordem.sd.lab = "c2-020"`, serial 2026101481 |
+| Latência por mensagem (n = 40) | média 21,8 ms, desvio 3,8 ms, mín. 20 ms, máx. 30 ms | média 21,2 ms, desvio 4,0 ms, mín. 20 ms, máx. 40 ms |
+| Duração dos envios (primeiro envio à última resposta) | 450 ms | 450 ms |
+
+Detalhes observados nos arquivos:
+
+- **Simultaneidade.** Os dois clientes começaram no mesmo instante (`envio_ms` 9374460 nos dois, na etapa 2; 9403460 e 9403470, na etapa 3) e terminaram juntos, de modo que os intervalos de envio se sobrepõem por inteiro.
+- **Ordem de aplicação.** Em `ordem-aplicacao.txt`, cada cliente aparece em ordem crescente (c1-001 a c1-020 e c2-001 a c2-020), nas duas etapas. Os clientes aparecem intercalados sem padrão fixo (etapa 2: `1212211212121212122121212121122121121221`, em que 1 é o cliente1 e 2 é o cliente2). Comparando a ordem de aplicação com a ordem de `envio_ms`, 9 de 780 pares (etapa 2) e 7 de 780 pares (etapa 3) ficaram invertidos. O `envio_ms` tem resolução de 10 ms, então mensagens com o mesmo valor não têm ordem definida entre si.
+- **Journal.** Cada transação traz a troca do SOA (serial antigo → novo) junto com a troca do TXT. Na etapa 3, o arquivo tem 40 linhas `add ordem.sd.lab`, ou seja, todas as versões intermediárias. As linhas `add c1.sd.lab` e `add c2.sd.lab` (20 de cada) desse arquivo vêm da etapa 2.
+- **Transferências.** Etapa 2: o ns2 transferiu 1401 → 1402 às 00:27:25,028 (1 passo, logo após o primeiro UPDATE) e 1402 → 1441 às 00:27:30,028 (39 passos, 5,0 s depois, coerente com o `notify-delay` de 5 s); o ns3 transferiu 1401 → 1441 de uma vez às 00:27:25,531 (160 registros, 4474 bytes), ~0,5 s depois do ns2, como no E3 (escalonamento de NOTIFY). Na etapa 3 o padrão se repetiu (ns2 às 00:27:54,032 e 00:27:59,032; ns3 às 00:27:54,532).
+- **Valor final na etapa 3.** As duas últimas mensagens (c1-020 e c2-020) foram enviadas no mesmo instante (`envio_ms` 9403890) e a c2-020 foi aplicada por último. Os outros 39 valores gravados em `ordem.sd.lab` foram sobrescritos sem aviso a nenhum cliente, inclusive o c1-020. Na execução original (5 mensagens por cliente) o valor final foi `c1-005`, então o vencedor variou entre as execuções.
+
+### Comparação com a previsão (etapas 2 e 3)
+
+| Item previsto | Observado | Resultado |
+| ------------- | --------- | --------- |
+| Etapa 2.1: 40 de 40 aceitas | 40 de 40 | **Confirmado** |
+| Etapa 2.2: delta de serial 40 | 40 (1401 → 1441) | **Confirmado** |
+| Etapa 2.3: journal com seriais consecutivos, sem repetição e sem lacuna | 1402 a 1441, sem lacuna nem repetição | **Confirmado** |
+| Etapa 2.4: 40 `adding an RR`; ordem de cada cliente preservada; clientes intercalados | 40; crescente nos dois clientes; intercalados | **Confirmado** |
+| Etapa 2.5: estado final idêntico (`c1-020`, `c2-020`) | Idêntico nos três, serial 2026101441 | **Confirmado** |
+| Etapa 2.6: 1 a 3 transferências por secundário, todas IXFR, nenhuma AXFR | ns2: 2, ns3: 1; todas IXFR; 0 AXFR-style | **Confirmado** |
+| Etapa 3.1: 40 de 40 aceitas, sem erro de conflito | 40 de 40 `NOERROR` | **Confirmado** |
+| Etapa 3.2: delta 40 e journal consecutivo | 40 (1441 → 1481); 1442 a 1481 consecutivos | **Confirmado** |
+| Etapa 3.3: valor final é o da última mensagem aplicada (`c1-020` ou `c2-020`), idêntico nos três; os demais se perdem | `c2-020`, idêntico nos três; 39 valores sobrescritos | **Confirmado** (*lost update*) |
+| Etapa 3.4: 40 `adding an RR`; journal com as 40 versões intermediárias | 40 linhas `adding an RR`; 40 `add ordem.sd.lab` no journal | **Confirmado** |
+| Latência de cada UPDATE: dezenas de ms | média de 21,2 a 21,8 ms | **Confirmado** |
+| Convergência dos secundários após a rajada: 0 a ≈ 6 s | 5 s | **Confirmado** |
+| Duração dos envios: poucos segundos | 450 ms | **Divergente** (mais rápido que o previsto: 20 mensagens × ~22 ms ≈ 440 ms) |
+
+### Etapa 4 (execução original de 27/10, 5 repetições)
+
+A etapa 4 não foi repetida. Os números da execução original (`medicoes-20261027-232512.csv`) frente à previsão:
+
+| Item previsto | Observado | Resultado |
+| ------------- | --------- | --------- |
+| Confirmação de cada UPDATE em dezenas de ms (10 a 100 ms) | média 32 ms, desvio 11,0 ms (20 a 50 ms) | **Confirmado** |
+| Propagação ns1 → ns2 e ns3 em menos de 1 s, "na casa de 100 a 500 ms" | ns2: média 44 ms; ns3: média 622 ms (600 a 640 ms) | **Confirmado** o limite de 1 s; a faixa estimada não: o ns2 ficou abaixo e o ns3 acima |
+| Nenhuma repetição estoura o timeout de 60 s | `NA = 0` | **Confirmado** |
+
+A diferença de ~0,5 s entre ns2 e ns3 vem do escalonamento de NOTIFY descrito no E3 (o ns2 é avisado na hora e o ns3 ~500 ms depois). Ela também aparece nas duas execuções de 20 mensagens (ns2 às 00:27:25,028 e ns3 às 00:27:25,531, na etapa 2).
+
+### Conclusão das etapas 2 e 3
+
+O primário serializou as 80 mensagens dos dois clientes concorrentes em uma ordem total, registrada no serial e no journal, sem lacuna e sem repetição. Todas foram aceitas, inclusive as que sobrescreveram o mesmo nome: o DNS não detecta escritas concorrentes, e o valor final é o da última mensagem aplicada, que não é necessariamente a do último cliente a enviar. Os secundários receberam tudo por IXFR, em 1 ou 2 transferências cada, com várias mensagens por transferência.
+
+### Limitações
+
+- Uma execução de 20 mensagens por modo, mais a original de 5 por modo. As duas rodaram em máquinas diferentes (Windows e Mac).
+- A resolução do relógio de envio é de 10 ms.
+- O vencedor da etapa 3 depende da ordem de chegada ao primário; duas execuções não bastam para estimar com que frequência cada cliente vence.

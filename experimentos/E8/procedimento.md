@@ -137,3 +137,14 @@ O resolvedor devolveu `10.0.0.1` depois da restauração.
 
 **Comparação com a previsão.** Confirmados: o coordenador estático, a propagação do serial crescente, a recusa da escrita por `nsupdate` (REFUSED no secundário e no primário com zona estática), o serial menor aceito só pelo primário, a divergência persistente por pelo menos 90 s (três ciclos de refresh, com 17 recusas `< ours` registradas ao longo da janela) e a convergência com serial maior. Não observado: o `notify-delay` com duas edições seguidas.
 
+## Ligação com relógios lógicos (Q9)
+
+O comportamento da E8.2 corresponde à regra de monotonicidade de um relógio de Lamport: os secundários recusaram o serial 2026101301, menor que o 2026101402 que já tinham (17 linhas `received from primary ... < ours` em ns2 e ns3, nenhuma transferência concluída, 10 amostras de 10 com a divergência), e só aceitaram um serial maior (2026101403, na restauração).
+
+Os limites da analogia, já apontados na previsão, são três:
+
+1. O secundário apenas copia o serial recebido, sem `max(local, recebido) + 1`, porque não gera eventos próprios.
+2. Com uma única fonte de escrita, o serial funciona como número de sequência de um sequenciador (uma ordem total trivial), e não como relógio distribuído. No E9, as 80 mensagens dos dois clientes das execuções de 20 mensagens receberam seriais consecutivos (1402 a 1481) na ordem de chegada ao primário.
+3. Um escalar não detecta concorrência: só relógios vetoriais mostrariam versões incomparáveis.
+
+A divergência da E8.2 não se corrigiu sozinha justamente por causa dessa regra: o primário, com serial menor, ficou com o dado novo, e os secundários, com serial maior, com o dado antigo.

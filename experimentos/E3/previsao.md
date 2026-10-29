@@ -4,8 +4,8 @@
 > O histórico do Git é a prova de que a previsão veio antes do resultado.
 
 - Responsável: Taryck Gean (responsável principal do E3; apoio: a definir)
-- Data/hora do registro: (preencher no commit)
-- Commit/tag do laboratório: (preencher com `git rev-parse --short HEAD`)
+- Data/hora do registro: 27/10/2026 13:37 (commit `4c77c19`, "E3: previsão antes da execução"; campo preenchido em 28/10/2026 a partir do `git log`)
+- Commit/tag do laboratório: `4c77c19` (o commit que registra esta previsão; campo preenchido em 28/10/2026; o texto da previsão não foi alterado)
 
 ## O que esperamos observar
 

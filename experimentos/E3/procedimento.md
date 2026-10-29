@@ -11,7 +11,7 @@
 
 - `scripts/verificar.sh` → RESULTADO: APROVADO, variante base, `COMPOSE_FILE` vazio.
 - Serial inicial servido: 2026101401. **Não foi rodado `scripts/reset.sh`**: o laboratório já estava no ar, e o `verificar.sh` aprovou.
-- Previsão commitada antes (`4c77c19`, 13:37). Os campos de data/hora e commit do `previsao.md` ficaram como "(preencher...)" no commit.
+- Previsão commitada antes (`4c77c19`, 13:37). Os campos de data/hora e commit do `previsao.md` ficaram como "(preencher...)" no commit. Foram preenchidos em 28/10/2026 a partir do `git log` (13:37, `4c77c19`); o texto da previsão não foi alterado.
 
 ## Passos e comandos
 
@@ -33,7 +33,7 @@ Cada repetição: o script grava um valor novo em `app` e sobe o serial (`zona.s
 
 | Arquivo | O que mostra |
 |---|---|
-| `previsao.md` | Previsão (commit 4c77c19), não alterada |
+| `previsao.md` | Previsão (commit 4c77c19); texto não alterado, só os campos de data/hora e commit foram preenchidos depois |
 | `com-notify-20261027-134339.csv` | 5 medições da série com NOTIFY (t0, ns2, ns3, atrasos em ms) |
 | `sem-notify-20261027-134440.csv` | 5 medições da série sem NOTIFY |
 | `saida-com-notify.txt`, `saida-sem-notify.txt` | Saída do script, com média e desvio |

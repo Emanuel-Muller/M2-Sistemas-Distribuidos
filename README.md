@@ -65,6 +65,22 @@ docker compose down           # remove os contêineres
 | `scripts/e9-medir.sh [n]` | E9: tempo de confirmação e de propagação de um UPDATE |
 | `scripts/e9-autorizacao.sh [--sem-restaurar]` | E9: testes de autorização (chave válida, sem chave, chave inválida, envio ao secundário) |
 
+## Experimentos: comando e pasta de evidências
+
+| Experimento | Comando | Pasta |
+|---|---|---|
+| E1: subida e topologia | `scripts/reset.sh`, `scripts/verificar.sh` e as consultas do procedimento | `experimentos/E1/` |
+| E2: caminho de uma operação | consultas `dig` a partir do `cliente` (ver o procedimento) | `experimentos/E2/` |
+| E3: replicação primário → secundários | `scripts/medir-propagacao.sh com-notify 5` e, na variante sem NOTIFY, `scripts/medir-propagacao.sh sem-notify 5 120` | `experimentos/E3/` |
+| E4: cache, TTL e janela de inconsistência | `scripts/medir-consistencia.sh` | `experimentos/E4/` |
+| E5: falha e quórum | `scripts/e5-falha.sh` | `experimentos/E5/execucao-*/` |
+| E6: partição de rede | `scripts/e6-particao.sh` | `experimentos/E6/execucao-*/` |
+| E7: recuperação | `scripts/medir-recuperacao.sh 5 20` | `experimentos/E7/execucao-*/` |
+| E8: coordenação e ordem | execução manual do procedimento e `scripts/e8-complemento.sh 90 10` | `experimentos/E8/` e `experimentos/E8/complemento/` |
+| E9: atualização dinâmica, TSIG e concorrência | `scripts/gerar-chaves-tsig.sh`, variante e9, `scripts/e9-autorizacao.sh`, `scripts/e9-concorrencia.sh 20 distintos`, `scripts/e9-concorrencia.sh 20 mesmo` e `scripts/e9-medir.sh 5` | `experimentos/E9/` |
+
+Cada pasta tem `previsao.md` (escrita antes da execução), `procedimento.md` (o que foi feito e a análise previsão × resultado) e os arquivos de evidência.
+
 ## Variantes
 
 | Variante | Ativar | Voltar à base |
@@ -113,8 +129,8 @@ Comportamentos do BIND que afetam os procedimentos:
 
 Chaves TSIG ficam em `secrets/` (fora do Git), geradas em cada máquina por `scripts/gerar-chaves-tsig.sh`.
 
-## Informações da equipe (README original)
+## Tema do trabalho
 
-# T1: Sistema de nomes distribuído (DNS)
-Ênfase B: Atualização dinâmica e ordem das escritas.
+T1: Sistema de nomes distribuído (DNS). Ênfase B: atualização dinâmica e ordem das escritas.
+
 Habilitar atualização dinâmica (RFC 2136) com chave TSIG e nsupdate. Disparar atualizações concorrentes a partir de dois clientes e mostrar como o primário as serializa (journal, serial, IXFR).

@@ -1,0 +1,128 @@
+ns3  | 2026-10-29T00:27:25.031328088Z 29-Oct-2026 00:27:25.030 client @0xffff8c716430 172.31.0.12#45296: received notify for zone 'sd.lab'
+ns3  | 2026-10-29T00:27:25.031343713Z 29-Oct-2026 00:27:25.030 zone sd.lab/IN: refused notify from non-primary: 172.31.0.12#45296
+ns3  | 2026-10-29T00:27:25.530099255Z 29-Oct-2026 00:27:25.529 client @0xffff8c70e0d0 172.30.0.11#33735: received notify for zone 'sd.lab'
+ns3  | 2026-10-29T00:27:25.530119963Z 29-Oct-2026 00:27:25.529 client @0xffff8c716430 172.31.0.11#37935: received notify for zone 'sd.lab'
+ns3  | 2026-10-29T00:27:25.530121255Z 29-Oct-2026 00:27:25.529 zone sd.lab/IN: notify from 172.30.0.11#33735: serial 2026101441
+ns3  | 2026-10-29T00:27:25.530205672Z 29-Oct-2026 00:27:25.529 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#37935
+ns3  | 2026-10-29T00:27:25.530549630Z 29-Oct-2026 00:27:25.529 zone sd.lab/IN: Transfer started.
+ns3  | 2026-10-29T00:27:25.530600672Z 29-Oct-2026 00:27:25.529 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns3  | 2026-10-29T00:27:25.572519297Z 29-Oct-2026 00:27:25.571 zone sd.lab/IN: transferred serial 2026101441
+ns3  | 2026-10-29T00:27:25.572589839Z 29-Oct-2026 00:27:25.571 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns3  | 2026-10-29T00:27:25.572594922Z 29-Oct-2026 00:27:25.571 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 160 records, 4474 bytes, 0.042 secs (106523 bytes/sec) (serial 2026101441)
+ns3  | 2026-10-29T00:27:25.572793380Z 29-Oct-2026 00:27:25.571 zone sd.lab/IN: sending notifies (serial 2026101441)
+ns3  | 2026-10-29T00:27:30.066955882Z 29-Oct-2026 00:27:30.066 client @0xffff8c70c350 172.31.0.12#48355: received notify for zone 'sd.lab'
+ns3  | 2026-10-29T00:27:30.066964424Z 29-Oct-2026 00:27:30.066 zone sd.lab/IN: refused notify from non-primary: 172.31.0.12#48355
+ns3  | 2026-10-29T00:27:30.526383008Z 29-Oct-2026 00:27:30.525 client @0xffff8c727350 172.30.0.11#44007: received notify for zone 'sd.lab'
+ns3  | 2026-10-29T00:27:30.526393633Z 29-Oct-2026 00:27:30.525 zone sd.lab/IN: notify from 172.30.0.11#44007: zone is up to date
+ns3  | 2026-10-29T00:27:30.526394716Z 29-Oct-2026 00:27:30.525 client @0xffff8c70c350 172.31.0.11#33380: received notify for zone 'sd.lab'
+ns3  | 2026-10-29T00:27:30.526396633Z 29-Oct-2026 00:27:30.525 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#33380
+ns2  | 2026-10-29T00:27:25.026813130Z 29-Oct-2026 00:27:25.025 client @0xffffb65890c0 172.30.0.11#49781: received notify for zone 'sd.lab'
+ns2  | 2026-10-29T00:27:25.026830380Z 29-Oct-2026 00:27:25.025 zone sd.lab/IN: notify from 172.30.0.11#49781: serial 2026101402
+ns2  | 2026-10-29T00:27:25.027320505Z 29-Oct-2026 00:27:25.026 zone sd.lab/IN: Transfer started.
+ns2  | 2026-10-29T00:27:25.027571838Z 29-Oct-2026 00:27:25.026 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns2  | 2026-10-29T00:27:25.030718005Z 29-Oct-2026 00:27:25.029 zone sd.lab/IN: transferred serial 2026101402
+ns2  | 2026-10-29T00:27:25.030730797Z 29-Oct-2026 00:27:25.029 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns2  | 2026-10-29T00:27:25.030733047Z 29-Oct-2026 00:27:25.029 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 5 records, 200 bytes, 0.003 secs (66666 bytes/sec) (serial 2026101402)
+ns2  | 2026-10-29T00:27:25.031011338Z 29-Oct-2026 00:27:25.029 zone sd.lab/IN: sending notifies (serial 2026101402)
+ns2  | 2026-10-29T00:27:25.530102213Z 29-Oct-2026 00:27:25.529 client @0xffffb2550180 172.31.0.11#55501: received notify for zone 'sd.lab'
+ns2  | 2026-10-29T00:27:25.530119838Z 29-Oct-2026 00:27:25.529 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#55501
+ns2  | 2026-10-29T00:27:25.572997714Z 29-Oct-2026 00:27:25.572 client @0xffffb65923f0 172.31.0.13#54927: received notify for zone 'sd.lab'
+ns2  | 2026-10-29T00:27:25.573004297Z 29-Oct-2026 00:27:25.572 zone sd.lab/IN: refused notify from non-primary: 172.31.0.13#54927
+ns2  | 2026-10-29T00:27:30.026424174Z 29-Oct-2026 00:27:30.025 client @0xffffb253b230 172.30.0.11#44137: received notify for zone 'sd.lab'
+ns2  | 2026-10-29T00:27:30.026439799Z 29-Oct-2026 00:27:30.025 zone sd.lab/IN: notify from 172.30.0.11#44137: serial 2026101441
+ns2  | 2026-10-29T00:27:30.027092132Z 29-Oct-2026 00:27:30.026 zone sd.lab/IN: Transfer started.
+ns2  | 2026-10-29T00:27:30.027387799Z 29-Oct-2026 00:27:30.026 transfer of 'sd.lab/IN' from 172.30.0.11#53: connected using 172.30.0.11#53
+ns2  | 2026-10-29T00:27:30.066348466Z 29-Oct-2026 00:27:30.065 zone sd.lab/IN: transferred serial 2026101441
+ns2  | 2026-10-29T00:27:30.066452549Z 29-Oct-2026 00:27:30.065 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer status: success
+ns2  | 2026-10-29T00:27:30.066454716Z 29-Oct-2026 00:27:30.065 transfer of 'sd.lab/IN' from 172.30.0.11#53: Transfer completed: 1 messages, 157 records, 4383 bytes, 0.039 secs (112384 bytes/sec) (serial 2026101441)
+ns2  | 2026-10-29T00:27:30.066636549Z 29-Oct-2026 00:27:30.065 zone sd.lab/IN: sending notifies (serial 2026101441)
+ns2  | 2026-10-29T00:27:30.526357341Z 29-Oct-2026 00:27:30.525 client @0xffffb25451e0 172.31.0.11#51801: received notify for zone 'sd.lab'
+ns2  | 2026-10-29T00:27:30.526374674Z 29-Oct-2026 00:27:30.525 zone sd.lab/IN: refused notify from non-primary: 172.31.0.11#51801
+ns1  | 2026-10-29T00:27:25.022620463Z 29-Oct-2026 00:27:25.021 client @0xffffa74e51c0 172.31.0.100#39801/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.022666422Z 29-Oct-2026 00:27:25.021 client @0xffffa74e51c0 172.31.0.100#39801/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-001"
+ns1  | 2026-10-29T00:27:25.026334005Z 29-Oct-2026 00:27:25.025 zone sd.lab/IN: sending notifies (serial 2026101402)
+ns1  | 2026-10-29T00:27:25.026705547Z 29-Oct-2026 00:27:25.025 client @0xffffa74d4340 172.31.0.101#51408/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.026739422Z 29-Oct-2026 00:27:25.025 client @0xffffa74d4340 172.31.0.101#51408/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-001"
+ns1  | 2026-10-29T00:27:25.028465088Z 29-Oct-2026 00:27:25.027 client @0xffffa74cf3a0 172.30.0.12#45447 (sd.lab): transfer of 'sd.lab/IN': IXFR started (serial 2026101401 -> 2026101402)
+ns1  | 2026-10-29T00:27:25.028575088Z 29-Oct-2026 00:27:25.027 client @0xffffa74cf3a0 172.30.0.12#45447 (sd.lab): transfer of 'sd.lab/IN': IXFR ended: 1 messages, 5 records, 200 bytes, 0.001 secs (200000 bytes/sec) (serial 2026101402)
+ns1  | 2026-10-29T00:27:25.052372213Z 29-Oct-2026 00:27:25.051 client @0xffffa74e51c0 172.31.0.100#36755/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.052400130Z 29-Oct-2026 00:27:25.051 client @0xffffa74e51c0 172.31.0.100#36755/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-002"
+ns1  | 2026-10-29T00:27:25.053535755Z 29-Oct-2026 00:27:25.052 client @0xffffa74d2430 172.31.0.101#36664/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.053544797Z 29-Oct-2026 00:27:25.052 client @0xffffa74d2430 172.31.0.101#36664/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-002"
+ns1  | 2026-10-29T00:27:25.075312880Z 29-Oct-2026 00:27:25.074 client @0xffffa74e51c0 172.31.0.101#41026/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.075325297Z 29-Oct-2026 00:27:25.074 client @0xffffa74e51c0 172.31.0.101#41026/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-003"
+ns1  | 2026-10-29T00:27:25.076395255Z 29-Oct-2026 00:27:25.075 client @0xffffa74ce4d0 172.31.0.100#52540/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.076402005Z 29-Oct-2026 00:27:25.075 client @0xffffa74ce4d0 172.31.0.100#52540/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-003"
+ns1  | 2026-10-29T00:27:25.098224297Z 29-Oct-2026 00:27:25.097 client @0xffffa74ce4d0 172.31.0.100#47313/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.098239922Z 29-Oct-2026 00:27:25.097 client @0xffffa74ce4d0 172.31.0.100#47313/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-004"
+ns1  | 2026-10-29T00:27:25.099422505Z 29-Oct-2026 00:27:25.098 client @0xffffa74aa0e0 172.31.0.101#42143/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.099434755Z 29-Oct-2026 00:27:25.098 client @0xffffa74aa0e0 172.31.0.101#42143/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-004"
+ns1  | 2026-10-29T00:27:25.120409297Z 29-Oct-2026 00:27:25.119 client @0xffffa74d4340 172.31.0.100#49913/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.120423672Z 29-Oct-2026 00:27:25.119 client @0xffffa74d4340 172.31.0.100#49913/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-005"
+ns1  | 2026-10-29T00:27:25.121476213Z 29-Oct-2026 00:27:25.120 client @0xffffa74ac130 172.31.0.101#35186/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.121480880Z 29-Oct-2026 00:27:25.120 client @0xffffa74ac130 172.31.0.101#35186/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-005"
+ns1  | 2026-10-29T00:27:25.142176588Z 29-Oct-2026 00:27:25.141 client @0xffffa74ac130 172.31.0.100#44077/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.142186130Z 29-Oct-2026 00:27:25.141 client @0xffffa74ac130 172.31.0.100#44077/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-006"
+ns1  | 2026-10-29T00:27:25.143421338Z 29-Oct-2026 00:27:25.142 client @0xffffa74a21e0 172.31.0.101#41813/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.143427422Z 29-Oct-2026 00:27:25.142 client @0xffffa74a21e0 172.31.0.101#41813/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-006"
+ns1  | 2026-10-29T00:27:25.163682588Z 29-Oct-2026 00:27:25.162 client @0xffffa74d2430 172.31.0.100#55092/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.163693422Z 29-Oct-2026 00:27:25.162 client @0xffffa74d2430 172.31.0.100#55092/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-007"
+ns1  | 2026-10-29T00:27:25.164713588Z 29-Oct-2026 00:27:25.163 client @0xffffa74aa0e0 172.31.0.101#55395/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.164723755Z 29-Oct-2026 00:27:25.163 client @0xffffa74aa0e0 172.31.0.101#55395/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-007"
+ns1  | 2026-10-29T00:27:25.185229797Z 29-Oct-2026 00:27:25.184 client @0xffffa74d2430 172.31.0.100#49044/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.185238338Z 29-Oct-2026 00:27:25.184 client @0xffffa74d2430 172.31.0.100#49044/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-008"
+ns1  | 2026-10-29T00:27:25.186263672Z 29-Oct-2026 00:27:25.185 client @0xffffa74d4340 172.31.0.101#42833/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.186268422Z 29-Oct-2026 00:27:25.185 client @0xffffa74d4340 172.31.0.101#42833/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-008"
+ns1  | 2026-10-29T00:27:25.206833922Z 29-Oct-2026 00:27:25.205 client @0xffffa74ac130 172.31.0.100#44077/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.206844463Z 29-Oct-2026 00:27:25.205 client @0xffffa74ac130 172.31.0.100#44077/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-009"
+ns1  | 2026-10-29T00:27:25.207790255Z 29-Oct-2026 00:27:25.206 client @0xffffa74ce4d0 172.31.0.101#50719/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.207802380Z 29-Oct-2026 00:27:25.206 client @0xffffa74ce4d0 172.31.0.101#50719/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-009"
+ns1  | 2026-10-29T00:27:25.228369547Z 29-Oct-2026 00:27:25.227 client @0xffffa74ac130 172.31.0.101#42352/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.228380213Z 29-Oct-2026 00:27:25.227 client @0xffffa74ac130 172.31.0.101#42352/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-010"
+ns1  | 2026-10-29T00:27:25.229360047Z 29-Oct-2026 00:27:25.228 client @0xffffa74d2430 172.31.0.100#51115/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.229365963Z 29-Oct-2026 00:27:25.228 client @0xffffa74d2430 172.31.0.100#51115/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-010"
+ns1  | 2026-10-29T00:27:25.249314505Z 29-Oct-2026 00:27:25.248 client @0xffffa74d4340 172.31.0.101#58438/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.249325255Z 29-Oct-2026 00:27:25.248 client @0xffffa74d4340 172.31.0.101#58438/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-011"
+ns1  | 2026-10-29T00:27:25.250412172Z 29-Oct-2026 00:27:25.249 client @0xffffa74aa0e0 172.31.0.100#35638/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.250417922Z 29-Oct-2026 00:27:25.249 client @0xffffa74aa0e0 172.31.0.100#35638/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-011"
+ns1  | 2026-10-29T00:27:25.270525172Z 29-Oct-2026 00:27:25.269 client @0xffffa74e51c0 172.31.0.101#54237/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.270537547Z 29-Oct-2026 00:27:25.269 client @0xffffa74e51c0 172.31.0.101#54237/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-012"
+ns1  | 2026-10-29T00:27:25.271505338Z 29-Oct-2026 00:27:25.270 client @0xffffa74d2430 172.31.0.100#40660/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.271516130Z 29-Oct-2026 00:27:25.270 client @0xffffa74d2430 172.31.0.100#40660/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-012"
+ns1  | 2026-10-29T00:27:25.292155130Z 29-Oct-2026 00:27:25.291 client @0xffffa74d2430 172.31.0.101#52448/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.292166755Z 29-Oct-2026 00:27:25.291 client @0xffffa74d2430 172.31.0.101#52448/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-013"
+ns1  | 2026-10-29T00:27:25.293162422Z 29-Oct-2026 00:27:25.292 client @0xffffa74a4390 172.31.0.100#34788/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.293167172Z 29-Oct-2026 00:27:25.292 client @0xffffa74a4390 172.31.0.100#34788/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-013"
+ns1  | 2026-10-29T00:27:25.313540963Z 29-Oct-2026 00:27:25.312 client @0xffffa74aa0e0 172.31.0.101#59814/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.313552172Z 29-Oct-2026 00:27:25.312 client @0xffffa74aa0e0 172.31.0.101#59814/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-014"
+ns1  | 2026-10-29T00:27:25.314595755Z 29-Oct-2026 00:27:25.313 client @0xffffa74a4390 172.31.0.100#55386/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.314607255Z 29-Oct-2026 00:27:25.313 client @0xffffa74a4390 172.31.0.100#55386/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-014"
+ns1  | 2026-10-29T00:27:25.335404797Z 29-Oct-2026 00:27:25.334 client @0xffffa74d4340 172.31.0.100#53979/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.335415213Z 29-Oct-2026 00:27:25.334 client @0xffffa74d4340 172.31.0.100#53979/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-015"
+ns1  | 2026-10-29T00:27:25.336447797Z 29-Oct-2026 00:27:25.335 client @0xffffa74993d0 172.31.0.101#45157/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.336458672Z 29-Oct-2026 00:27:25.335 client @0xffffa74993d0 172.31.0.101#45157/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-015"
+ns1  | 2026-10-29T00:27:25.357326422Z 29-Oct-2026 00:27:25.356 client @0xffffa74e51c0 172.31.0.101#35884/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.357336630Z 29-Oct-2026 00:27:25.356 client @0xffffa74e51c0 172.31.0.101#35884/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-016"
+ns1  | 2026-10-29T00:27:25.358382505Z 29-Oct-2026 00:27:25.357 client @0xffffa74ce4d0 172.31.0.100#57830/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.358392713Z 29-Oct-2026 00:27:25.357 client @0xffffa74ce4d0 172.31.0.100#57830/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-016"
+ns1  | 2026-10-29T00:27:25.378297172Z 29-Oct-2026 00:27:25.377 client @0xffffa74993d0 172.31.0.101#34290/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.378305130Z 29-Oct-2026 00:27:25.377 client @0xffffa74993d0 172.31.0.101#34290/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-017"
+ns1  | 2026-10-29T00:27:25.379347672Z 29-Oct-2026 00:27:25.378 client @0xffffa74ac130 172.31.0.100#51466/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.379353005Z 29-Oct-2026 00:27:25.378 client @0xffffa74ac130 172.31.0.100#51466/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-017"
+ns1  | 2026-10-29T00:27:25.400711588Z 29-Oct-2026 00:27:25.399 client @0xffffa74d4340 172.31.0.100#56530/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.400720130Z 29-Oct-2026 00:27:25.399 client @0xffffa74d4340 172.31.0.100#56530/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-018"
+ns1  | 2026-10-29T00:27:25.401603255Z 29-Oct-2026 00:27:25.400 client @0xffffa74ac130 172.31.0.101#41885/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.401608047Z 29-Oct-2026 00:27:25.400 client @0xffffa74ac130 172.31.0.101#41885/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-018"
+ns1  | 2026-10-29T00:27:25.421359880Z 29-Oct-2026 00:27:25.420 client @0xffffa74993d0 172.31.0.100#49635/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.421370255Z 29-Oct-2026 00:27:25.420 client @0xffffa74993d0 172.31.0.100#49635/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-019"
+ns1  | 2026-10-29T00:27:25.422343880Z 29-Oct-2026 00:27:25.421 client @0xffffa74ac130 172.31.0.101#34432/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.422352130Z 29-Oct-2026 00:27:25.421 client @0xffffa74ac130 172.31.0.101#34432/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-019"
+ns1  | 2026-10-29T00:27:25.443319880Z 29-Oct-2026 00:27:25.442 client @0xffffa74ac130 172.31.0.101#59222/key cliente2: updating zone 'sd.lab/IN': deleting rrset at 'c2.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.443327297Z 29-Oct-2026 00:27:25.442 client @0xffffa74ac130 172.31.0.101#59222/key cliente2: updating zone 'sd.lab/IN': adding an RR at 'c2.sd.lab' TXT "c2-020"
+ns1  | 2026-10-29T00:27:25.444338130Z 29-Oct-2026 00:27:25.443 client @0xffffa74d4340 172.31.0.100#54270/key cliente1: updating zone 'sd.lab/IN': deleting rrset at 'c1.sd.lab' TXT
+ns1  | 2026-10-29T00:27:25.444342838Z 29-Oct-2026 00:27:25.443 client @0xffffa74d4340 172.31.0.100#54270/key cliente1: updating zone 'sd.lab/IN': adding an RR at 'c1.sd.lab' TXT "c1-020"
+ns1  | 2026-10-29T00:27:25.531241588Z 29-Oct-2026 00:27:25.530 client @0xffffa7492200 172.30.0.13#32979 (sd.lab): transfer of 'sd.lab/IN': IXFR started (serial 2026101401 -> 2026101441)
+ns1  | 2026-10-29T00:27:25.531558755Z 29-Oct-2026 00:27:25.530 client @0xffffa7492200 172.30.0.13#32979 (sd.lab): transfer of 'sd.lab/IN': IXFR ended: 1 messages, 160 records, 4474 bytes, 0.001 secs (4474000 bytes/sec) (serial 2026101441)
+ns1  | 2026-10-29T00:27:30.026170799Z 29-Oct-2026 00:27:30.025 zone sd.lab/IN: sending notifies (serial 2026101441)
+ns1  | 2026-10-29T00:27:30.027934132Z 29-Oct-2026 00:27:30.027 client @0xffffa74823d0 172.30.0.12#45091 (sd.lab): transfer of 'sd.lab/IN': IXFR started (serial 2026101402 -> 2026101441)
+ns1  | 2026-10-29T00:27:30.028320007Z 29-Oct-2026 00:27:30.027 client @0xffffa74823d0 172.30.0.12#45091 (sd.lab): transfer of 'sd.lab/IN': IXFR ended: 1 messages, 157 records, 4383 bytes, 0.001 secs (4383000 bytes/sec) (serial 2026101441)

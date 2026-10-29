@@ -1,0 +1,317 @@
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101401 30 10 300 20
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101402 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-001"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101402 30 10 300 20
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101403 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-001"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101403 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-001"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101404 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-002"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101404 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-001"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101405 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-002"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101405 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-002"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101406 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-003"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101406 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-002"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101407 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-003"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101407 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-003"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101408 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-004"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101408 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-003"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101409 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-004"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101409 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-004"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101410 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-005"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101410 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-004"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101411 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-005"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101411 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-005"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101412 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-006"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101412 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-005"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101413 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-006"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101413 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-006"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101414 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-007"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101414 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-006"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101415 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-007"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101415 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-007"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101416 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-008"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101416 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-007"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101417 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-008"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101417 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-008"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101418 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-009"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101418 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-008"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101419 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-009"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101419 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-009"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101420 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-010"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101420 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-009"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101421 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-010"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101421 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-010"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101422 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-011"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101422 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-010"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101423 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-011"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101423 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-011"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101424 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-012"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101424 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-011"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101425 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-012"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101425 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-012"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101426 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-013"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101426 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-012"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101427 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-013"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101427 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-013"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101428 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-014"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101428 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-013"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101429 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-014"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101429 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-014"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101430 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-015"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101430 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-014"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101431 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-015"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101431 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-015"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101432 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-016"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101432 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-015"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101433 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-016"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101433 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-016"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101434 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-017"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101434 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-016"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101435 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-017"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101435 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-017"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101436 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-018"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101436 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-017"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101437 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-018"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101437 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-018"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101438 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-019"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101438 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-018"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101439 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-019"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101439 30 10 300 20
+del c2.sd.lab.		60	IN	TXT	"c2-019"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101440 30 10 300 20
+add c2.sd.lab.		60	IN	TXT	"c2-020"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101440 30 10 300 20
+del c1.sd.lab.		60	IN	TXT	"c1-019"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101441 30 10 300 20
+add c1.sd.lab.		60	IN	TXT	"c1-020"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101441 30 10 300 20
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101442 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-001"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101442 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-001"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101443 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-001"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101443 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-001"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101444 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-002"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101444 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-002"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101445 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-002"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101445 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-002"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101446 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-003"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101446 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-003"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101447 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-003"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101447 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-003"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101448 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-004"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101448 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-004"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101449 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-004"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101449 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-004"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101450 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-005"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101450 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-005"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101451 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-005"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101451 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-005"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101452 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-006"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101452 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-006"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101453 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-006"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101453 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-006"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101454 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-007"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101454 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-007"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101455 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-007"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101455 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-007"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101456 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-008"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101456 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-008"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101457 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-008"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101457 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-008"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101458 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-009"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101458 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-009"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101459 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-009"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101459 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-009"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101460 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-010"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101460 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-010"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101461 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-010"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101461 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-010"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101462 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-011"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101462 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-011"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101463 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-011"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101463 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-011"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101464 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-012"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101464 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-012"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101465 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-012"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101465 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-012"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101466 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-013"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101466 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-013"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101467 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-013"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101467 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-013"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101468 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-014"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101468 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-014"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101469 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-014"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101469 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-014"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101470 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-015"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101470 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-015"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101471 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-015"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101471 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-015"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101472 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-016"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101472 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-016"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101473 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-016"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101473 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-016"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101474 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-017"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101474 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-017"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101475 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-017"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101475 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-017"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101476 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-018"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101476 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-018"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101477 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-018"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101477 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-018"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101478 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-019"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101478 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-019"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101479 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-019"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101479 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c2-019"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101480 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c1-020"
+del sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101480 30 10 300 20
+del ordem.sd.lab.		60	IN	TXT	"c1-020"
+add sd.lab.			60	IN	SOA	ns1.sd.lab. admin.sd.lab. 2026101481 30 10 300 20
+add ordem.sd.lab.		60	IN	TXT	"c2-020"
