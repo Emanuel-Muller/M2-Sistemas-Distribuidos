@@ -59,7 +59,7 @@ docker compose down           # remove os contêineres
 | `scripts/e6-particao.sh [int] [limite] [--manter-isolado]` | E6: ns3 isolado da rede interna, divergência e expire |
 | `scripts/e8-complemento.sh [dur] [int]` | E8: papéis, serial crescente, `nsupdate` no secundário, serial menor observado por `dur` s e restauração |
 | `scripts/estatisticas.sh <csv> <coluna>` | Média e desvio padrão de uma coluna |
-| `scripts/gerar-chaves-tsig.sh [--substituir]` | E9: chaves TSIG em `secrets/` (fora do Git); gera só as que faltam |
+| `scripts/gerar-chaves-tsig.sh [--substituir]` | E9: chaves TSIG em `secrets/` (fora do Git); gera só as que faltam ou não passam no `named-checkconf` |
 | `scripts/e9-atualizar.sh ...` | E9: uma atualização dinâmica (validação e testes de autorização) |
 | `scripts/e9-concorrencia.sh [n] [mesmo\|distintos]` | E9: atualizações concorrentes dos dois clientes |
 | `scripts/e9-medir.sh [n]` | E9: tempo de confirmação e de propagação de um UPDATE |
@@ -90,7 +90,7 @@ Cada pasta tem `previsao.md` (escrita antes da execução), `procedimento.md` (o
 
 `COMPOSE_FILE` vale só para o terminal onde foi definido. O separador é `:` no Linux, no macOS e no WSL; no Git Bash ou no PowerShell do Windows (Docker do Windows), use `;` (ex.: `docker-compose.yml;docker-compose.e9.yml`).
 
-Códigos de saída: os scripts de experimento terminam com 0 quando tudo foi executado e o laboratório convergiu. `e5-falha.sh` e `medir-recuperacao.sh` retornam 1 quando o laboratório não converge (e interrompem os cenários seguintes); `e6-particao.sh` retorna 2 quando o experimento terminou mas o ns3 ainda não convergiu; `medir-recuperacao.sh` retorna 2 quando alguma repetição não termina com estado idêntico nos três. `e9-atualizar.sh` devolve o código do `nsupdate` (2 = recusado, esperado nos testes negativos).
+Códigos de saída: os scripts de experimento terminam com 0 quando tudo foi executado e o laboratório convergiu. `e5-falha.sh` e `medir-recuperacao.sh` retornam 1 quando o laboratório não converge (e interrompem os cenários seguintes); `e6-particao.sh` retorna 2 quando o experimento terminou mas o ns3 ainda não convergiu; `medir-recuperacao.sh` retorna 2 quando alguma repetição não termina com estado idêntico nos três. `e9-atualizar.sh` devolve o código do `nsupdate` (2 = recusado, esperado nos testes negativos). `e9-autorizacao.sh` retorna 1 quando algum dos quatro resultados difere do previsto (a recusa dos testes negativos é o resultado correto e não conta como falha); `e9-concorrencia.sh` retorna 1 se nem todas as mensagens forem aceitas, se o serial não subir uma unidade por mensagem, se os secundários não convergirem ou se o estado final diferir entre os três. `reset.sh` retorna 1, sem tocar em `runtime/`, se o `docker compose down` falhar.
 
 `e8-complemento.sh` e `e9-autorizacao.sh` gravam em pastas de nome fixo (`experimentos/E8/complemento/`, `experimentos/E9/autorizacao/`). Se a pasta já existir, a execução anterior é renomeada para `<pasta>-anterior-<data-hora>` em vez de apagada.
 

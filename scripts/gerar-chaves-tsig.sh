@@ -12,14 +12,29 @@ substituir=0; [ "${1:-}" = "--substituir" ] && substituir=1
 docker image inspect sd-bind >/dev/null 2>&1 || { echo "ERRO: imagem sd-bind não existe. Rode: docker compose build"; exit 1; }
 mkdir -p secrets
 
-# Verdadeiro se o arquivo contém uma chave TSIG com o nome esperado.
-chave_valida() { [ -s "$1" ] && grep -q "key \"$2\"" "$1" && grep -q 'secret "' "$1"; }
+# Verdadeiro se o BIND aceita a sintaxe do arquivo (named-checkconf dentro da imagem).
+# Pega arquivo truncado e segredo que não é base64.
+sintaxe_ok() {
+    docker run --rm -i sd-bind sh -c 'cat > /tmp/k.key && printf "include \"/tmp/k.key\";\n" > /tmp/k.conf && named-checkconf /tmp/k.conf' < "$1" > /dev/null 2>&1
+}
+
+# Verdadeiro se o arquivo contém uma chave TSIG com o nome esperado e o BIND aceita a sintaxe.
+chave_valida() {
+    [ -s "$1" ] && grep -q "key \"$2\"" "$1" && grep -q 'secret "' "$1" && sintaxe_ok "$1"
+}
+
+# Segredo (entre aspas) de um arquivo de chave.
+segredo() { sed -n 's/.*secret "\([^"]*\)".*/\1/p' "$1" 2>/dev/null | head -1; }
 
 # gera <arquivo sem .key> <nome da chave>
 gera() {
     tmp="secrets/.$1.tmp"
     if docker run --rm sd-bind tsig-keygen -a hmac-sha256 "$2" > "$tmp" 2>/dev/null && chave_valida "$tmp" "$2"; then
-        mv "$tmp" "secrets/$1.key"
+        if ! mv "$tmp" "secrets/$1.key"; then
+            rm -f "$tmp"
+            echo "ERRO: não foi possível instalar secrets/$1.key"
+            return 1
+        fi
         echo "gerada:  secrets/$1.key (nome $2)"
     else
         rm -f "$tmp"
@@ -39,8 +54,9 @@ for par in "cliente1 cliente1" "cliente2 cliente2" "invalida cliente1"; do
 done
 chmod 0644 secrets/*.key 2>/dev/null
 
-if cmp -s secrets/cliente1.key secrets/invalida.key; then
-    echo "ERRO: invalida.key é idêntica a cliente1.key. Rode: scripts/gerar-chaves-tsig.sh --substituir"
+seg1=$(segredo secrets/cliente1.key); seg_inv=$(segredo secrets/invalida.key)
+if [ -z "$seg1" ] || [ -z "$seg_inv" ] || [ "$seg1" = "$seg_inv" ]; then
+    echo "ERRO: invalida.key tem o mesmo segredo de cliente1.key (ou um dos dois não existe). Rode: scripts/gerar-chaves-tsig.sh --substituir"
     falhas=$((falhas + 1))
 fi
 

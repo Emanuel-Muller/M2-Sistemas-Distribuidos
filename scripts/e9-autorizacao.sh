@@ -79,9 +79,57 @@ resultado() {
     echo "propagação:"; sed 's/^/  /' "$dir/propagacao.txt"
 } | tee "$dir/resumo.txt"
 
+# Confere se os quatro resultados são os esperados. As recusas dos testes 2 a 4
+# são o resultado correto; o que falha a execução é um resultado diferente do previsto.
+# - aceita: código 0 e serial do ns1 +1
+# - recusada: código diferente de 0 e serial do ns1 inalterado
+rc=0
+campos() { # arquivo -> "codigo antes depois"
+    f="$dir/$1"
+    cod=$(sed -n 's/^código de saída do nsupdate: \([0-9]*\).*/\1/p' "$f")
+    ser=$(sed -n 's/^serial do ns1: //p' "$f")
+    antes=${ser%% -> *}; depois=${ser##* -> }
+    echo "$cod $antes $depois"
+}
+numero() { case "$1" in ''|*[!0-9]*) return 1 ;; esac; }
+espera_aceita() { # arquivo rotulo
+    set -- "$1" "$2" $(campos "$1")
+    if numero "$3" && numero "$4" && numero "$5" && [ "$3" = 0 ] && [ "$5" -eq $(( $4 + 1 )) ]; then
+        echo "OK     $2: aceita, serial $4 -> $5"
+    else
+        echo "FALHOU $2: era esperada aceitação com serial +1 (código '$3', serial '$4' -> '$5')"; rc=1
+    fi
+}
+espera_recusa() { # arquivo rotulo
+    set -- "$1" "$2" $(campos "$1")
+    if numero "$3" && numero "$4" && numero "$5" && [ "$3" != 0 ] && [ "$4" = "$5" ]; then
+        echo "OK     $2: recusada (código $3), serial inalterado em $4"
+    else
+        echo "FALHOU $2: era esperada recusa com serial inalterado (código '$3', serial '$4' -> '$5')"; rc=1
+    fi
+}
+# As verificações vão para um arquivo (e não para um pipe) para que "rc" valha no shell principal.
+{
+    echo "Verificação dos resultados esperados"
+    espera_aceita 1-valida.txt     "chave cliente1 -> ns1"
+    espera_recusa 2-sem-chave.txt  "sem chave -> ns1"
+    espera_recusa 3-invalida.txt   "chave inválida -> ns1"
+    espera_recusa 4-secundario.txt "chave cliente1 -> ns2"
+    if grep -q '^AVISO' "$dir/propagacao.txt" || [ "$(grep -c 'ordem.sd.lab="teste-valida"' "$dir/propagacao.txt")" -ne 3 ]; then
+        echo "FALHOU propagação: ns1, ns2 e ns3 não servem todos teste-valida"; rc=1
+    else
+        echo "OK     propagação: ns1, ns2 e ns3 servem teste-valida"
+    fi
+    [ "$rc" -eq 0 ] && echo "RESULTADO: autorização conforme o esperado" || echo "RESULTADO: autorização DIFERENTE do esperado"
+} > "$dir/.verificacao"
+tee -a "$dir/resumo.txt" < "$dir/.verificacao" | tee -a "$dir/execucao.txt"
+rm -f "$dir/.verificacao"
+rc_verif=$rc
+
 if [ "$restaurar" -eq 1 ]; then
     log "Restauração da variante base (unset COMPOSE_FILE + reset)"
-    env -u COMPOSE_FILE scripts/reset.sh > "$dir/restauracao.txt" 2>&1
+    env -u COMPOSE_FILE scripts/reset.sh > "$dir/restauracao.txt" 2>&1 || { log "ERRO na restauração (ver restauracao.txt)"; rc_verif=1; }
     tail -1 "$dir/restauracao.txt" | tee -a "$dir/execucao.txt"
     echo "Neste terminal, rode também: unset COMPOSE_FILE"
 fi
+exit "$rc_verif"
